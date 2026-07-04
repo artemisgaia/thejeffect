@@ -12,9 +12,15 @@ export default function AboutCta({
   return (
     <section className="about-cta">
       <div className="about-cta__inner">
-        <div className="about-cta__img reveal">
+        <div className="about-cta__img reveal" style={{ position: 'relative' }}>
           {image ? (
-            <Image src={image} alt="The J Effect story" loading="lazy" width={900} height={900} />
+            <>
+              <Image className="is-pending-img" src={image} alt="The J Effect story" loading="lazy" width={900} height={900} />
+              <div className="pending-badge">
+                <span className="pending-badge__label">Coming Soon</span>
+                <span className="pending-badge__sub">Updating Inventory</span>
+              </div>
+            </>
           ) : (
             <div style={{ width: '100%', minHeight: '360px', background: 'var(--cream-3)' }} />
           )}

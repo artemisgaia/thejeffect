@@ -35,6 +35,7 @@ export default function AboutPage() {
         </div>
         <div className="about-hero__img reveal reveal--d2" style={{ position: 'relative', overflow: 'hidden', minHeight: '320px' }}>
           <Image
+            className="is-pending-img"
             src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=900&q=80"
             alt="The J Effect skincare products arranged on a clean surface"
             fill
@@ -42,6 +43,10 @@ export default function AboutPage() {
             style={{ objectFit: 'cover' }}
             priority
           />
+          <div className="pending-badge">
+            <span className="pending-badge__label">Coming Soon</span>
+            <span className="pending-badge__sub">Updating Inventory</span>
+          </div>
         </div>
       </div>
 
@@ -51,6 +56,7 @@ export default function AboutPage() {
       <div className="about-mission">
         <div className="about-mission__img reveal" style={{ position: 'relative', overflow: 'hidden', minHeight: '320px' }}>
           <Image
+            className="is-pending-img"
             src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=900&q=80"
             alt="Clean skincare jar held in hands showing The J Effect products"
             fill
@@ -58,6 +64,10 @@ export default function AboutPage() {
             style={{ objectFit: 'cover' }}
             loading="lazy"
           />
+          <div className="pending-badge">
+            <span className="pending-badge__label">Coming Soon</span>
+            <span className="pending-badge__sub">Updating Inventory</span>
+          </div>
         </div>
         <div>
           <div className="eyebrow reveal">Our Mission</div>

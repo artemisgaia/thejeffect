@@ -28,13 +28,18 @@ export default async function BlogPostPage({ params }) {
         {/* Post Hero */}
         <header className="blog-post__hero">
           <div className="blog-post__hero-img-wrap reveal reveal--d1">
-            <Image 
-              src={post.image} 
-              alt={post.title} 
-              fill 
-              style={{ objectFit: 'cover' }} 
-              priority 
+            <Image
+              className="is-pending-img"
+              src={post.image}
+              alt={post.title}
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
             />
+            <div className="pending-badge">
+              <span className="pending-badge__label">Coming Soon</span>
+              <span className="pending-badge__sub">Updating Inventory</span>
+            </div>
           </div>
           <div className="blog-post__header-content">
             <div className="eyebrow eyebrow--center reveal reveal--d2">{post.date}</div>

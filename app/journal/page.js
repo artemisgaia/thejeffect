@@ -31,8 +31,9 @@ export default function JournalPage() {
             {POSTS.map((post, i) => (
               <article className={`article-card reveal reveal--d${i + 1}`} key={post.slug}>
                 <Link href={`/journal/${post.slug}`} style={{ display: 'block' }}>
-                  <div className="article-card__img">
+                  <div className="article-card__img" style={{ position: 'relative' }}>
                     <Image
+                      className="is-pending-img"
                       src={post.image}
                       alt={post.title}
                       loading="lazy"
@@ -40,6 +41,10 @@ export default function JournalPage() {
                       height={500}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
+                    <div className="pending-badge">
+                      <span className="pending-badge__label">Coming Soon</span>
+                      <span className="pending-badge__sub">Updating Inventory</span>
+                    </div>
                   </div>
                 </Link>
                 <div className="article-card__body">

@@ -10,7 +10,11 @@ export default function ImageMosaic({ images = MOSAIC_IMAGES }) {
             key={i}
             className={`mosaic-item${img.tall ? ' mosaic-item--tall' : ''}${img.wide ? ' mosaic-item--wide' : ''}`}
           >
-            <Image src={img.src} alt={img.caption || ''} loading="lazy" width={800} height={600} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <Image className="is-pending-img" src={img.src} alt={img.caption || ''} loading="lazy" width={800} height={600} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="pending-badge">
+              <span className="pending-badge__label">Coming Soon</span>
+              <span className="pending-badge__sub">Updating Inventory</span>
+            </div>
             {img.caption && <div className="mosaic-item__cap">{img.caption}</div>}
           </div>
         ))}

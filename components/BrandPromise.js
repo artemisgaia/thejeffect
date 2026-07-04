@@ -23,11 +23,15 @@ export default function BrandPromise({
         {/* Stacked image block */}
         <div className="brand-promise__stack reveal">
           {imageMain && (
-            <Image className="brand-promise__img-main" src={imageMain} alt="Brand promise" loading="lazy" width={900} height={800} />
+            <Image className="brand-promise__img-main is-pending-img" src={imageMain} alt="Brand promise" loading="lazy" width={900} height={800} />
           )}
           {imageAccent && (
-            <Image className="brand-promise__img-accent" src={imageAccent} alt="Ingredients" loading="lazy" width={600} height={500} />
+            <Image className="brand-promise__img-accent is-pending-img" src={imageAccent} alt="Ingredients" loading="lazy" width={600} height={500} />
           )}
+          <div className="pending-badge">
+            <span className="pending-badge__label">Coming Soon</span>
+            <span className="pending-badge__sub">Updating Inventory</span>
+          </div>
           <div className="brand-promise__badge">
             <div className="brand-promise__badge-num">{badgeNumber}</div>
             <div className="brand-promise__badge-label">{badgeLabel}</div>

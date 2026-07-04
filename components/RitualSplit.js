@@ -18,9 +18,15 @@ export default function RitualSplit({
   imagePosition = 'left',
 }) {
   const imgBlock = (
-    <div className="ritual-split__img">
+    <div className="ritual-split__img" style={{ position: 'relative' }}>
       {image ? (
-        <Image src={image} alt="The Ritual Method" loading="lazy" width={900} height={1100} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <>
+          <Image className="is-pending-img" src={image} alt="The Ritual Method" loading="lazy" width={900} height={1100} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <div className="pending-badge">
+            <span className="pending-badge__label">Coming Soon</span>
+            <span className="pending-badge__sub">Updating Inventory</span>
+          </div>
+        </>
       ) : (
         <div style={{ width: '100%', height: '100%', background: 'var(--cream-2)', minHeight: '400px' }} />
       )}

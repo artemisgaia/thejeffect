@@ -24,7 +24,11 @@ export default function CategoryCards({
             >
               {cat.image ? (
                 <div className="cat-card__media">
-                  <Image className="cat-card__img" src={cat.image} alt={cat.name} loading="lazy" width={600} height={800} />
+                  <Image className="cat-card__img is-pending-img" src={cat.image} alt={cat.name} loading="lazy" width={600} height={800} />
+                  <div className="pending-badge">
+                    <span className="pending-badge__label">Coming Soon</span>
+                    <span className="pending-badge__sub">Updating Inventory</span>
+                  </div>
                 </div>
               ) : (
                 <div className="cat-card__img" style={{ background: 'var(--cream-2)', width: '100%', height: '100%' }} />

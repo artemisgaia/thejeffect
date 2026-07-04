@@ -26,7 +26,7 @@ export default function Hero({
     >
       {/* Background */}
       <div
-        className="hero__bg"
+        className={`hero__bg${image ? ' is-pending-img' : ''}`}
         style={
           image
             ? { backgroundImage: `url('${image}')` }

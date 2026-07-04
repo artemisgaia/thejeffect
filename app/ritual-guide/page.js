@@ -120,7 +120,11 @@ export default function RitualGuidePage() {
                   overflow: 'hidden',
                   background: 'var(--cream-2)'
                 }}>
-                  <Image src={step.image} alt={step.title} fill style={{ objectFit: 'cover' }} loading={i === 0 ? 'eager' : 'lazy'} />
+                  <Image className="is-pending-img" src={step.image} alt={step.title} fill style={{ objectFit: 'cover' }} loading={i === 0 ? 'eager' : 'lazy'} />
+                  <div className="pending-badge">
+                    <span className="pending-badge__label">Coming Soon</span>
+                    <span className="pending-badge__sub">Updating Inventory</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -137,7 +141,7 @@ export default function RitualGuidePage() {
             {FAQS.map((faq, i) => (
               <div className="accordion reveal" key={i}>
                 <button className="accordion__btn" aria-expanded="false">
-                  {faq.q} <span className="accordion__chevron" aria-hidden="true">+</span>
+                  {faq.q} <span className="accordion__icon" aria-hidden="true">+</span>
                 </button>
                 <div className="accordion__body">
                   <p>{faq.a}</p>
