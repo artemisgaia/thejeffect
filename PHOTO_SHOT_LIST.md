@@ -1,0 +1,214 @@
+# The J Effect — Product Photography Shot List
+
+> **Brand Aesthetic:** Ultra-premium, clean luxury. Muted earth tones (forest green, warm gold, soft cream). Natural light. Minimalist compositions with botanical accents. Think Aesop meets Glossier — calm, intentional, elevated.
+>
+> **Consistent Elements:** White/cream marble or linen surfaces, dried botanicals (eucalyptus, lavender), natural wood accents, soft directional light from left. All bottles/jars should use The J Effect branding (dark forest green labels with gold typography).
+
+---
+
+## 1. PRODUCT HERO SHOTS (White Background — 2 per product)
+
+Each product needs **2 images**: a clean front-facing hero and a styled alternate angle.
+
+### Serums
+
+**1A. Aqua Lock Hyaluronic Serum — Hero**
+> Minimal dropper bottle with translucent blue-tinted serum, dark forest green label with gold "Aqua Lock" text. Shot on pure white background, soft shadow falling right. Bottle slightly angled 15°. Drop of serum on the dropper tip catching light. Product photography, clean luxury skincare, 4K, studio lighting.
+
+**1B. Aqua Lock Hyaluronic Serum — Lifestyle**
+> Same dropper bottle resting on a slab of white marble beside a small clear glass bowl of water with a single floating eucalyptus leaf. Morning light from a window, soft bokeh background. Clean, hydrating mood.
+
+**2A. Midnight Renewal Retinol & Peptide Serum — Hero**
+> Dark amber glass dropper bottle, forest green label with gold "Midnight Renewal" typography. Pure white background. Dramatic single light source from upper left creating a moody shadow. The amber glass should glow subtly. Product photography, luxury skincare.
+
+**2B. Midnight Renewal Retinol & Peptide Serum — Lifestyle**
+> Bottle on a dark slate surface with dried lavender sprigs and a folded navy linen towel. Warm evening light, candle glow in soft background. Nighttime ritual mood.
+
+**3A. Luminous Radiance PDRN Serum — Hero**
+> Frosted glass dropper bottle with a pearl-white serum visible inside, forest green label with gold "Luminous Radiance" text. Pure white background. Soft glow effect around the bottle suggesting radiance. Clean product photography.
+
+**3B. Luminous Radiance PDRN Serum — Lifestyle**
+> Bottle on a cream linen cloth next to a small gold dish holding a few drops of pearlescent serum. A single white peony petal resting nearby. Bright, airy, luminous lighting.
+
+### Moisturizers
+
+**4A. Timeless Renewal Cream — Hero**
+> Elegant round jar with cream-colored product visible through frosted glass, dark green lid with gold embossed "Timeless Renewal" text. White background, jar slightly open showing rich cream texture inside. Soft shadow. Luxury skincare product photography.
+
+**4B. Timeless Renewal Cream — Lifestyle**
+> Open jar on a wooden vanity tray beside a small jade roller and a sprig of rosemary. Warm natural light from the side. Cream texture visible and inviting.
+
+**5A. Watermelon Dew Moisturizer — Hero (BESTSELLER)**
+> Round jar with pink-tinted gel-cream visible through clear glass, forest green lid with gold "Watermelon Dew" text. A tiny watermelon seed or thin watermelon slice as a prop. White background. Fresh, dewy, bouncy feeling. This is the hero product — make it pop.
+
+**5B. Watermelon Dew Moisturizer — Lifestyle**
+> Open jar with a finger swiping through the gel-cream to show bouncy texture. Fresh watermelon slices in the soft background on a white marble counter. Bright, juicy, summery light. Close-up showing the gel-cream's translucent pink texture.
+
+**6A. Daily Calm Hydration Cream — Hero**
+> Soft matte white jar with forest green label, gold "Daily Calm" text. White background, clean shadow. Simple, understated, everyday luxury.
+
+**6B. Daily Calm Hydration Cream — Lifestyle**
+> Jar on a bathroom shelf next to a small succulent plant and a white ceramic tray. Soft morning light. Calm, routine, reliable feeling.
+
+### Oils
+
+**7A. Pure Jojoba Glow Oil — Hero**
+> Slim amber glass bottle with dropper cap, golden oil visible inside. Forest green label with gold "Pure Jojoba" text. White background. A few golden drops pooled at the base catching light. Warm, glowy product photography.
+
+**7B. Pure Jojoba Glow Oil — Lifestyle**
+> Bottle on its side on a raw linen cloth with jojoba seeds scattered nearby and a small ceramic dish with oil pooled in it. Warm golden hour light. Nourishing, ritual mood.
+
+**8A. Ritual Glide Gua Sha Oil — Hero**
+> Slim amber bottle next to a rose quartz gua sha tool. Forest green label with gold "Ritual Glide" text. White background. The gua sha and bottle should feel like a pair. Clean, intentional.
+
+**8B. Ritual Glide Gua Sha Oil — Lifestyle**
+> Close-up of someone's hand holding the gua sha tool with oil glistening on it, the bottle in soft focus behind on a cream surface. Warm skin tones, self-care ritual in progress.
+
+### Cleansers
+
+**9A. Gentle Purifying Cleanser — Hero**
+> Soft-squeeze tube or pump bottle, forest green with gold "Gentle Purifying" text. White background. A small dollop of creamy cleanser squeezed out beside it. Clean and fresh.
+
+**9B. Gentle Purifying Cleanser — Lifestyle**
+> Bottle beside a running bathroom sink on white marble countertop, soft foam on fingertips in foreground. Morning energy, fresh start feeling.
+
+### Ritual Bars (Soap Bars)
+
+**10A. Cooling Aloe Cleansing Bar — Hero**
+> Rectangular artisan soap bar with a subtle green marbled pattern, sitting on a small wooden soap dish. White background. Clean, spa-like. A thin aloe vera leaf cross-section prop nearby.
+
+**10B. Cooling Aloe Cleansing Bar — Lifestyle**
+> Bar on a wet stone surface in a shower setting with water droplets and a eucalyptus branch hanging from a showerhead in soft focus. Fresh, spa, cooling mood.
+
+**11A. Evening Calm Lavender Bar — Hero**
+> Rectangular bar with subtle purple-grey swirl pattern on a white background. Dried lavender sprigs laid beside it. Calming, evening mood. Soft warm lighting.
+
+**11B. Evening Calm Lavender Bar — Lifestyle**
+> Bar on a white ceramic dish beside a lit candle, dried lavender bundle, and a folded cream towel. Warm, intimate bathroom setting. Evening wind-down mood.
+
+**12A. Brightening Turmeric & Kojic Bar — Hero**
+> Golden-yellow bar with speckled texture on white background. A small pile of turmeric powder and a few thin turmeric root slices as props. Vibrant but sophisticated.
+
+**12B. Brightening Turmeric & Kojic Bar — Lifestyle**
+> Bar lathered on hands showing golden foam, bar resting on a terracotta dish in background. Warm light, brightening energy.
+
+---
+
+## 2. HOMEPAGE HERO IMAGE (1 shot)
+
+**13. Homepage Hero — Full Width**
+> A woman's hands gently holding an open jar of The J Effect cream, close-up. Soft natural light from the right. Background is a blurred bathroom or vanity scene in cream/white tones. Foreground focus on the jar and her clean, glowing skin. Shot at roughly 16:9 aspect ratio for full-width hero. Cinematic, editorial skincare photography. The jar has a dark forest green lid with gold text.
+
+---
+
+## 3. CATEGORY CARD IMAGES (4 shots)
+
+**14. Cleanse & Reset**
+> Flat-lay of a cleanser bottle and a ritual bar on a wet white marble surface with water droplets and a small eucalyptus sprig. Shot from directly above. Clean, fresh, reset mood. Square or 3:4 aspect ratio.
+
+**15. Treat & Target**
+> Two or three serum dropper bottles arranged on a cream linen cloth with a few drops of golden serum pooled between them. Soft side lighting. Intentional, scientific, targeted mood. 3:4 aspect ratio.
+
+**16. Seal & Protect**
+> An open moisturizer jar with a finger scooping cream, beside a closed jar. On a wooden vanity surface. Warm, protective, sealing mood. 3:4 aspect ratio.
+
+**17. Body & Glow**
+> Three ritual bars stacked artfully on a stone soap dish with a body oil bottle beside them. Dried botanicals scattered. Warm golden light. Full body ritual mood. 3:4 aspect ratio.
+
+---
+
+## 4. RITUAL SPLIT IMAGE (1 shot)
+
+**18. The Ritual Method — Editorial Split**
+> Overhead flat-lay of a complete 3-step ritual arranged left to right: cleanser, serum dropper, moisturizer jar. Each on its own small cream ceramic dish. Connected by a thin trail of product (foam, drops, cream). On a natural linen surface with a dried botanical branch crossing diagonally. Shot from above, editorial style, vertical orientation (portrait). This is the hero image for the "Skincare as ceremony" section.
+
+---
+
+## 5. IMAGE MOSAIC (5 shots)
+
+**19. Mosaic — Tall Left (tall, 1:2 ratio)**
+> Full-length shot of The J Effect product lineup — 5-6 bottles and jars arranged on ascending white marble steps, each at a different height. Dramatic side lighting. Gallery/museum display feeling.
+
+**20. Mosaic — Top Center**
+> Close-up texture shot of golden oil being dripped from a dropper, caught mid-air. Macro photography, shallow depth of field, warm golden tones.
+
+**21. Mosaic — Top Right**
+> A woman applying cream to her cheek, shot from the side. Only her jaw, cheek, and fingers visible. Glowing dewy skin. Clean, close-up, editorial beauty shot.
+
+**22. Mosaic — Bottom Center (wide)**
+> Bathroom shelfie — a curated row of The J Effect products on a floating white shelf. Small plant, a candle, and a folded towel completing the scene. Aspirational lifestyle, "I want my bathroom to look like this."
+
+**23. Mosaic — Bottom Right**
+> Close-up of a ritual bar with rich lather on hands, water streaming in soft focus. Fresh, sensorial, tactile.
+
+---
+
+## 6. ABOUT PAGE IMAGES (2 shots)
+
+**24. About Hero — Brand Story**
+> The J Effect product collection spread across a live-edge wooden table in a sunlit studio. Natural light streaming through large windows. Plants in the background. The founder's aesthetic — warm, intentional, California-inspired. 4:3 landscape or 3:4 portrait (used in split layout).
+
+**25. About Mission**
+> Close-up of hands carefully packaging a product into a minimalist kraft box with tissue paper. A handwritten "thank you" card visible. Warm light. The care and intentionality of each order.
+
+---
+
+## 7. BLOG POST HEADER IMAGES (3 shots)
+
+**26. "Your 3-Step Morning Ritual" — Blog Header**
+> Morning bathroom scene: products lined up on a white counter, soft golden sunrise light through a window, a coffee cup in soft focus. Fresh, aspirational morning energy. 16:10 landscape.
+
+**27. "Vitamin C — What It Actually Does" — Blog Header**
+> Close-up of a serum dropper releasing a single golden drop, with sliced oranges and citrus arranged artfully behind on a white surface. Bright, educational, ingredient-focused. 16:10 landscape.
+
+**28. "How to Build a Skincare Habit" — Blog Header**
+> A neatly organized vanity top from above: products in a tray, a small mirror, a journal and pen beside them. The "put together" aspirational routine. Warm, organized, intentional. 16:10 landscape.
+
+---
+
+## 8. BRAND PROMISE SECTION (2 shots)
+
+**29. Brand Promise — Main Image**
+> A close-up of raw, clean ingredients: jojoba seeds, aloe vera leaves, watermelon slices, turmeric root, lavender sprigs — all arranged on a white marble surface. Overhead flat-lay. The "we show you what's inside" transparency feeling. Large, editorial.
+
+**30. Brand Promise — Accent Image**
+> A single product jar surrounded by its key ingredients scattered naturally — the "farm to face" concept. Soft natural light, cream background.
+
+---
+
+## 9. MEGA MENU PROMO IMAGES (2 shots)
+
+**31. Mega Menu — Bestseller Promo**
+> The Watermelon Dew Moisturizer jar on a small pedestal or elevated surface, with a "Bestseller" feeling. Clean, quick-read composition. Tight crop, 4:3 landscape. Should work at ~300px wide.
+
+**32. Mega Menu — Ritual Guide Promo**
+> The 3-step ritual bottles arranged in a line, seen from a slight angle. "The Method" feeling. Clean background, 4:3 landscape. Small and punchy.
+
+---
+
+## 10. OG / SOCIAL SHARING IMAGE (1 shot)
+
+**33. Open Graph Image (1200x630)**
+> The J Effect logo centered over a soft-focus lifestyle background showing products on a cream surface. Dark forest green overlay with gold logo text. Clean, brandable, looks good when shared on social media. Exactly 1200x630px.
+
+---
+
+## Technical Specifications
+
+| Shot Type | Dimensions | Format | Background |
+|---|---|---|---|
+| Product Hero | 900x1100px | WebP/JPG | Pure white (#FDFCFA) |
+| Product Lifestyle | 900x1100px | WebP/JPG | Styled/contextual |
+| Homepage Hero | 1800x1200px | WebP/JPG | Contextual |
+| Category Cards | 700x933px (3:4) | WebP/JPG | Styled flat-lay |
+| Mosaic (tall) | 800x1280px | WebP/JPG | Styled |
+| Mosaic (standard) | 800x600px | WebP/JPG | Styled |
+| Blog Headers | 800x500px (16:10) | WebP/JPG | Lifestyle |
+| Mega Menu | 600x450px (4:3) | WebP/JPG | Clean |
+| OG Image | 1200x630px | JPG | Branded overlay |
+
+**Color grading:** Slightly warm, desaturated. Lift the shadows slightly for that luxury editorial look. Never harsh or overly vibrant. Whites should feel like cream, not clinical.
+
+**Total shots needed: 33**
+- 24 product shots (12 products x 2 each)
+- 9 lifestyle/editorial shots (hero, categories, mosaic, about, blog, promo, OG)
