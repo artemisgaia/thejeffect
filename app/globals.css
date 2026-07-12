@@ -462,6 +462,17 @@ input, textarea, select { font-family: inherit; }
 .pending-badge--sm .pending-badge__label { font-size: .5rem; padding: 5px 9px; letter-spacing: .1em; }
 .pending-badge--sm .pending-badge__sub { display: none; }
 
+/* ── PACKAGING PREVIEW NOTE (product gallery) ────────────── */
+.gallery-note {
+  margin-top: 10px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: .78rem;
+  color: var(--ink-muted);
+  text-align: center;
+  letter-spacing: .02em;
+}
+
 /* ══════════════════════════════════════════════════════════
    HERO SECTION
 ══════════════════════════════════════════════════════════ */

@@ -40,14 +40,7 @@ export default function ProductPageClient({ product, related }) {
                       priority={i === 0}
                       width={900}
                       height={1100}
-                      className={product.imagePlaceholder ? 'is-pending-img' : ''}
                     />
-                    {product.imagePlaceholder && (
-                      <div className="pending-badge">
-                        <span className="pending-badge__label">Coming Soon</span>
-                        <span className="pending-badge__sub">Updating Inventory</span>
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
@@ -56,7 +49,7 @@ export default function ProductPageClient({ product, related }) {
                   {product.images.map((img, i) => (
                     <Image
                       key={i}
-                      className={`product-gallery__thumb${i === activeImg ? ' active' : ''}${product.imagePlaceholder ? ' is-pending-img' : ''}`}
+                      className={`product-gallery__thumb${i === activeImg ? ' active' : ''}`}
                       src={img}
                       alt={`View ${i + 1}`}
                       loading="lazy"
@@ -66,6 +59,9 @@ export default function ProductPageClient({ product, related }) {
                     />
                   ))}
                 </div>
+              )}
+              {product.packagingPreview && (
+                <p className="gallery-note">Packaging preview — final product photography coming soon.</p>
               )}
             </div>
           </div>
@@ -203,20 +199,13 @@ export default function ProductPageClient({ product, related }) {
         <section className="product-ritual-banner">
           <div className="product-ritual-banner__bg">
              <Image
-               src={product.images[1] || product.images[0]}
+               src={product.images[0]}
                alt="Ritual"
                fill
                style={{ objectFit: 'cover' }}
                loading="lazy"
-               className={product.imagePlaceholder ? 'is-pending-img' : ''}
              />
              <div className="product-ritual-banner__overlay"></div>
-             {product.imagePlaceholder && (
-               <div className="pending-badge">
-                 <span className="pending-badge__label">Coming Soon</span>
-                 <span className="pending-badge__sub">Updating Inventory</span>
-               </div>
-             )}
           </div>
           <div className="product-ritual-banner__content reveal">
             <div className="eyebrow eyebrow--light">The Method</div>
@@ -244,7 +233,7 @@ export default function ProductPageClient({ product, related }) {
               <Image
                 src={product.images[0]}
                 alt={product.title}
-                className={`sticky-bar__img${product.imagePlaceholder ? ' is-pending-img' : ''}`}
+                className="sticky-bar__img"
                 width={44}
                 height={44}
                 loading="lazy"

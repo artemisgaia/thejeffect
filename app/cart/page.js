@@ -33,7 +33,7 @@ export default function CartPage() {
             <div>
               {cart.map((item) => (
                 <div key={item.key} style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '20px', padding: '24px 0', borderBottom: '1px solid var(--cream-3)' }}>
-                    <Image className={item.imagePlaceholder ? 'is-pending-img' : ''} src={item.image} alt={item.title} width={100} height={120} style={{ width: '100px', height: '120px', objectFit: 'cover' }} loading="lazy" />
+                    <Image src={item.image} alt={item.title} width={100} height={120} style={{ width: '100px', height: '120px', objectFit: 'cover' }} loading="lazy" />
                   <div>
                     <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '.72rem', letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--ink-muted)', marginBottom: '4px' }}>The J Effect</div>
                     <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: '400', fontSize: '1.1rem', color: 'var(--ink)', marginBottom: '4px' }}>{item.title}</h3>

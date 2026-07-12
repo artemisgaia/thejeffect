@@ -169,6 +169,14 @@ export default function ThemeScript() {
       });
       mo.observe(document.body, { childList: true, subtree: true });
       cleanups.push(() => { io.disconnect(); mo.disconnect(); });
+
+      // Safety net: if IntersectionObserver never fires (broken viewport
+      // state, extensions, edge-case browsers), force-reveal everything
+      // after a short delay so content is never stuck invisible.
+      const fallback = setTimeout(() => {
+        document.querySelectorAll('.reveal:not(.revealed)').forEach((el) => el.classList.add('revealed'));
+      }, 1500);
+      cleanups.push(() => clearTimeout(fallback));
     } else {
       document.querySelectorAll('.reveal').forEach((el) => el.classList.add('revealed'));
     }

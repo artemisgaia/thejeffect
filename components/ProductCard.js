@@ -28,7 +28,7 @@ export default function ProductCard({ product }) {
           {product.images[0] ? (
             <>
               <Image
-                className={`product-card__img${product.imagePlaceholder ? ' is-pending-img' : ''}`}
+                className="product-card__img"
                 src={product.images[0]}
                 alt={product.title}
                 width={600}
@@ -37,19 +37,13 @@ export default function ProductCard({ product }) {
               />
               {product.images[1] && (
                 <Image
-                  className={`product-card__img product-card__img--hover${product.imagePlaceholder ? ' is-pending-img' : ''}`}
+                  className="product-card__img product-card__img--hover"
                   src={product.images[1]}
                   alt={product.title}
                   loading="lazy"
                   width={600}
                   height={700}
                 />
-              )}
-              {product.imagePlaceholder && (
-                <div className="pending-badge">
-                  <span className="pending-badge__label">Coming Soon</span>
-                  <span className="pending-badge__sub">Updating Inventory</span>
-                </div>
               )}
             </>
           ) : (

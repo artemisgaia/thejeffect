@@ -62,7 +62,7 @@ export default function CartDrawer() {
           ) : (
             cart.map((item) => (
               <div className="cart-item" key={item.key}>
-                <Image className={`cart-item__img${item.imagePlaceholder ? ' is-pending-img' : ''}`} src={item.image} alt={item.title} width={80} height={90} loading="lazy" />
+                <Image className="cart-item__img" src={item.image} alt={item.title} width={80} height={90} loading="lazy" />
                 <div>
                   <div className="cart-item__title">{item.title}</div>
                   {item.variantTitle && <div className="cart-item__variant">{item.variantTitle}</div>}

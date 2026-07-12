@@ -43,7 +43,6 @@ export function CartProvider({ children }) {
           price: variant?.price || product.price,
           stripe_price_id: variant?.stripe_price_id || product.stripe_price_id,
           image: product.images[0] || '',
-          imagePlaceholder: !!product.imagePlaceholder,
           quantity: 1,
         },
       ];

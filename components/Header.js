@@ -72,7 +72,7 @@ export default function Header() {
                         </div>
                         <div className="mega-menu__promos">
                           <Link href="/shop/watermelon-hydration-moisturizer" className="mega-promo">
-                            <Image className="is-pending-img" src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=600&q=80" alt="Bestseller" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <Image src="/products/watermelon-hydration-moisturizer.webp" alt="Bestseller" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="mega-promo__overlay" />
                             <div className="mega-promo__text">
                               <div className="mega-promo__label">Bestseller</div>
@@ -80,7 +80,7 @@ export default function Header() {
                             </div>
                           </Link>
                           <Link href="/ritual-guide" className="mega-promo">
-                            <Image className="is-pending-img" src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80" alt="Ritual Guide" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <Image src="/products/hyaluronic-acid-serum.webp" alt="Ritual Guide" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="mega-promo__overlay" />
                             <div className="mega-promo__text">
                               <div className="mega-promo__label">Method</div>
