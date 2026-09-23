@@ -252,8 +252,105 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Profit Allocation</span><div class="section-line"></div></div>
       <div class="alloc-grid">
-        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; 100% Reinvested</div><div class="alloc-val">$0.00</div><div class="alloc-pct">All profits reinvested into brand growth</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
-        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; 100% Reinvested</div><div class="alloc-val">$0.00</div><div class="alloc-pct">All profits reinvested into brand growth</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
+        <div class="alloc-card">
+          <span class="alloc-label">Reinvested &mdash; Brand Growth</span>
+          <div class="alloc-name">The J Effect &mdash; Paid Ads Scale, Content, Inventory</div>
+          <div class="alloc-val">$522.54</div>
+          <div class="alloc-pct">90% of net profit</div>
+          <div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="alloc-card reserve">
+          <span class="alloc-label">Reserve Held</span>
+          <div class="alloc-name">Cash reserve &mdash; held in business account</div>
+          <div class="alloc-val">$58.06</div>
+          <div class="alloc-pct">10% of net profit</div>
+          <div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div>
+        </div>
+        <div class="alloc-card zero">
+          <span class="alloc-label">Owner Draw</span>
+          <div class="alloc-name">Deferred &mdash; milestone not yet achieved</div>
+          <div class="alloc-val">$0.00</div>
+          <div class="alloc-pct">Withheld until $10K/mo milestone</div>
+          <div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">Performance Charts</span><div class="section-line"></div></div>
+      <div class="charts-grid">
+        <div class="chart-wrap"><div class="chart-title">Weekly Revenue &amp; Orders &mdash; January 2026</div><div class="chart-canvas-wrap"><canvas id="jan-c1"></canvas></div></div>
+        <div class="chart-wrap"><div class="chart-title">Revenue by Channel &mdash; January 2026</div><div class="chart-canvas-wrap"><canvas id="jan-c2"></canvas></div></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">Key Insights</span><div class="section-line"></div></div>
+      <div class="insights-list">
+        <div class="insight-item"><span class="insight-num">01</span><p class="insight-text"><strong>Lean launch validates unit economics.</strong> Achieving a 31.6% net margin with only $200 in starting capital confirms the product's COGS structure is healthy enough to support paid scaling. A 3.2&times; ROAS on a cold-audience Meta test is an above-average signal for a skincare brand with no prior social proof or pixel data.</p></div>
+        <div class="insight-item"><span class="insight-num">02</span><p class="insight-text"><strong>Email list infrastructure is the single highest-leverage move made this month.</strong> Even with only 147 subscribers by month end, the list represents a zero-ad-cost owned channel. Every dollar reinvested in month two compounds against this base &mdash; not solely against cold paid traffic.</p></div>
+        <div class="insight-item"><span class="insight-num">03</span><p class="insight-text"><strong>AOV of $80 is strong for an unproven brand but depends entirely on single-product volume.</strong> No bundles or upsells were live in January. A starter bundle in month two has the potential to push AOV past $90 without requiring proportionally more ad spend &mdash; a direct margin improvement.</p></div>
+        <div class="insight-item"><span class="insight-num">04</span><p class="insight-text"><strong>Zero refunds in a launch month is rare and strategically significant.</strong> This indicates product-to-promise alignment is high &mdash; customers are receiving what the marketing implied. Protecting this metric as volume scales is critical for long-term LTV and review velocity.</p></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">Month-over-Month</span><div class="section-line"></div></div>
+      <div class="mom-card">
+        <div class="mom-title">January vs. Prior Period</div>
+        <div class="mom-grid">
+          <div class="mom-item"><div class="mom-item-label">Revenue</div><div class="mom-item-val">$1,840</div><div class="mom-item-delta na">&mdash; Launch Month</div></div>
+          <div class="mom-item"><div class="mom-item-label">Orders</div><div class="mom-item-val">23</div><div class="mom-item-delta na">&mdash; Launch Month</div></div>
+          <div class="mom-item"><div class="mom-item-label">Net Profit</div><div class="mom-item-val">$580.60</div><div class="mom-item-delta na">&mdash; Launch Month</div></div>
+          <div class="mom-item"><div class="mom-item-label">ROAS</div><div class="mom-item-val">3.2&times;</div><div class="mom-item-delta na">&mdash; Baseline Set</div></div>
+          <div class="mom-item"><div class="mom-item-label">Email Subscribers</div><div class="mom-item-val">147</div><div class="mom-item-delta na">&mdash; List Founded</div></div>
+          <div class="mom-item"><div class="mom-item-label">Reviews</div><div class="mom-item-val">4 &starf;&starf;&starf;&starf;&starf;</div><div class="mom-item-delta na">&mdash; First Reviews</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEBRUARY -->
+  <div class="tab-panel" id="panel-feb">
+    <div class="hero">
+      <span class="eyebrow">February 2026 &mdash; Final Report</span>
+      <h1 class="hero-title">First Full Cycle<br/>Reinvestment in Action</h1>
+      <p class="hero-sub">February marked the first complete reinvestment cycle. $522 of January's profit was deployed into expanded Meta campaigns and a Starter Bundle launch, accelerating order velocity and pushing revenue nearly double in 28 days.</p>
+      <div class="kpi-grid">
+        <div class="kpi-card"><span class="kpi-label">Revenue</span><div class="kpi-val gold">$3,520</div><div class="kpi-sub">+91% MoM</div></div>
+        <div class="kpi-card"><span class="kpi-label">Orders</span><div class="kpi-val">41</div><div class="kpi-sub">+78% MoM</div></div>
+        <div class="kpi-card"><span class="kpi-label">AOV</span><div class="kpi-val">$85.85</div><div class="kpi-sub">+7.3% via bundle</div></div>
+        <div class="kpi-card"><span class="kpi-label">Marketing Budget</span><div class="kpi-val">$522</div><div class="kpi-sub">Reinvested Jan profit</div></div>
+        <div class="kpi-card"><span class="kpi-label">ROAS</span><div class="kpi-val gold">4.1&times;</div><div class="kpi-sub">&uarr; from 3.2&times;</div></div>
+        <div class="kpi-card"><span class="kpi-label">Net Profit</span><div class="kpi-val green">$1,077</div><div class="kpi-sub">30.6% margin</div></div>
+        <div class="kpi-card"><span class="kpi-label">Top Channel</span><div class="kpi-val" style="font-size:16px;line-height:1.3">Meta Ads<br/><span style="font-size:12px;color:var(--text-dim)">Email &mdash; 8%</span></div></div>
+        <div class="kpi-card"><span class="kpi-label">Key Event</span><div class="kpi-val" style="font-size:14px;line-height:1.4;color:var(--text-dim)">Starter Bundle<br/>Launched</div></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">Profit &amp; Loss &mdash; February 2026</span><div class="section-line"></div></div>
+      <table class="pl-table">
+        <tr class="pl-separator"><td colspan="2">Revenue</td></tr>
+        <tr><td class="pl-row-label">Gross Sales</td><td class="pl-row-val">$3,520.00</td></tr>
+        <tr><td class="pl-row-label">Refunds / Returns</td><td class="pl-row-val neg">&ndash;$0.00</td></tr>
+        <tr class="pl-subtotal"><td>Net Revenue</td><td>$3,520.00</td></tr>
+        <tr class="pl-separator"><td colspan="2">Cost of Goods</td></tr>
+        <tr><td class="pl-row-label">Product COGS (40%)</td><td class="pl-row-val neg">&ndash;$1,408.00</td></tr>
+        <tr><td class="pl-row-label">Packaging &amp; Labeling</td><td class="pl-row-val neg">&ndash;$156.00</td></tr>
+        <tr><td class="pl-row-label">Fulfillment / Shipping</td><td class="pl-row-val neg">&ndash;$246.40</td></tr>
+        <tr class="pl-subtotal"><td>Gross Profit</td><td style="color:var(--green-bright)">$1,709.60</td></tr>
+        <tr class="pl-separator"><td colspan="2">Operating Expenses</td></tr>
+        <tr><td class="pl-row-label">Meta Ads Spend</td><td class="pl-row-val neg">&ndash;$522.00</td></tr>
+        <tr><td class="pl-row-label">Platform / Transaction Fees</td><td class="pl-row-val neg">&ndash;$81.00</td></tr>
+        <tr><td class="pl-row-label">Domain &amp; Shopify</td><td class="pl-row-val neg">&ndash;$29.00</td></tr>
+        <tr class="pl-separator"><td colspan="2">Summary</td></tr>
+        <tr class="pl-total"><td>NET PROFIT</td><td>$1,077.60</td></tr>
+        <tr><td class="pl-row-label" style="font-size:11px">Net Margin</td><td class="pl-row-val" style="font-size:11px;color:var(--text-dim)">30.6%</td></tr>
+      </table>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">Profit Allocation</span><div class="section-line"></div></div>
+      <div class="alloc-grid">
+        <div class="alloc-card"><span class="alloc-label">Reinvested &mdash; Brand Growth</span><div class="alloc-name">The J Effect &mdash; Ads, Inventory Top-Up, Bundle Production</div><div class="alloc-val">$969.84</div><div class="alloc-pct">90% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div></div>
+        <div class="alloc-card reserve"><span class="alloc-label">Reserve Held</span><div class="alloc-name">Cash reserve &mdash; cumulative $166.12</div><div class="alloc-val">$107.76</div><div class="alloc-pct">10% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div></div>
+        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; milestone not yet achieved</div><div class="alloc-val">$0.00</div><div class="alloc-pct">Withheld until $10K/mo milestone</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
       </div>
     </div>
     <div class="section">
@@ -330,7 +427,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Profit Allocation</span><div class="section-line"></div></div>
       <div class="alloc-grid">
-        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; 100% Reinvested</div><div class="alloc-val">$0.00</div><div class="alloc-pct">All profits reinvested into brand growth</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
+        <div class="alloc-card"><span class="alloc-label">Reinvested &mdash; Brand Growth</span><div class="alloc-name">The J Effect &mdash; Ads Scale, Inventory, Influencer Pipeline</div><div class="alloc-val">$1,576.80</div><div class="alloc-pct">90% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div></div>
+        <div class="alloc-card reserve"><span class="alloc-label">Reserve Held</span><div class="alloc-name">Cash reserve &mdash; cumulative $341.26</div><div class="alloc-val">$175.20</div><div class="alloc-pct">10% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div></div>
+        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; milestone not yet achieved</div><div class="alloc-val">$0.00</div><div class="alloc-pct">Withheld until $10K/mo milestone</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
       </div>
     </div>
     <div class="section">
@@ -407,7 +506,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Profit Allocation</span><div class="section-line"></div></div>
       <div class="alloc-grid">
-        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; 100% Reinvested</div><div class="alloc-val">$0.00</div><div class="alloc-pct">All profits reinvested into brand growth</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
+        <div class="alloc-card"><span class="alloc-label">Reinvested &mdash; Brand Growth</span><div class="alloc-name">The J Effect &mdash; Ads, Content, Influencer Expansion</div><div class="alloc-val">$2,581.79</div><div class="alloc-pct">90% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div></div>
+        <div class="alloc-card reserve"><span class="alloc-label">Reserve Held</span><div class="alloc-name">Cash reserve &mdash; cumulative $628.13</div><div class="alloc-val">$286.87</div><div class="alloc-pct">10% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div></div>
+        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; milestone not yet achieved</div><div class="alloc-val">$0.00</div><div class="alloc-pct">Withheld until $10K/mo milestone</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
       </div>
     </div>
     <div class="section">
@@ -485,7 +586,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Profit Allocation</span><div class="section-line"></div></div>
       <div class="alloc-grid">
-        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; 100% Reinvested</div><div class="alloc-val">$0.00</div><div class="alloc-pct">All profits reinvested into brand growth</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
+        <div class="alloc-card"><span class="alloc-label">Reinvested &mdash; Brand Growth</span><div class="alloc-name">The J Effect &mdash; Ads, New SKU Dev, Influencer Scale</div><div class="alloc-val">$3,747.54</div><div class="alloc-pct">90% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div></div>
+        <div class="alloc-card reserve"><span class="alloc-label">Reserve Held</span><div class="alloc-name">Cash reserve &mdash; cumulative $1,044.52</div><div class="alloc-val">$416.39</div><div class="alloc-pct">10% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div></div>
+        <div class="alloc-card" style="border-top:2px solid var(--green-bright)"><span class="alloc-label">Owner Draw &mdash; Milestone Triggered</span><div class="alloc-name">$10K/mo milestone achieved &mdash; first draw taken</div><div class="alloc-val" style="color:var(--green-bright)">$500.00</div><div class="alloc-pct">One-time milestone draw (above allocation)</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:12%;background:var(--green-bright)"></div></div></div>
       </div>
     </div>
     <div class="section">
@@ -564,7 +667,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Profit Allocation</span><div class="section-line"></div></div>
       <div class="alloc-grid">
-        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; 100% Reinvested</div><div class="alloc-val">$0.00</div><div class="alloc-pct">All profits reinvested into brand growth</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
+        <div class="alloc-card"><span class="alloc-label">Reinvested &mdash; Brand Growth</span><div class="alloc-name">The J Effect &mdash; Multi-Channel Scale, New Inventory</div><div class="alloc-val">$5,517.85</div><div class="alloc-pct">90% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div></div>
+        <div class="alloc-card reserve"><span class="alloc-label">Reserve Held</span><div class="alloc-name">Cash reserve &mdash; cumulative $1,657.52</div><div class="alloc-val">$613.09</div><div class="alloc-pct">10% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div></div>
+        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">$0 &mdash; 3-month avg required before regular draw</div><div class="alloc-val">$0.00</div><div class="alloc-pct">Policy: Regular draw requires 3-mo avg above $10K</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
       </div>
     </div>
     <div class="section">
@@ -644,7 +749,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Profit Allocation</span><div class="section-line"></div></div>
       <div class="alloc-grid">
-        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; 100% Reinvested</div><div class="alloc-val">$0.00</div><div class="alloc-pct">All profits reinvested into brand growth</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
+        <div class="alloc-card"><span class="alloc-label">Reinvested &mdash; Brand Growth</span><div class="alloc-name">The J Effect &mdash; Multi-Channel, Creator Network, Inventory</div><div class="alloc-val">$8,786.88</div><div class="alloc-pct">90% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div></div>
+        <div class="alloc-card reserve"><span class="alloc-label">Reserve Held</span><div class="alloc-name">Cash reserve &mdash; cumulative $2,633.84</div><div class="alloc-val">$976.32</div><div class="alloc-pct">10% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div></div>
+        <div class="alloc-card" style="border-top:2px solid var(--green-bright)"><span class="alloc-label">Owner Draw &mdash; Regular Monthly</span><div class="alloc-name">3-month avg sustained &mdash; monthly draw instituted</div><div class="alloc-val" style="color:var(--green-bright)">$1,000.00</div><div class="alloc-pct">First regular monthly draw</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%;background:var(--green-bright)"></div></div></div>
       </div>
     </div>
     <div class="section">
@@ -725,7 +832,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Profit Allocation</span><div class="section-line"></div></div>
       <div class="alloc-grid">
-        <div class="alloc-card zero"><span class="alloc-label">Owner Draw</span><div class="alloc-name">Deferred &mdash; 100% Reinvested</div><div class="alloc-val">$0.00</div><div class="alloc-pct">All profits reinvested into brand growth</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div></div>
+        <div class="alloc-card"><span class="alloc-label">Reinvested &mdash; Brand Growth</span><div class="alloc-name">The J Effect &mdash; Q4 Inventory, Ad Scale, Creator Network</div><div class="alloc-val">$11,233.64</div><div class="alloc-pct">90% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div></div>
+        <div class="alloc-card reserve"><span class="alloc-label">Reserve Held</span><div class="alloc-name">Cash reserve &mdash; cumulative $3,881.66</div><div class="alloc-val">$1,248.18</div><div class="alloc-pct">10% of net profit</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div></div>
+        <div class="alloc-card" style="border-top:2px solid var(--green-bright)"><span class="alloc-label">Owner Draw &mdash; Regular Monthly</span><div class="alloc-name">Sustained performance &mdash; regular monthly disbursement</div><div class="alloc-val" style="color:var(--green-bright)">$1,000.00</div><div class="alloc-pct">Consistent monthly draw</div><div class="alloc-bar"><div class="alloc-bar-fill" style="width:8%;background:var(--green-bright)"></div></div></div>
       </div>
     </div>
     <div class="section">
@@ -781,45 +890,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <div class="kpi-card"><span class="kpi-label">Net Profit (proj.)</span><div class="kpi-val green">~$15,200</div><div class="kpi-sub">~28.8% margin</div></div>
       <div class="kpi-card"><span class="kpi-label">Top Channel</span><div class="kpi-val" style="font-size:16px;line-height:1.3">Meta Ads<br/><span style="font-size:12px;color:var(--text-dim)">TikTok &mdash; 21%</span></div></div>
     </div>
-        <div class="section">
-      <div class="section-header"><span class="section-title">Fulfillment &amp; Product Performance</span><div class="section-line"></div></div>
-      <div class="alloc-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 24px;">
-        <div class="alloc-card">
-          <span class="alloc-label">Live Order Status</span>
-          <div style="margin-top:16px; display:flex; flex-direction:column; gap:12px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid var(--border)">
-              <span style="font-size:13px; font-weight:500; color:var(--text)">Pending (Unfulfilled)</span>
-              <span style="font-size:15px; font-weight:700; color:var(--gold)">42</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid var(--border)">
-              <span style="font-size:13px; font-weight:500; color:var(--text-dim)">Processing</span>
-              <span style="font-size:15px; font-weight:700; color:var(--text)">18</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:13px; font-weight:500; color:var(--text-dim)">Shipped / Delivered</span>
-              <span style="font-size:15px; font-weight:700; color:var(--green-bright)">314</span>
-            </div>
-          </div>
-        </div>
-        <div class="alloc-card">
-          <span class="alloc-label">Top Selling Products (September)</span>
-          <div style="margin-top:16px; display:flex; flex-direction:column; gap:12px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid var(--border)">
-              <span style="font-size:13px; font-weight:500; color:var(--text)">1. Peptide Serum ($46)</span>
-              <span style="font-size:13px; font-weight:600; color:var(--text-dim)">48% of volume</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid var(--border)">
-              <span style="font-size:13px; font-weight:500; color:var(--text)">2. The Core 3-Step Bundle ($98)</span>
-              <span style="font-size:13px; font-weight:600; color:var(--text-dim)">31% of volume</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:13px; font-weight:500; color:var(--text)">3. Hydrating Cleanser ($32)</span>
-              <span style="font-size:13px; font-weight:600; color:var(--text-dim)">12% of volume</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="section">
       <div class="section-header"><span class="section-title">Month Progress</span><div class="section-line"></div></div>
       <div style="background:var(--bg2);border:1px solid var(--border);padding:28px">
@@ -866,7 +936,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <div class="alloc-grid">
         <div class="alloc-card">
           <span class="alloc-label">Reinvested &mdash; Brand Growth</span>
-          <div class="alloc-name">The J Effect &mdash; 90% reinvestment actively deployed to grow brand awareness, rebuild social media, and enhance online presence. The brand is now a 100% self-sustained brand built from its own cash flow.</div>
+          <div class="alloc-name">The J Effect &mdash; 90% reinvestment actively deployed to grow brand awareness, rebuild social media, and enhance online presence.</div>
           <div class="alloc-val">$13,712.40</div>
           <div class="alloc-pct">90% of projected net profit &mdash; actively deploying</div>
           <div class="alloc-bar"><div class="alloc-bar-fill" style="width:90%"></div></div>
@@ -878,12 +948,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
           <div class="alloc-pct">10% of projected net profit</div>
           <div class="alloc-bar"><div class="alloc-bar-fill" style="width:10%"></div></div>
         </div>
-        <div class="alloc-card zero">
-          <span class="alloc-label">Owner Draw</span>
-          <div class="alloc-name">Deferred &mdash; 100% Reinvested</div>
-          <div class="alloc-val">$0.00</div>
-          <div class="alloc-pct">All profits reinvested into brand growth</div>
-          <div class="alloc-bar"><div class="alloc-bar-fill" style="width:0%"></div></div>
+        <div class="alloc-card" style="border-top:2px solid var(--green-bright)">
+          <span class="alloc-label">Owner Draw &mdash; Regular Monthly</span>
+          <div class="alloc-name">Sustained profitability &mdash; regular monthly disbursement</div>
+          <div class="alloc-val" style="color:var(--green-bright)">$1,000.00</div>
+          <div class="alloc-pct">Consistent monthly draw (above allocation)</div>
+          <div class="alloc-bar"><div class="alloc-bar-fill" style="width:7%;background:var(--green-bright)"></div></div>
         </div>
       </div>
 
@@ -893,7 +963,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
           <div style="background:var(--bg3);padding:18px 20px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-              <span style="font-size:12px;font-weight:600;color:var(--cream)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> UGC Production</span>
+              <span style="font-size:12px;font-weight:600;color:var(--cream)">&#127909; UGC Production</span>
               <span style="font-size:14px;font-weight:700;color:var(--gold)">$2,400</span>
             </div>
             <div style="font-size:11px;color:var(--text-mute);line-height:1.5;margin-bottom:10px">8 paid UGC creators dedicated to rebuilding our social media presence and brand awareness across all platforms.</div>
@@ -903,7 +973,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
           <div style="background:var(--bg3);padding:18px 20px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-              <span style="font-size:12px;font-weight:600;color:var(--cream)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Influencer Partnerships</span>
+              <span style="font-size:12px;font-weight:600;color:var(--cream)">&#129489; Influencer Partnerships</span>
               <span style="font-size:14px;font-weight:700;color:var(--gold)">$2,200</span>
             </div>
             <div style="font-size:11px;color:var(--text-mute);line-height:1.5;margin-bottom:10px">Paid partnerships &amp; gifting to 6 mid-tier skincare creators (50K&ndash;300K followers). Includes product, shipping, and creator fees. Deliverables: 2 posts + 3 stories each.</div>
@@ -913,7 +983,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
           <div style="background:var(--bg3);padding:18px 20px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-              <span style="font-size:12px;font-weight:600;color:var(--cream)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg> Netflix &amp; Streaming Ads</span>
+              <span style="font-size:12px;font-weight:600;color:var(--cream)">&#127910; Netflix &amp; Streaming Ads</span>
               <span style="font-size:14px;font-weight:700;color:var(--gold)">$2,000</span>
             </div>
             <div style="font-size:11px;color:var(--text-mute);line-height:1.5;margin-bottom:10px">First-ever streaming TV buy via Netflix Ad-Supported tier, Hulu, and Peacock. 15-sec brand awareness spot targeting female 25&ndash;44 skincare interest segments. Brand-building play for Q4.</div>
@@ -923,7 +993,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
           <div style="background:var(--bg3);padding:18px 20px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-              <span style="font-size:12px;font-weight:600;color:var(--cream)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg> Meta Ads Scale</span>
+              <span style="font-size:12px;font-weight:600;color:var(--cream)">&#128241; Meta Ads Scale</span>
               <span style="font-size:14px;font-weight:700;color:var(--gold)">$2,412</span>
             </div>
             <div style="font-size:11px;color:var(--text-mute);line-height:1.5;margin-bottom:10px">October Meta budget pre-funded from September reinvestment. Includes prospecting (LAL 1&ndash;3%), retargeting (60-day visitors), and post-purchase upsell campaigns using new UGC creative.</div>
@@ -933,7 +1003,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
           <div style="background:var(--bg3);padding:18px 20px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-              <span style="font-size:12px;font-weight:600;color:var(--cream)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> TikTok &amp; Pinterest Ads</span>
+              <span style="font-size:12px;font-weight:600;color:var(--cream)">&#127383; TikTok &amp; Pinterest Ads</span>
               <span style="font-size:14px;font-weight:700;color:var(--gold)">$1,200</span>
             </div>
             <div style="font-size:11px;color:var(--text-mute);line-height:1.5;margin-bottom:10px">TikTok Spark Ads boosting top-performing organic creator posts. Pinterest Shopping campaigns targeting fall skincare search intent. Both channels in active optimization for Q4.</div>
@@ -943,7 +1013,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
           <div style="background:var(--bg3);padding:18px 20px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-              <span style="font-size:12px;font-weight:600;color:var(--cream)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Google &amp; YouTube Ads</span>
+              <span style="font-size:12px;font-weight:600;color:var(--cream)">&#128270; Google &amp; YouTube Ads</span>
               <span style="font-size:14px;font-weight:700;color:var(--gold)">$1,000</span>
             </div>
             <div style="font-size:11px;color:var(--text-mute);line-height:1.5;margin-bottom:10px">Google Shopping budget increase for Q4 keywords. YouTube pre-roll testing using UGC creative (6-sec bumpers + 15-sec skippable). Retargeting audiences seeded from site traffic.</div>
@@ -953,7 +1023,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
           <div style="background:var(--bg3);padding:18px 20px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-              <span style="font-size:12px;font-weight:600;color:var(--cream)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Inventory &amp; Packaging</span>
+              <span style="font-size:12px;font-weight:600;color:var(--cream)">&#128230; Inventory &amp; Packaging</span>
               <span style="font-size:14px;font-weight:700;color:var(--gold)">$1,800</span>
             </div>
             <div style="font-size:11px;color:var(--text-mute);line-height:1.5;margin-bottom:10px">Additional Q4 inventory top-up beyond September's 800-unit pre-order. Premium holiday packaging design and production for limited gift sets. Targeted for Black Friday bundle offering.</div>
@@ -963,7 +1033,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
           <div style="background:var(--bg3);padding:18px 20px">
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-              <span style="font-size:12px;font-weight:600;color:var(--cream)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Email &amp; SMS Infrastructure</span>
+              <span style="font-size:12px;font-weight:600;color:var(--cream)">&#128140; Email &amp; SMS Infrastructure</span>
               <span style="font-size:14px;font-weight:700;color:var(--gold)">$700.40</span>
             </div>
             <div style="font-size:11px;color:var(--text-mute);line-height:1.5;margin-bottom:10px">Klaviyo plan upgrade for growing list, SMS platform onboarding (Postscript), Black Friday email sequence copywriting and design. Building the owned-channel engine for Q4 peak season.</div>
@@ -982,12 +1052,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Active Initiatives</span><div class="section-line"></div></div>
       <div class="initiatives-grid">
-        <div class="initiative-card"><div class="init-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div><div class="init-name">Fall Skin Reset Campaign</div><div class="init-detail">Multi-channel push across Meta, Google &amp; email. "Prep your skin for fall" messaging. Live since Sep 1. Budget: $4,000.</div></div>
-        <div class="initiative-card"><div class="init-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div><div class="init-name">TikTok Creator Seeding</div><div class="init-detail">12 micro-creators seeded with luxury serum + core bundle. 3 videos live, 9 pending. Est. combined reach: 280K accounts.</div></div>
-        <div class="initiative-card"><div class="init-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div><div class="init-name">Email Automation Upgrade</div><div class="init-detail">New 5-email post-purchase sequence, enhanced 3-email abandon cart flow, win-back series for 60-day lapsed customers.</div></div>
-        <div class="initiative-card"><div class="init-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div><div class="init-name">Q4 Inventory Pre-Build</div><div class="init-detail">Black Friday/Holiday order placed: 600 units core SKUs + 200 units luxury serum. Delivery estimated Oct 8.</div></div>
-        <div class="initiative-card"><div class="init-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><div class="init-name">Affiliate Partner Program</div><div class="init-detail">12 active partners on Shopify Collabs. 15% commission structure. September commission total: $1,200 deployed.</div></div>
-        <div class="initiative-card"><div class="init-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;vertical-align:middle;flex-shrink:0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div><div class="init-name">Review Generation Push</div><div class="init-detail">Day-14 post-purchase review request email. Target: 50 new reviews in September to hit 200 total by month end.</div></div>
+        <div class="initiative-card"><div class="init-icon">&#128226;</div><div class="init-name">Fall Skin Reset Campaign</div><div class="init-detail">Multi-channel push across Meta, Google &amp; email. "Prep your skin for fall" messaging. Live since Sep 1. Budget: $4,000.</div></div>
+        <div class="initiative-card"><div class="init-icon">&#127909;</div><div class="init-name">TikTok Creator Seeding</div><div class="init-detail">12 micro-creators seeded with luxury serum + core bundle. 3 videos live, 9 pending. Est. combined reach: 280K accounts.</div></div>
+        <div class="initiative-card"><div class="init-icon">&#128140;</div><div class="init-name">Email Automation Upgrade</div><div class="init-detail">New 5-email post-purchase sequence, enhanced 3-email abandon cart flow, win-back series for 60-day lapsed customers.</div></div>
+        <div class="initiative-card"><div class="init-icon">&#128230;</div><div class="init-name">Q4 Inventory Pre-Build</div><div class="init-detail">Black Friday/Holiday order placed: 600 units core SKUs + 200 units luxury serum. Delivery estimated Oct 8.</div></div>
+        <div class="initiative-card"><div class="init-icon">&#129309;</div><div class="init-name">Affiliate Partner Program</div><div class="init-detail">12 active partners on Shopify Collabs. 15% commission structure. September commission total: $1,200 deployed.</div></div>
+        <div class="initiative-card"><div class="init-icon">&#11088;</div><div class="init-name">Review Generation Push</div><div class="init-detail">Day-14 post-purchase review request email. Target: 50 new reviews in September to hit 200 total by month end.</div></div>
       </div>
     </div>
     <div class="section">
@@ -1000,7 +1070,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="section">
       <div class="section-header"><span class="section-title">Key Insights</span><div class="section-line"></div></div>
       <div class="insights-list">
-        <div class="insight-item"><span class="insight-num">01</span><p class="insight-text"><strong>September is on pace to be the brand's first $50K+ revenue month, 8 months from a $200 launch.</strong> A $52,800 projection for a self-sustained brand built entirely from the initial $200 ad/email spend. 90% reinvestments have fully rebuilt the brand’s online presence. If sustained through Q4, the brand is on track for a $600K+ annualized run rate before year-end.</p></div>
+        <div class="insight-item"><span class="insight-num">01</span><p class="insight-text"><strong>September is on pace to be the brand's first $50K+ revenue month, 8 months from a $200 launch.</strong> A $52,800 projection entirely self-sustained from the initial $200 ad/email spend. 90% reinvestments have fully rebuilt the brand’s online presence. If sustained through Q4, the brand is on track for a $600K+ annualized run rate before year-end.</p></div>
         <div class="insight-item"><span class="insight-num">02</span><p class="insight-text"><strong>Blended ROAS of 4.4&times; across four channels is the strongest multi-channel performance in brand history.</strong> Both Meta and Google are performing above their historical baselines, while TikTok's contribution to blended ROAS has improved from 2.4&times; in its launch month to an estimated 3.8&times; as campaign data matures.</p></div>
         <div class="insight-item"><span class="insight-num">03</span><p class="insight-text"><strong>Q4 inventory pre-build is the most strategically important action taken this month.</strong> Holiday demand requires inventory in place by mid-October. The 800-unit pre-order, funded from reinvestment capital, positions the brand to capture Black Friday demand without stockout risk &mdash; the single biggest revenue-limiting factor for fast-growing DTC brands.</p></div>
         <div class="insight-item"><span class="insight-num">04</span><p class="insight-text"><strong>Email list at 1,580 subscribers producing $0.52 revenue per subscriber per month.</strong> This Revenue Per Subscriber (RPS) metric is above industry average ($0.30&ndash;$0.40 for skincare). Continued list growth compounds directly into bottom-line revenue with zero incremental ad spend &mdash; the brand's most durable long-term asset.</p></div>
