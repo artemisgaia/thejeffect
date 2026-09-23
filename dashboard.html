@@ -1124,22 +1124,37 @@ const tabMeta={
   sep:{label:'September 2026',live:true}
 };
 const initializedTabs=new Set();
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
+document.querySelector('.tab-nav').addEventListener('click',(e)=>{
+  const btn = e.target.closest('.tab-btn');
+  if(!btn) return;
+  try {
     const tab=btn.dataset.tab;
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
     btn.classList.add('active');
-    document.getElementById('panel-'+tab).classList.add('active');
+    const panel = document.getElementById('panel-'+tab);
+    if(panel) panel.classList.add('active');
     const m=tabMeta[tab];
-    document.getElementById('topbar-period').textContent=m.label+' \u00b7 The J Effect Skincare';
-    const badge=document.getElementById('topbar-badge');
-    badge.textContent=m.live?'LIVE':'COMPLETE';
-    badge.className='status-badge '+(m.live?'badge-live':'badge-complete');
-    initTab(tab);
-  });
+    if(m){
+      document.getElementById('topbar-period').textContent=m.label+' \u00b7 The J Effect Skincare';
+      const badge=document.getElementById('topbar-badge');
+      badge.textContent=m.live?'LIVE':'COMPLETE';
+      badge.className='status-badge '+(m.live?'badge-live':'badge-complete');
+    }
+    setTimeout(() => initTab(tab), 10);
+  } catch(err) {
+    console.error("Tab switch error:", err);
+  }
 });
-function initTab(tab){if(initializedTabs.has(tab))return;initializedTabs.add(tab);({jan:initJan,feb:initFeb,mar:initMar,apr:initApr,may:initMay,jun:initJun,jul:initJul,aug:initAug,sep:initSep}[tab]||(() => {}))();}
+function initTab(tab){
+  try {
+    if(initializedTabs.has(tab))return;
+    initializedTabs.add(tab);
+    ({jan:initJan,feb:initFeb,mar:initMar,apr:initApr,may:initMay,jun:initJun,jul:initJul,aug:initAug,sep:initSep}[tab]||(() => {}))();
+  } catch (err) {
+    console.error("Chart init error for tab:", tab, err);
+  }
+}
 
 const G={gold:'#D4AF37',gd:'rgba(212,175,55,0.18)',cream:'#EAE0CA',green:'#5DB870',gn:'rgba(93,184,112,0.15)',grid:'rgba(44,39,25,0.9)',mute:'#6B6045'};
 function baseOpts(){return{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,labels:{color:G.mute,font:{family:'DM Sans',size:10},boxWidth:10,padding:14}},tooltip:{backgroundColor:'#221E13',borderColor:'rgba(212,175,55,0.3)',borderWidth:1,titleColor:G.cream,bodyColor:G.mute,padding:10,cornerRadius:0,titleFont:{family:'DM Sans',size:11,weight:'600'},bodyFont:{family:'DM Sans',size:11}}},scales:{x:{grid:{color:G.grid},ticks:{color:G.mute,font:{family:'DM Sans',size:10}}},y:{grid:{color:G.grid},ticks:{color:G.mute,font:{family:'DM Sans',size:10}}}}};}
