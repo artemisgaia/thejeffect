@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
 import ThemeScript from '@/components/ThemeScript';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { siteGraph, jsonLd } from '@/lib/seo';
 
 export const metadata = {
   title: {
@@ -16,7 +17,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE_CONFIG.name,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    locale: 'en_US',
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="no-js">
       <head>
         <meta name="theme-color" content="#243B27" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(siteGraph())} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

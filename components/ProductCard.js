@@ -2,8 +2,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
-import { formatMoney } from '@/lib/products';
+import { formatMoney } from '@/lib/format';
 
+// Expects the slim shape from toCard() in lib/products.js.
 export default function ProductCard({ product }) {
   const { addToCart } = useCart();
   const cv = product.variants?.[0] || product;
@@ -11,6 +12,7 @@ export default function ProductCard({ product }) {
   const isBestseller = product.tags.includes('bestseller');
   const isNew = product.tags.includes('new');
   const isSale = hasCompare;
+  const href = `/shop/${product.slug}`;
 
   return (
     <article
@@ -19,30 +21,27 @@ export default function ProductCard({ product }) {
       data-type={product.type.toLowerCase().replace(/\s+/g, '-')}
     >
       <div className="product-card__media">
-        <Link
-          href={`/shop/${product.slug}`}
-          className="product-card__img-link"
-          tabIndex={0}
-          aria-label={`View ${product.title}`}
-        >
+        <Link href={href} className="product-card__img-link" aria-label={`View ${product.name} ${product.descriptor}`}>
           {product.images[0] ? (
             <>
               <Image
                 className="product-card__img"
                 src={product.images[0]}
-                alt={product.title}
+                alt={product.alt || product.title}
                 width={600}
-                height={700}
+                height={800}
+                sizes="(min-width: 1200px) 25vw, (min-width: 600px) 50vw, 100vw"
                 loading="lazy"
               />
               {product.images[1] && (
                 <Image
                   className="product-card__img product-card__img--hover"
                   src={product.images[1]}
-                  alt={product.title}
-                  loading="lazy"
+                  alt=""
                   width={600}
-                  height={700}
+                  height={800}
+                  sizes="(min-width: 1200px) 25vw, (min-width: 600px) 50vw, 100vw"
+                  loading="lazy"
                 />
               )}
             </>
@@ -63,7 +62,7 @@ export default function ProductCard({ product }) {
           <button
             className="btn-atc"
             onClick={() => addToCart(product, cv)}
-            aria-label={`Add ${product.title} to cart`}
+            aria-label={`Add ${product.name} to cart`}
           >
             Add to Ritual — {formatMoney(product.price)}
           </button>
@@ -71,10 +70,13 @@ export default function ProductCard({ product }) {
       </div>
 
       <div className="product-card__info">
-        <div className="product-card__type">{product.type}</div>
+        <div className="product-card__type">
+          {product.no ? `Nº ${String(product.no).padStart(2, '0')} · ` : ''}{product.type}
+        </div>
         <h3 className="product-card__title">
-          <Link href={`/shop/${product.slug}`}>{product.title}</Link>
+          <Link href={href}>{product.name}</Link>
         </h3>
+        <p className="product-card__descriptor">{product.descriptor}</p>
         <div className="product-card__bottom">
           <span className="product-card__price">
             {formatMoney(product.price)}
@@ -82,7 +84,7 @@ export default function ProductCard({ product }) {
               <span className="product-card__compare">{formatMoney(product.compare_at_price)}</span>
             )}
           </span>
-          <span className="product-card__stars" aria-label="5 stars">★★★★★</span>
+          {product.size && <span className="product-card__size">{product.size}</span>}
         </div>
       </div>
     </article>

@@ -64,23 +64,25 @@ export default function Header() {
                           <div className="mega-menu__col-title">Shop By Ritual</div>
                           <ul className="mega-menu__list">
                             <li><Link href="/shop" className="mega-menu__link">All Products</Link></li>
-                            <li><Link href="/shop?filter=moisturizer" className="mega-menu__link">Moisturizers</Link></li>
-                            <li><Link href="/shop?filter=serum" className="mega-menu__link">Serums</Link></li>
-                            <li><Link href="/shop?filter=cleanser" className="mega-menu__link">Cleansers</Link></li>
-                            <li><Link href="/shop?filter=ritual-bar" className="mega-menu__link">Ritual Bars</Link></li>
+                            <li><Link href="/shop/category/moisturizers" className="mega-menu__link">Moisturizers</Link></li>
+                            <li><Link href="/shop/category/serums" className="mega-menu__link">Serums</Link></li>
+                            <li><Link href="/shop/category/cleansers" className="mega-menu__link">Cleansers</Link></li>
+                            <li><Link href="/shop/category/body" className="mega-menu__link">Body</Link></li>
+                            <li><Link href="/shop/category/ritual-bars" className="mega-menu__link">Ritual Bars</Link></li>
+                            <li><Link href="/shop/category/hair-scalp" className="mega-menu__link">Hair &amp; Scalp</Link></li>
                           </ul>
                         </div>
                         <div className="mega-menu__promos">
                           <Link href="/shop/watermelon-hydration-moisturizer" className="mega-promo">
-                            <Image src="/products/watermelon-hydration-moisturizer.webp" alt="Bestseller" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <Image src="/products/watermelon-hydration-moisturizer/watermelon-hydration-moisturizer-pack.webp" alt="Watermelon Dew hydration moisturizer" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="mega-promo__overlay" />
                             <div className="mega-promo__text">
                               <div className="mega-promo__label">Bestseller</div>
-                              <div className="mega-promo__title">Watermelon Hydration</div>
+                              <div className="mega-promo__title">Watermelon Dew</div>
                             </div>
                           </Link>
                           <Link href="/ritual-guide" className="mega-promo">
-                            <Image src="/products/hyaluronic-acid-serum.webp" alt="Ritual Guide" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <Image src="/products/hyaluronic-acid-serum/hyaluronic-acid-serum-pack.webp" alt="Aqua Lock hyaluronic acid serum" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="mega-promo__overlay" />
                             <div className="mega-promo__text">
                               <div className="mega-promo__label">Method</div>

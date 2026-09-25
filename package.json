@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node --no-warnings scripts/sync-product-images.mjs",
     "dev": "next dev",
+    "prebuild": "node --no-warnings scripts/sync-product-images.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "images:sync": "node --no-warnings scripts/sync-product-images.mjs",
+    "images:render": "node --no-warnings scripts/render-packaging.mjs",
+    "prompts:kling": "node --no-warnings scripts/build-kling-prompts.mjs"
   },
   "dependencies": {
+    "jsdom": "^29.1.1",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -17,6 +23,7 @@
   "devDependencies": {
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.2.9"
+    "eslint-config-next": "16.2.9",
+    "sharp": "^0.34.5"
   }
 }

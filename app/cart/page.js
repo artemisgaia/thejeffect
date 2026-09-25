@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
-import { formatMoney } from '@/lib/products';
+import { formatMoney } from '@/lib/format';
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQty, cartTotal, cartTotalFormatted, checkout } = useCart();

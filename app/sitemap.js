@@ -1,8 +1,10 @@
-import { PRODUCTS, POSTS } from '@/lib/products';
+import { PRODUCTS, POSTS, CATEGORY_META } from '@/lib/products';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { categoryUrl } from '@/lib/seo';
 
 export default async function sitemap() {
-  const baseUrl = 'https://thejeffect.com'; // Replace with production URL when deployed
+  const baseUrl = SITE_CONFIG.url;
+  const today = new Date().toISOString().split('T')[0];
 
   // Core static routes
   const routes = [
@@ -18,20 +20,31 @@ export default async function sitemap() {
     '/contact',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
+    lastModified: today,
     changeFrequency: 'weekly',
-    priority: route === '' ? 1.0 : 0.8,
+    priority: route === '' ? 1.0 : route === '/shop' ? 0.9 : 0.6,
   }));
 
-  // Dynamic product routes
+  // Category landing pages
+  const categoryRoutes = Object.keys(CATEGORY_META)
+    .filter((key) => PRODUCTS.some((p) => p.category === key))
+    .map((key) => ({
+      url: `${baseUrl}${categoryUrl(key)}`,
+      lastModified: today,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }));
+
+  // Product pages, with every gallery image for Google Images
   const productRoutes = PRODUCTS.map((product) => ({
     url: `${baseUrl}/shop/${product.slug}`,
-    lastModified: new Date().toISOString().split('T')[0],
+    lastModified: today,
     changeFrequency: 'weekly',
     priority: 0.9,
+    images: product.gallery.map((g) => `${baseUrl}${g.src}`),
   }));
 
-  // Dynamic journal routes
+  // Journal posts
   const postRoutes = POSTS.map((post) => ({
     url: `${baseUrl}/journal/${post.slug}`,
     lastModified: new Date(post.date).toISOString().split('T')[0],
@@ -39,5 +52,5 @@ export default async function sitemap() {
     priority: 0.7,
   }));
 
-  return [...routes, ...productRoutes, ...postRoutes];
+  return [...routes, ...categoryRoutes, ...productRoutes, ...postRoutes];
 }

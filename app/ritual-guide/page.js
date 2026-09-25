@@ -17,8 +17,8 @@ const STEPS = [
     desc: 'A gentle, pH-balanced cleanse removes the day — pollution, SPF, impurities — without stripping the skin\'s natural moisture barrier. The foundation of everything that follows.',
     tip: 'Tip: Use lukewarm water, never hot. Massage for 30–60 seconds.',
     products: [
-      { name: 'Gentle Cleansing Gel', slug: 'gentle-cleansing-gel' },
-      { name: 'Aloe & Cool Cucumber Soap', slug: 'aloe-cool-cucumber-soap' },
+      { name: 'Nº 01 Soft Reset Cleanser', slug: 'gentle-cleansing-gel' },
+      { name: 'Nº 38 Cooling Aloe Bar', slug: 'aloe-cool-cucumber-soap' },
     ],
     image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&q=80'
   },
@@ -30,9 +30,9 @@ const STEPS = [
     desc: 'Serums, oils, and eye treatments are your precision tools. Applied on clean, slightly damp skin, they absorb deeper and deliver faster — brightening, firming, targeting.',
     tip: 'Tip: Apply lightest to heaviest. Let each step absorb before layering.',
     products: [
-      { name: 'PDRN Brightening Serum', slug: 'pdrn-brightening-serum' },
-      { name: 'Nourishing Jojoba Face Oil', slug: 'nourishing-jojoba-face-oil' },
-      { name: 'Gua Sha Face Oil', slug: 'gua-sha-face-oil' },
+      { name: 'Nº 09 Glasslight PDRN Serum', slug: 'pdrn-brightening-serum' },
+      { name: 'Nº 17 Jojoba Glow Face Oil', slug: 'nourishing-jojoba-face-oil' },
+      { name: 'Nº 18 Ritual Glide Gua Sha Oil', slug: 'gua-sha-face-oil' },
     ],
     image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=900&q=80'
   },
@@ -44,8 +44,8 @@ const STEPS = [
     desc: 'Moisturizer seals everything in — nutrients, hydration, and treatment. It creates a protective layer that keeps skin supple through the night or shields it through the day.',
     tip: 'Tip: In the morning, always follow with SPF. It\'s non-negotiable.',
     products: [
-      { name: 'Watermelon Hydration Moisturizer', slug: 'watermelon-hydration-moisturizer' },
-      { name: 'Anti Aging Moisturizer', slug: 'anti-aging-moisturizer' },
+      { name: 'Nº 19 Watermelon Dew Moisturizer', slug: 'watermelon-hydration-moisturizer' },
+      { name: 'Nº 23 Timeless Renewal Cream', slug: 'anti-aging-moisturizer' },
     ],
     image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=900&q=80'
   },
@@ -53,9 +53,9 @@ const STEPS = [
 
 const FAQS = [
   { q: 'How often should I do the full ritual?', a: 'Both morning and evening. Consistency is the single most important factor in skincare results.' },
-  { q: 'Can I use all three steps if I have sensitive skin?', a: 'Yes — our formulas are designed for sensitive skin. Start with Cleanse + Moisturizer, then add treatment steps one at a time.' },
-  { q: 'What order do I apply the PDRN Serum and Jojoba Face Oil?', a: 'Serum first (water-based), then oil (oil-based). Oils always go after serums.' },
-  { q: 'Do I need the Soap Bar if I already have the Cleansing Gel?', a: 'They\'re alternatives — choose based on preference. The Gel is ideal for daily use; the Bar is great for travel and zero-waste routines.' },
+  { q: 'Can I use all three steps if I have sensitive skin?', a: 'Yes. Many of our formulas are fragrance-free and made with sensitive skin in mind; check each product’s details. Start with Cleanse + Moisturizer, then add treatment steps one at a time.' },
+  { q: 'What order do I apply Glasslight serum and Jojoba Glow oil?', a: 'Serum first (water-based), then oil (oil-based). Oils always go after serums.' },
+  { q: 'Do I need a ritual bar if I already have a cleansing gel?', a: 'They\'re alternatives — choose based on preference. Soft Reset gel is ideal for daily face cleansing; ritual bars are great for body, travel and zero-waste routines.' },
 ];
 
 export default function RitualGuidePage() {

@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { formatMoney } from '@/lib/products';
+import { formatMoney } from '@/lib/format';
 
 const CartContext = createContext(null);
 

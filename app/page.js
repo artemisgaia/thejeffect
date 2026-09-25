@@ -9,6 +9,9 @@ import Reviews from '@/components/Reviews';
 import BrandPromise from '@/components/BrandPromise';
 import AboutCta from '@/components/AboutCta';
 import EmailSignup from '@/components/EmailSignup';
+import { getProductBySlug, formatMoney } from '@/lib/products';
+
+const HERO_PRODUCT = getProductBySlug('watermelon-hydration-moisturizer');
 
 export const metadata = {
   title: 'The J Effect | Mindful Skincare Rituals — Made in the USA',
@@ -29,8 +32,8 @@ export default function HomePage() {
         image="https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=1800&q=80"
         showFloatCard={true}
         floatLabel="Bestseller"
-        floatTitle="Watermelon Hydration"
-        floatSub="Moisturizer — $28.00"
+        floatTitle={HERO_PRODUCT.name}
+        floatSub={`${HERO_PRODUCT.type} · ${formatMoney(HERO_PRODUCT.price)}`}
       />
       <MarqueeBar />
       <ProofBar />

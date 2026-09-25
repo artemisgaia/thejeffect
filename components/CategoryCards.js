@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { CATEGORIES } from '@/lib/products';
+import { CATEGORIES, CATEGORY_META } from '@/lib/products';
 
 export default function CategoryCards({
   eyebrow = 'Shop By Ritual',
@@ -19,7 +19,7 @@ export default function CategoryCards({
           {categories.map((cat, i) => (
             <Link
               key={i}
-              href={`/shop?filter=${cat.filter}`}
+              href={`/shop/category/${CATEGORY_META[cat.filter].path}`}
               className={`cat-card reveal reveal--d${i + 1}`}
             >
               {cat.image ? (

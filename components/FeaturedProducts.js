@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PRODUCTS } from '@/lib/products';
+import { FEATURED_PRODUCTS, toCard } from '@/lib/products';
 import ProductCard from './ProductCard';
 
 export default function FeaturedProducts({
@@ -10,7 +10,7 @@ export default function FeaturedProducts({
   count = 4,
   products = null,
 }) {
-  const items = (products || PRODUCTS).slice(0, count);
+  const items = (products || FEATURED_PRODUCTS).slice(0, count);
 
   return (
     <section className="featured-products">
@@ -26,7 +26,7 @@ export default function FeaturedProducts({
         </div>
         <div className="product-grid">
           {items.map((p) => (
-            <ProductCard key={p.id} product={p} />
+            <ProductCard key={p.id} product={toCard(p)} />
           ))}
         </div>
       </div>
