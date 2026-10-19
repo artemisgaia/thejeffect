@@ -1,27 +1,62 @@
 'use client';
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback, useSyncExternalStore } from 'react';
 import { formatMoney } from '@/lib/format';
 
 const CartContext = createContext(null);
 
+const STORAGE_KEY = 'je-cart';
+const EMPTY_CART = [];
+
+// Cart lives in a tiny external store so localStorage hydrates without a
+// setState-in-effect flash, and stays in sync across browser tabs.
+let cartState = EMPTY_CART;
+let cartLoaded = false;
+const listeners = new Set();
+
+function loadCart() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    cartState = Array.isArray(saved) ? saved : EMPTY_CART;
+  } catch (_) {
+    cartState = EMPTY_CART;
+  }
+  cartLoaded = true;
+}
+
+function getCartSnapshot() {
+  if (!cartLoaded) loadCart();
+  return cartState;
+}
+
+function getServerCartSnapshot() {
+  return EMPTY_CART;
+}
+
+function subscribeToCart(listener) {
+  listeners.add(listener);
+  const onStorage = (e) => {
+    if (e.key !== null && e.key !== STORAGE_KEY) return;
+    loadCart();
+    listener();
+  };
+  window.addEventListener('storage', onStorage);
+  return () => {
+    listeners.delete(listener);
+    window.removeEventListener('storage', onStorage);
+  };
+}
+
+function setCart(update) {
+  cartState = typeof update === 'function' ? update(getCartSnapshot()) : update;
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cartState));
+  } catch (_) {}
+  listeners.forEach((l) => l());
+}
+
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+  const cart = useSyncExternalStore(subscribeToCart, getCartSnapshot, getServerCartSnapshot);
   const [cartOpen, setCartOpen] = useState(false);
-
-  // Load from localStorage on mount
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem('je-cart');
-      if (saved) setCart(JSON.parse(saved));
-    } catch (_) {}
-  }, []);
-
-  // Persist to localStorage on change
-  useEffect(() => {
-    try {
-      localStorage.setItem('je-cart', JSON.stringify(cart));
-    } catch (_) {}
-  }, [cart]);
 
   const addToCart = useCallback((product, variant) => {
     setCart((prev) => {
@@ -64,7 +99,7 @@ export function CartProvider({ children }) {
     }
   }, []);
 
-  const clearCart = useCallback(() => setCart([]), []);
+  const clearCart = useCallback(() => setCart(EMPTY_CART), []);
 
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);

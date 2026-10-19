@@ -15,7 +15,7 @@ export default function NotFoundPage() {
           Page not found.
         </h1>
         <p className="reveal reveal--d2" style={{ fontFamily: "'DM Sans', sans-serif", color: 'var(--ink-soft)', marginBottom: '40px' }}>
-          The page you are looking for doesn't exist or has been moved.
+          The page you are looking for doesn&rsquo;t exist or has been moved.
         </p>
         <Link href="/" className="btn-primary reveal reveal--d3">
           Return Home →

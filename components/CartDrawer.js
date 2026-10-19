@@ -54,7 +54,7 @@ export default function CartDrawer() {
                 </svg>
               </div>
               <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.6rem', color: 'var(--ink)', marginBottom: '12px' }}>Your ritual bag is empty.</h3>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", color: 'var(--ink-soft)', fontSize: '0.9rem', marginBottom: '32px' }}>Take your time. Intentional skincare shouldn't be rushed.</p>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", color: 'var(--ink-soft)', fontSize: '0.9rem', marginBottom: '32px' }}>Take your time. Intentional skincare shouldn&rsquo;t be rushed.</p>
               <Link href="/shop" className="btn-primary" style={{ display: 'inline-flex' }} onClick={() => setCartOpen(false)}>
                 Start Your Ritual →
               </Link>

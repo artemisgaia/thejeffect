@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function Footer() {
@@ -130,11 +131,11 @@ export default function Footer() {
           <p className="footer-copy">{footer.copyright}</p>
           {footer.showPaymentIcons && (
             <div className="footer-payment" aria-label="Payment methods accepted">
-              <span className="footer-payment__icon" aria-label="Visa"><img src="/payments/visa.svg" alt="Visa" width="40" height="14" /></span>
-              <span className="footer-payment__icon" aria-label="Mastercard"><img src="/payments/mastercard.svg" alt="Mastercard" width="28" height="18" /></span>
-              <span className="footer-payment__icon" aria-label="PayPal"><img src="/payments/paypal.svg" alt="PayPal" width="16" height="18" /></span>
-              <span className="footer-payment__icon" aria-label="Stripe"><img src="/payments/stripe.svg" alt="Stripe" width="36" height="15" /></span>
-              <span className="footer-payment__icon" aria-label="Apple Pay"><img src="/payments/apple-pay.svg" alt="Apple Pay" width="16" height="18" /></span>
+              <span className="footer-payment__icon" aria-label="Visa"><Image src="/payments/visa.svg" alt="Visa" width={40} height={14} /></span>
+              <span className="footer-payment__icon" aria-label="Mastercard"><Image src="/payments/mastercard.svg" alt="Mastercard" width={28} height={18} /></span>
+              <span className="footer-payment__icon" aria-label="PayPal"><Image src="/payments/paypal.svg" alt="PayPal" width={16} height={18} /></span>
+              <span className="footer-payment__icon" aria-label="Stripe"><Image src="/payments/stripe.svg" alt="Stripe" width={36} height={15} /></span>
+              <span className="footer-payment__icon" aria-label="Apple Pay"><Image src="/payments/apple-pay.svg" alt="Apple Pay" width={16} height={18} /></span>
             </div>
           )}
         </div>

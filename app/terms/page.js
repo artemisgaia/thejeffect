@@ -10,7 +10,7 @@ export default function TermsPage() {
         <h1 className="policy-page__title">Terms of Service</h1>
         <div className="policy-page__content">
           <p><em>Last Updated: June 29, 2026</em></p>
-          <p>Welcome to The J Effect. By accessing or using our website at thejeffect.com (the "Site"), you agree to be bound by these Terms of Service ("Terms"). Please read them carefully before placing an order or using any of our services.</p>
+          <p>Welcome to The J Effect. By accessing or using our website at thejeffect.com (the &ldquo;Site&rdquo;), you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). Please read them carefully before placing an order or using any of our services.</p>
 
           <h2>1. Acceptance of Terms</h2>
           <p>By browsing, purchasing from, or otherwise using this Site, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree with any part of these Terms, you must not use the Site.</p>
@@ -42,7 +42,7 @@ export default function TermsPage() {
           <p>Our total liability for any claim arising from or related to these Terms shall not exceed the amount you paid for the product(s) at issue.</p>
 
           <h2>9. Indemnification</h2>
-          <p>You agree to indemnify and hold harmless The J Effect, its officers, directors, employees, and agents from any claims, losses, liabilities, damages, costs, or expenses (including reasonable attorneys' fees) arising from your use of the Site or violation of these Terms.</p>
+          <p>You agree to indemnify and hold harmless The J Effect, its officers, directors, employees, and agents from any claims, losses, liabilities, damages, costs, or expenses (including reasonable attorneys&rsquo; fees) arising from your use of the Site or violation of these Terms.</p>
 
           <h2>10. Governing Law</h2>
           <p>These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of the Site shall be resolved in the courts of Los Angeles County, California.</p>

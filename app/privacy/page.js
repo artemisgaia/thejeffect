@@ -10,14 +10,14 @@ export default function PrivacyPage() {
         <h1 className="policy-page__title">Privacy Policy</h1>
         <div className="policy-page__content">
           <p><em>Last Updated: June 29, 2026</em></p>
-          <p>The J Effect ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website at thejeffect.com (the "Site"), regardless of where you visit it from, and tell you about your privacy rights.</p>
+          <p>The J Effect (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) respects your privacy and is committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website at thejeffect.com (the &ldquo;Site&rdquo;), regardless of where you visit it from, and tell you about your privacy rights.</p>
 
           <h2>1. Information We Collect</h2>
           <p>We may collect, use, store, and transfer different kinds of personal data about you which we have grouped together as follows:</p>
           <ul>
             <li><strong>Identity Data:</strong> includes first name, last name, username or similar identifier.</li>
             <li><strong>Contact Data:</strong> includes billing address, delivery address, email address, and telephone numbers.</li>
-            <li><strong>Financial Data:</strong> includes payment card details. We do not store your payment card information on our servers. All payment processing is handled securely by our third-party payment processor, Stripe, Inc. Please review <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe's Privacy Policy</a> for details on how they handle your financial data.</li>
+            <li><strong>Financial Data:</strong> includes payment card details. We do not store your payment card information on our servers. All payment processing is handled securely by our third-party payment processor, Stripe, Inc. Please review <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe&rsquo;s Privacy Policy</a> for details on how they handle your financial data.</li>
             <li><strong>Transaction Data:</strong> includes details about payments to and from you and other details of products you have purchased from us.</li>
             <li><strong>Technical Data:</strong> includes internet protocol (IP) address, browser type and version, time zone setting, browser plug-in types and versions, operating system, and other technology on the devices you use to access this Site.</li>
             <li><strong>Usage Data:</strong> includes information about how you use our Site and products.</li>
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
           <h2>5. Third-Party Services</h2>
           <p>We share your data with the following third-party service providers who process it on our behalf:</p>
           <ul>
-            <li><strong>Stripe, Inc.</strong> — Payment processing. Stripe collects and processes your payment information securely under PCI-DSS Level 1 compliance. See <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe's Privacy Policy</a>.</li>
+            <li><strong>Stripe, Inc.</strong> — Payment processing. Stripe collects and processes your payment information securely under PCI-DSS Level 1 compliance. See <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe&rsquo;s Privacy Policy</a>.</li>
             <li><strong>Shipping carriers</strong> (USPS, UPS) — Order fulfillment and delivery.</li>
             <li><strong>Email service providers</strong> — Transactional and marketing emails.</li>
           </ul>
@@ -87,14 +87,14 @@ export default function PrivacyPage() {
           <h2>10. International Customers (GDPR)</h2>
           <p>If you are located in the European Economic Area (EEA), United Kingdom, or Australia, you may have additional rights under applicable data protection laws, including the General Data Protection Regulation (GDPR). Our legal basis for processing your personal data includes performance of a contract (order fulfillment), legitimate interests (improving our services), and consent (marketing communications). You may exercise your rights by contacting us at <strong>hello@thejeffect.com</strong>.</p>
 
-          <h2>11. Children's Privacy</h2>
+          <h2>11. Children&rsquo;s Privacy</h2>
           <p>Our Site is not intended for children under the age of 16. We do not knowingly collect personal data from children under 16. If you believe we have collected data from a child under 16, please contact us immediately and we will promptly delete the information.</p>
 
           <h2>12. Do Not Sell or Share My Personal Information</h2>
-          <p>We do not sell your personal information. We do not share your personal information for cross-context behavioral advertising. If you wish to submit a "Do Not Sell or Share" request, you may contact us at <strong>hello@thejeffect.com</strong> at any time.</p>
+          <p>We do not sell your personal information. We do not share your personal information for cross-context behavioral advertising. If you wish to submit a &ldquo;Do Not Sell or Share&rdquo; request, you may contact us at <strong>hello@thejeffect.com</strong> at any time.</p>
 
           <h2>13. Changes to This Policy</h2>
-          <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage you to review this page periodically.</p>
+          <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the &ldquo;Last Updated&rdquo; date. We encourage you to review this page periodically.</p>
 
           <h2>14. Contact Us</h2>
           <p>If you have any questions about this Privacy Policy, please contact us:</p>
