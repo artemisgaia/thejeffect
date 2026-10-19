@@ -41,7 +41,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  cursor: none;
 }
 
 /* ── SCROLLBAR ───────────────────────────────────────────── */
@@ -52,40 +51,13 @@ body {
 
 img, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: none; }
+button { font-family: inherit; cursor: pointer; }
 ul, ol { list-style: none; }
 input, textarea, select { font-family: inherit; }
-*, *::before, *::after { cursor: none !important; }
 
 /* ── SKIP LINK ───────────────────────────────────────────── */
 .skip-link { position: absolute; top: -100%; left: 16px; background: var(--forest); color: var(--cream); padding: 8px 16px; font-size: .8rem; z-index: 99999; }
 .skip-link:focus { top: 8px; }
-
-/* ── CURSOR ──────────────────────────────────────────────── */
-#je-cursor {
-  position: fixed; width: 8px; height: 8px;
-  background: var(--gold); border-radius: 50%;
-  pointer-events: none; z-index: 99999;
-  top: 0; left: 0; transform: translate(-50%,-50%);
-  transition: width .15s, height .15s, background .2s, opacity .2s;
-  opacity: 0;
-  will-change: transform;
-  mix-blend-mode: normal;
-}
-#je-cursor-ring {
-  position: fixed; width: 32px; height: 32px;
-  border: 1.5px solid rgba(196,149,74,.5); border-radius: 50%;
-  background: transparent;
-  pointer-events: none; z-index: 99998;
-  top: 0; left: 0; transform: translate(-50%,-50%);
-  transition: width .3s, height .3s, border-color .2s, opacity .2s;
-  opacity: 0;
-  will-change: transform;
-}
-#je-cursor.active, #je-cursor-ring.active { opacity: 1; }
-#je-cursor.big { width: 6px; height: 6px; background: var(--gold); }
-#je-cursor-ring.big { width: 52px; height: 52px; border-color: var(--gold); opacity: .9 !important; }
-@media (hover: none) { #je-cursor, #je-cursor-ring { display: none; } body { cursor: auto !important; } *, *::before, *::after { cursor: auto !important; } }
 
 /* ── FOOTER ──────────────────────────────────────────────── */
 .site-footer {
@@ -1611,8 +1583,6 @@ input, textarea, select { font-family: inherit; }
 
 /* ── MOBILE: search icon not a circle ────────────────────── */
 @media (max-width: 999px) {
-  #je-cursor, #je-cursor-ring { display: none !important; }
-  body, *, *::before, *::after { cursor: auto !important; }
 }
 
 /* Contact page mobile fixes */

@@ -4,9 +4,13 @@ import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { useCart } from '@/context/CartContext';
 
-export default function Header() {
+export default function Header({ announcementOverride = null }) {
   const { cartCount, setCartOpen } = useCart();
-  const { announcement, nav, name } = SITE_CONFIG;
+  const { nav, name } = SITE_CONFIG;
+  // Text saved in the admin replaces the default bar copy.
+  const announcement = announcementOverride
+    ? { ...SITE_CONFIG.announcement, ...announcementOverride }
+    : SITE_CONFIG.announcement;
 
   return (
     <>
@@ -15,7 +19,8 @@ export default function Header() {
         <div
           className="announce"
           id="announce"
-          role="banner"
+          role="region"
+          aria-label="Announcement"
           style={{ background: announcement.bg, color: announcement.color }}
         >
           {announcement.link ? (
@@ -29,7 +34,7 @@ export default function Header() {
       )}
 
       {/* Main Header */}
-      <header className="site-header" id="site-header" role="banner">
+      <header className="site-header" id="site-header">
         <div className="header-inner">
           {/* Hamburger */}
           <button

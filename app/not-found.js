@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SiteChrome from '@/components/SiteChrome';
 
 export const metadata = {
   title: 'Page Not Found — The J Effect',
@@ -6,6 +7,7 @@ export const metadata = {
 
 export default function NotFoundPage() {
   return (
+    <SiteChrome>
     <div style={{ paddingTop: 'calc(var(--announce-h) + var(--header-h) + 40px)', background: 'var(--cream)', minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ textAlign: 'center', padding: '0 24px 80px' }}>
         <div className="reveal" style={{ fontSize: '10rem', lineHeight: '1', fontFamily: "'Playfair Display', serif", color: 'var(--cream-3)', fontWeight: '500', marginBottom: '24px' }}>
@@ -22,5 +24,6 @@ export default function NotFoundPage() {
         </Link>
       </div>
     </div>
+    </SiteChrome>
   );
 }

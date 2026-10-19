@@ -1,9 +1,4 @@
 import './globals.css';
-import { CartProvider } from '@/context/CartContext';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import CartDrawer from '@/components/CartDrawer';
-import ThemeScript from '@/components/ThemeScript';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { siteGraph, jsonLd } from '@/lib/seo';
 
@@ -35,33 +30,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>
-        <CartProvider>
-          {/* Skip link */}
-          <a className="skip-link" href="#main-content">Skip to content</a>
-
-          {/* Custom cursor */}
-          <div id="je-cursor" aria-hidden="true" />
-          <div id="je-cursor-ring" aria-hidden="true" />
-
-          {/* Header */}
-          <Header />
-
-          {/* Cart drawer */}
-          <CartDrawer />
-
-          {/* Main */}
-          <main id="main-content" role="main" tabIndex="-1">
-            {children}
-          </main>
-
-          {/* Footer */}
-          <Footer />
-
-          {/* Theme JS (cursor, scroll, nav, accordions, reveal) */}
-          <ThemeScript />
-        </CartProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

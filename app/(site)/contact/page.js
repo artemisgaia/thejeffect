@@ -11,18 +11,30 @@ const DETAILS = [
 ];
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
-  const [status, setStatus] = useState(null);
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '', company: '' });
+  const [status, setStatus] = useState(null); // null | 'loading' | 'success' | 'error'
+  const [error, setError] = useState('');
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
-    // TODO: wire to a contact form API (e.g. Resend, Formspree, or a custom route)
-    await new Promise((r) => setTimeout(r, 900));
-    setStatus('success');
-    setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'We could not send your message. Please try again.');
+      setStatus('success');
+      setForm({ name: '', email: '', phone: '', subject: '', message: '', company: '' });
+    } catch (err) {
+      setError(err.message);
+      setStatus('error');
+    }
   };
 
   return (
@@ -79,6 +91,11 @@ export default function ContactPage() {
                 <label className="form-label" htmlFor="contact-message">Message *</label>
                 <textarea id="contact-message" name="message" value={form.message} onChange={handleChange} className="form-textarea" placeholder="Tell us how we can help…" required />
               </div>
+              <div className="visually-hidden" aria-hidden="true">
+                <label htmlFor="contact-company">Company</label>
+                <input id="contact-company" type="text" name="company" value={form.company} onChange={handleChange} tabIndex={-1} autoComplete="off" />
+              </div>
+              {status === 'error' && <div className="form-error" role="alert">{error}</div>}
               <div className="form-submit">
                 <button type="submit" className="btn-secondary" style={{ width: '100%', justifyContent: 'center' }} disabled={status === 'loading'}>
                   {status === 'loading' ? 'Sending…' : 'Send Message →'}

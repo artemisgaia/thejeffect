@@ -8,43 +8,12 @@ export default function ThemeScript() {
   useEffect(() => {
     document.documentElement.classList.remove('no-js');
 
-    /* ── Custom cursor ── */
-    const isTouchDevice = window.matchMedia('(hover: none)').matches;
-    const cur = document.getElementById('je-cursor');
-    const ring = document.getElementById('je-cursor-ring');
     const cleanups = [];
 
     const listen = (el, evt, fn, opts) => {
       el.addEventListener(evt, fn, opts);
       cleanups.push(() => el.removeEventListener(evt, fn, opts));
     };
-
-    if (!isTouchDevice && cur && ring) {
-      let mx = -300, my = -300, rx = -300, ry = -300, curOn = false;
-      let rafId;
-      const onMove = (e) => {
-        mx = e.clientX; my = e.clientY;
-        cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-        if (!curOn) { curOn = true; cur.classList.add('active'); ring.classList.add('active'); }
-      };
-      listen(document, 'mousemove', onMove, { passive: true });
-      const loop = () => {
-        rx += (mx - rx) * 0.1; ry += (my - ry) * 0.1;
-        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-        rafId = requestAnimationFrame(loop);
-      };
-      loop();
-      cleanups.push(() => cancelAnimationFrame(rafId));
-      listen(document, 'mouseleave', () => { cur.style.opacity = '0'; ring.style.opacity = '0'; });
-      listen(document, 'mouseenter', () => { if (curOn) { cur.style.opacity = ''; ring.style.opacity = ''; } });
-      listen(document, 'mouseover', (e) => {
-        const t = e.target.closest('a,button,.product-card,.cat-card');
-        if (t) { cur.classList.add('big'); ring.classList.add('big'); }
-        else { cur.classList.remove('big'); ring.classList.remove('big'); }
-      });
-    } else if (cur) {
-      cur.remove(); if (ring) ring.remove();
-    }
 
     /* ── Header scroll behaviour ── */
     const header = document.getElementById('site-header');

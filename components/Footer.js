@@ -8,19 +8,29 @@ export default function Footer() {
   const { footer, name } = SITE_CONFIG;
   const [footerEmail, setFooterEmail] = useState('');
   const [footerSubmitted, setFooterSubmitted] = useState(false);
+  const [footerCompany, setFooterCompany] = useState(''); // honeypot
+  const [footerError, setFooterError] = useState('');
 
   const handleFooterNewsletter = async (e) => {
     e.preventDefault();
     if (!footerEmail) return;
+    setFooterError('');
     try {
-      await fetch('/api/newsletter', {
+      const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: footerEmail }),
+        body: JSON.stringify({ email: footerEmail, company: footerCompany, source: 'footer' }),
       });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setFooterError(data.error || 'Something went wrong. Please try again.');
+        return;
+      }
       setFooterSubmitted(true);
       setFooterEmail('');
-    } catch { /* silent */ }
+    } catch {
+      setFooterError('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -51,9 +61,11 @@ export default function Footer() {
                     onChange={(e) => setFooterEmail(e.target.value)}
                     required
                   />
+                  <input type="text" name="company" value={footerCompany} onChange={(e) => setFooterCompany(e.target.value)} className="visually-hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                   <button type="submit" className="footer-newsletter__btn">{footer.newsletter.btn}</button>
                 </form>
               )}
+              {footerError && <p className="footer-newsletter__note" role="alert">{footerError}</p>}
               {footer.newsletter.note && (
                 <p className="footer-newsletter__note">{footer.newsletter.note}</p>
               )}

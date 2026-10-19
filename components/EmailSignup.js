@@ -10,7 +10,9 @@ export default function EmailSignup({
   note = 'No spam. Unsubscribe anytime.',
 }) {
   const [email, setEmail] = useState('');
+  const [company, setCompany] = useState(''); // honeypot
   const [status, setStatus] = useState(null); // null | 'loading' | 'success' | 'error'
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,11 +21,16 @@ export default function EmailSignup({
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, company, source: 'home' }),
       });
       if (res.ok) { setStatus('success'); setEmail(''); }
-      else setStatus('error');
+      else {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error || 'Something went wrong. Please try again.');
+        setStatus('error');
+      }
     } catch {
+      setError('Something went wrong. Please try again.');
       setStatus('error');
     }
   };
@@ -56,6 +63,7 @@ export default function EmailSignup({
                 required
                 aria-required="true"
               />
+              <input type="text" name="company" value={company} onChange={(e) => setCompany(e.target.value)} className="visually-hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <button type="submit" className="email-signup__btn" disabled={status === 'loading'}>
                 {status === 'loading' ? 'Subscribing…' : btnLabel}
               </button>
@@ -63,7 +71,7 @@ export default function EmailSignup({
           )}
           {status === 'error' && (
             <p style={{ color: 'rgba(255,100,100,.8)', fontSize: '.78rem', marginTop: '8px', fontFamily: "'DM Sans', sans-serif" }}>
-              Something went wrong. Please try again.
+              {error}
             </p>
           )}
           <p className="email-signup__note">{note}</p>
