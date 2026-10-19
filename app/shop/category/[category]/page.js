@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
-import { PRODUCTS, CATEGORY_META, toCard } from '@/lib/products';
+import { CATEGORY_META, toCard } from '@/lib/products';
+import { getProducts } from '@/lib/store';
 import { itemListGraph, jsonLd, categoryUrl } from '@/lib/seo';
 import ShopGrid from '../../ShopGrid';
 
@@ -7,7 +8,8 @@ export const dynamicParams = false;
 
 const byPath = (path) => Object.entries(CATEGORY_META).find(([, m]) => m.path === path);
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const PRODUCTS = await getProducts();
   return Object.entries(CATEGORY_META)
     .filter(([key]) => PRODUCTS.some((p) => p.category === key))
     .map(([, m]) => ({ category: m.path }));
@@ -31,7 +33,7 @@ export default async function CategoryPage({ params }) {
   const entry = byPath(category);
   if (!entry) notFound();
   const [key, meta] = entry;
-  const products = PRODUCTS.filter((p) => p.category === key);
+  const products = (await getProducts()).filter((p) => p.category === key);
 
   return (
     <>

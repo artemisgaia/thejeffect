@@ -9,16 +9,16 @@ import Reviews from '@/components/Reviews';
 import BrandPromise from '@/components/BrandPromise';
 import AboutCta from '@/components/AboutCta';
 import EmailSignup from '@/components/EmailSignup';
-import { getProductBySlug, formatMoney } from '@/lib/products';
-
-const HERO_PRODUCT = getProductBySlug('watermelon-hydration-moisturizer');
+import { formatMoney } from '@/lib/format';
+import { getProduct } from '@/lib/store';
 
 export const metadata = {
   title: 'The J Effect | Mindful Skincare Rituals — Made in the USA',
   description: 'Discover The J Effect: clean skincare rituals crafted in the USA. Shop moisturizers, serums, cleansers and ritual bars for luminous, confident skin.',
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const HERO_PRODUCT = await getProduct('watermelon-hydration-moisturizer');
   return (
     <>
       <Hero
@@ -30,10 +30,10 @@ export default function HomePage() {
         btn2Label="See the Guide"
         btn2Href="/ritual-guide"
         image="https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=1800&q=80"
-        showFloatCard={true}
         floatLabel="Bestseller"
-        floatTitle={HERO_PRODUCT.name}
-        floatSub={`${HERO_PRODUCT.type} · ${formatMoney(HERO_PRODUCT.price)}`}
+        showFloatCard={Boolean(HERO_PRODUCT)}
+        floatTitle={HERO_PRODUCT?.name}
+        floatSub={HERO_PRODUCT ? `${HERO_PRODUCT.type} · ${formatMoney(HERO_PRODUCT.price)}` : ''}
       />
       <MarqueeBar />
       <ProofBar />

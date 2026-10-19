@@ -29,14 +29,22 @@ const FILTER_TO_CATEGORY = {
   'ritual-bar': 'ritual-bars', 'hair': 'hair-scalp',
 };
 
+// Admin-uploaded product photos are served from Supabase Storage.
+const supabaseHost = (() => {
+  try { return new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).hostname; } catch { return null; }
+})();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Pin the workspace root (a stray lockfile in the home folder confuses detection).
+  turbopack: { root: import.meta.dirname },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'cdn.shopify.com' },
       { protocol: 'https', hostname: 'thejeffect.com' },
       { protocol: 'https', hostname: 'picsum.photos' },
+      ...(supabaseHost ? [{ protocol: 'https', hostname: supabaseHost }] : []),
     ],
   },
   async redirects() {

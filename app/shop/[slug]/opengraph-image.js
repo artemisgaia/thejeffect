@@ -2,23 +2,28 @@ import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import sharp from 'sharp';
-import { PRODUCTS, getProductBySlug, formatMoney } from '@/lib/products';
+import { formatMoney } from '@/lib/format';
+import { getProducts, getProduct } from '@/lib/store';
 
 export const alt = 'The J Effect product';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 // Prerender every card at build time (reads the image from public/).
-export function generateStaticParams() {
-  return PRODUCTS.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  return (await getProducts()).map((p) => ({ slug: p.slug }));
 }
 
 // Landscape share card: product image left, name and price right.
 export default async function Image({ params }) {
   const { slug } = await params;
-  const p = getProductBySlug(slug);
-  const src = join(process.cwd(), 'public', p.gallery[0].src);
-  const png = await sharp(await readFile(src)).resize(473, 630, { fit: 'cover' }).png().toBuffer();
+  const p = await getProduct(slug);
+  const first = p.gallery[0].src;
+  // Local files come from public/; admin-uploaded images live on Supabase Storage.
+  const source = first.startsWith('http')
+    ? Buffer.from(await (await fetch(first)).arrayBuffer())
+    : await readFile(join(process.cwd(), 'public', first));
+  const png = await sharp(source).resize(473, 630, { fit: 'cover' }).png().toBuffer();
   const img = `data:image/png;base64,${png.toString('base64')}`;
   const no = String(p.no).padStart(2, '0');
 

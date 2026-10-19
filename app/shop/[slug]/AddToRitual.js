@@ -7,14 +7,15 @@ import { formatMoney } from '@/lib/format';
 export default function AddToRitual({ product }) {
   const { addToCart } = useCart();
   const variant = product.variants[0];
-  const add = () => addToCart(product, variant);
+  const soldOut = product.sold_out;
+  const add = () => { if (!soldOut) addToCart(product, variant); };
   const price = formatMoney(variant.price);
 
   return (
     <>
       <div className="pdp-atc">
-        <button className="btn-primary pdp-atc__btn" onClick={add}>
-          Add to Ritual · {price}
+        <button className="btn-primary pdp-atc__btn" onClick={add} disabled={soldOut}>
+          {soldOut ? 'Sold out' : `Add to Ritual · ${price}`}
         </button>
         <p className="pdp-atc__note">Free U.S. shipping over $50 · 30-day money-back guarantee</p>
       </div>
@@ -28,8 +29,8 @@ export default function AddToRitual({ product }) {
             <span className="sticky-bar__name">{product.name}</span>
           </div>
           <span className="sticky-bar__price">{price}</span>
-          <button className="btn-primary sticky-bar__atc" onClick={add} tabIndex={-1}>
-            Add to Ritual
+          <button className="btn-primary sticky-bar__atc" onClick={add} tabIndex={-1} disabled={soldOut}>
+            {soldOut ? 'Sold out' : 'Add to Ritual'}
           </button>
         </div>
       </div>

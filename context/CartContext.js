@@ -109,21 +109,18 @@ export function CartProvider({ children }) {
   const checkout = useCallback(async () => {
     if (cart.length === 0) return;
     try {
-      const lineItems = cart.map((item) => ({
-        price: item.stripe_price_id,
-        quantity: item.quantity,
-      }));
+      const items = cart.map((item) => ({ slug: item.slug, quantity: item.quantity }));
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lineItems }),
+        body: JSON.stringify({ items }),
       });
       const data = await res.json();
       if (data.url) {
         window.location.href = data.url;
       } else {
         console.error('Checkout error:', data.error);
-        alert('Checkout failed. Please try again.');
+        alert(data.error || 'Checkout failed. Please try again.');
       }
     } catch (err) {
       console.error('Checkout error:', err);

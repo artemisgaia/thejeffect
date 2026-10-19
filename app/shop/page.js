@@ -1,4 +1,5 @@
-import { PRODUCTS, CATEGORY_META, toCard } from '@/lib/products';
+import { CATEGORY_META, toCard } from '@/lib/products';
+import { getProducts } from '@/lib/store';
 import { itemListGraph, jsonLd } from '@/lib/seo';
 import ShopGrid from './ShopGrid';
 
@@ -10,14 +11,14 @@ export const metadata = {
   openGraph: { url: '/shop', title: 'Shop the Full Ritual | The J Effect' },
 };
 
-const FILTERS = [
-  { label: 'All', value: 'all' },
-  ...Object.entries(CATEGORY_META)
-    .filter(([key]) => PRODUCTS.some((p) => p.category === key))
-    .map(([value, meta]) => ({ label: meta.label, value })),
-];
-
-export default function ShopPage() {
+export default async function ShopPage() {
+  const PRODUCTS = await getProducts();
+  const FILTERS = [
+    { label: 'All', value: 'all' },
+    ...Object.entries(CATEGORY_META)
+      .filter(([key]) => PRODUCTS.some((p) => p.category === key))
+      .map(([value, meta]) => ({ label: meta.label, value })),
+  ];
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(itemListGraph('Shop all The J Effect skincare', '/shop', PRODUCTS))} />

@@ -12,6 +12,7 @@ export default function ProductCard({ product }) {
   const isBestseller = product.tags.includes('bestseller');
   const isNew = product.tags.includes('new');
   const isSale = hasCompare;
+  const soldOut = product.sold_out;
   const href = `/shop/${product.slug}`;
 
   return (
@@ -52,9 +53,10 @@ export default function ProductCard({ product }) {
 
         {/* Badges */}
         <div className="product-card__badges" aria-hidden="true">
-          {isBestseller && <span className="badge badge--forest">Bestseller</span>}
-          {!isBestseller && isNew && <span className="badge badge--gold">New</span>}
-          {!isBestseller && !isNew && isSale && <span className="badge badge--sale">Sale</span>}
+          {soldOut && <span className="badge badge--sale">Sold out</span>}
+          {!soldOut && isBestseller && <span className="badge badge--forest">Bestseller</span>}
+          {!soldOut && !isBestseller && isNew && <span className="badge badge--gold">New</span>}
+          {!soldOut && !isBestseller && !isNew && isSale && <span className="badge badge--sale">Sale</span>}
         </div>
 
         {/* ATC overlay */}
@@ -62,9 +64,10 @@ export default function ProductCard({ product }) {
           <button
             className="btn-atc"
             onClick={() => addToCart(product, cv)}
-            aria-label={`Add ${product.name} to cart`}
+            aria-label={soldOut ? `${product.name} is sold out` : `Add ${product.name} to cart`}
+            disabled={soldOut}
           >
-            Add to Ritual — {formatMoney(product.price)}
+            {soldOut ? 'Sold out' : `Add to Ritual — ${formatMoney(product.price)}`}
           </button>
         </div>
       </div>

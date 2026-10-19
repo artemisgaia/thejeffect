@@ -1,9 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  PRODUCTS, getProductBySlug, formatMoney, getPairings, getRelated, toCard, CATEGORY_META,
-} from '@/lib/products';
+import { formatMoney, toCard, CATEGORY_META } from '@/lib/products';
+import { getProducts, getProduct, pairingsOf, relatedOf } from '@/lib/store';
 import { productGraph, jsonLd, categoryUrl } from '@/lib/seo';
 import ProductCard from '@/components/ProductCard';
 import ProductGallery from './ProductGallery';
@@ -11,13 +10,13 @@ import AddToRitual from './AddToRitual';
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return PRODUCTS.map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  return (await getProducts()).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const p = getProductBySlug(slug);
+  const p = await getProduct(slug);
   if (!p) return { title: 'Product Not Found' };
 
   const url = `/shop/${p.slug}`;
@@ -42,7 +41,7 @@ export async function generateMetadata({ params }) {
       'product:brand': 'The J Effect',
       'product:price:amount': (p.price / 100).toFixed(2),
       'product:price:currency': 'USD',
-      'product:availability': 'in stock',
+      'product:availability': p.sold_out ? 'out of stock' : 'in stock',
       'product:condition': 'new',
       'product:retailer_item_id': p.sku,
     },
@@ -59,19 +58,20 @@ const Leaf = () => (
 
 export default async function ProductPage({ params }) {
   const { slug } = await params;
-  const p = getProductBySlug(slug);
+  const p = await getProduct(slug);
   if (!p) notFound();
 
+  const all = await getProducts();
   const cat = CATEGORY_META[p.category];
-  const pairings = getPairings(p);
-  const related = getRelated(p);
+  const pairings = pairingsOf(p, all);
+  const related = relatedOf(p, all);
   const no = String(p.no).padStart(2, '0');
   const badges = [...new Set([...p.badges, 'Made in USA'])];
   const ritualImage = p.gallery.find((g) => g.kind === 'lifestyle') || p.gallery[0];
 
   return (
     <article className="pdp">
-      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(productGraph(p))} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(productGraph(p, pairings))} />
 
       {/* ── 1. Hero ─────────────────────────────────────────── */}
       <section className="pdp-hero">

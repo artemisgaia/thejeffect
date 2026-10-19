@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { FEATURED_PRODUCTS, toCard } from '@/lib/products';
+import { toCard } from '@/lib/products';
+import { getFeaturedProducts } from '@/lib/store';
 import ProductCard from './ProductCard';
 
-export default function FeaturedProducts({
+export default async function FeaturedProducts({
   eyebrow = 'Daily Essentials',
   title = 'Curated for your skin.',
   viewAllLabel = 'View All Products',
@@ -10,7 +11,7 @@ export default function FeaturedProducts({
   count = 4,
   products = null,
 }) {
-  const items = (products || FEATURED_PRODUCTS).slice(0, count);
+  const items = (products || (await getFeaturedProducts())).slice(0, count);
 
   return (
     <section className="featured-products">

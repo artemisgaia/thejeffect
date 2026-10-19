@@ -1,8 +1,10 @@
-import { PRODUCTS, POSTS, CATEGORY_META } from '@/lib/products';
+import { POSTS, CATEGORY_META } from '@/lib/products';
+import { getProducts } from '@/lib/store';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { categoryUrl } from '@/lib/seo';
 
 export default async function sitemap() {
+  const PRODUCTS = await getProducts();
   const baseUrl = SITE_CONFIG.url;
   const today = new Date().toISOString().split('T')[0];
 
@@ -41,7 +43,7 @@ export default async function sitemap() {
     lastModified: today,
     changeFrequency: 'weekly',
     priority: 0.9,
-    images: product.gallery.map((g) => `${baseUrl}${g.src}`),
+    images: product.gallery.map((g) => (g.src.startsWith('http') ? g.src : `${baseUrl}${g.src}`)),
   }));
 
   // Journal posts
