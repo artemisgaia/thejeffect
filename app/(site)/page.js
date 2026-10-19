@@ -1,12 +1,10 @@
 import Hero from '@/components/Hero';
+import SiteImage from '@/components/SiteImage';
 import MarqueeBar from '@/components/MarqueeBar';
-import ProofBar from '@/components/ProofBar';
 import CategoryCards from '@/components/CategoryCards';
 import FeaturedProducts from '@/components/FeaturedProducts';
 import RitualSplit from '@/components/RitualSplit';
-import ImageMosaic from '@/components/ImageMosaic';
 import Reviews from '@/components/Reviews';
-import BrandPromise from '@/components/BrandPromise';
 import AboutCta from '@/components/AboutCta';
 import EmailSignup from '@/components/EmailSignup';
 import { formatMoney } from '@/lib/format';
@@ -23,26 +21,24 @@ export default async function HomePage() {
     <>
       <Hero
         eyebrow="Crafted in the USA · Est. 2024"
-        title="Where calm meets luminous skin."
-        subtitle="Clean formulas, intentional rituals, and radiant results — The J Effect is skincare designed to feel like coming home to yourself."
+        title="Where calm meets *luminous* skin."
+        subtitle="Clean formulas, intentional rituals and radiant results. The J Effect is skincare designed to feel like coming home to yourself."
         btn1Label="Shop the Ritual"
         btn1Href="/shop"
         btn2Label="See the Guide"
         btn2Href="/ritual-guide"
-        image="https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=1800&q=80"
+        visual={<SiteImage slot="hero" priority sizes="(min-width: 1000px) 38vw, 80vw" />}
         floatLabel="Bestseller"
-        showFloatCard={Boolean(HERO_PRODUCT)}
         floatTitle={HERO_PRODUCT?.name}
         floatSub={HERO_PRODUCT ? `${HERO_PRODUCT.type} · ${formatMoney(HERO_PRODUCT.price)}` : ''}
+        floatHref={HERO_PRODUCT ? `/shop/${HERO_PRODUCT.slug}` : '/shop'}
+        trust={[]}
       />
       <MarqueeBar />
-      <ProofBar />
       <CategoryCards />
       <FeaturedProducts count={4} />
       <RitualSplit />
-      <ImageMosaic />
       <Reviews />
-      <BrandPromise />
       <AboutCta />
       <EmailSignup />
     </>

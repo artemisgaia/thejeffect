@@ -3,7 +3,7 @@ export default function Loading() {
     <div className="global-loading">
       <div style={{ textAlign: 'center' }}>
         <div style={{
-          fontFamily: "'Playfair Display', serif",
+          fontFamily: "var(--font-display)",
           fontSize: '1.2rem',
           letterSpacing: '.1em',
           textTransform: 'uppercase',

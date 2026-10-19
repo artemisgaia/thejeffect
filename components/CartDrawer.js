@@ -28,7 +28,7 @@ export default function CartDrawer() {
 
         {/* Free shipping bar */}
         {cartTotal < FREE_SHIPPING_THRESHOLD && (
-          <div style={{ padding: '10px 24px 0', fontSize: '.72rem', color: 'var(--ink-muted)', fontFamily: "'DM Sans', sans-serif" }}>
+          <div style={{ padding: '10px 24px 0', fontSize: '.72rem', color: 'var(--ink-muted)', fontFamily: "var(--font-body)" }}>
             <div style={{ marginBottom: '6px' }}>
               Add <strong style={{ color: 'var(--forest)' }}>{formatMoney(remaining)}</strong> more for free shipping
             </div>
@@ -38,7 +38,7 @@ export default function CartDrawer() {
           </div>
         )}
         {cartTotal >= FREE_SHIPPING_THRESHOLD && (
-          <div style={{ padding: '10px 24px 0', fontSize: '.72rem', color: 'var(--forest)', fontFamily: "'DM Sans', sans-serif" }}>
+          <div style={{ padding: '10px 24px 0', fontSize: '.72rem', color: 'var(--forest)', fontFamily: "var(--font-body)" }}>
             You qualify for free shipping!
           </div>
         )}
@@ -53,8 +53,8 @@ export default function CartDrawer() {
                   <path d="M16 10a4 4 0 0 1-8 0"></path>
                 </svg>
               </div>
-              <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.6rem', color: 'var(--ink)', marginBottom: '12px' }}>Your ritual bag is empty.</h3>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", color: 'var(--ink-soft)', fontSize: '0.9rem', marginBottom: '32px' }}>Take your time. Intentional skincare shouldn&rsquo;t be rushed.</p>
+              <h3 style={{ fontFamily: "var(--font-display)", fontSize: '1.6rem', color: 'var(--ink)', marginBottom: '12px' }}>Your ritual bag is empty.</h3>
+              <p style={{ fontFamily: "var(--font-body)", color: 'var(--ink-soft)', fontSize: '0.9rem', marginBottom: '32px' }}>Take your time. Intentional skincare shouldn&rsquo;t be rushed.</p>
               <Link href="/shop" className="btn-primary" style={{ display: 'inline-flex' }} onClick={() => setCartOpen(false)}>
                 Start Your Ritual →
               </Link>

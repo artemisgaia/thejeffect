@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Wordmark from '@/components/Wordmark';
 import { SITE_CONFIG } from '@/lib/site-config';
 
 export default function Footer() {
@@ -39,13 +40,13 @@ export default function Footer() {
 
         {/* Newsletter */}
         {footer.newsletter.show && (
-          <div className="footer-newsletter" style={{ borderBottom: '1px solid rgba(255,255,255,.08)', paddingBottom: '40px', marginBottom: '40px' }}>
+          <div className="footer-newsletter">
             <div className="footer-newsletter__inner">
               <div className="footer-newsletter__text">
                 <h3 className="footer-newsletter__heading">{footer.newsletter.heading}</h3>
               </div>
               {footerSubmitted ? (
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '.88rem', color: 'var(--gold-light)' }}>
+                <p className="footer-newsletter__done">
                   Welcome to the ritual. Check your inbox soon.
                 </p>
               ) : (
@@ -77,7 +78,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="footer-brand">
             <Link href="/" className="footer-logo-link" aria-label={`${name} home`}>
-              <span className="footer-logo-text">{name}</span>
+              <Wordmark className="wordmark--footer" />
             </Link>
             <p className="footer-tagline">{footer.tagline}</p>
             <div className="footer-social">
@@ -137,6 +138,8 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        <div className="footer-mark" aria-hidden="true">The J Effect</div>
 
         {/* Footer bottom */}
         <div className="footer-bottom">

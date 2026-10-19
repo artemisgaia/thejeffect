@@ -46,9 +46,7 @@ export default function EmailSignup({
 
         <div className="reveal reveal--d3">
           {status === 'success' ? (
-            <p style={{ color: 'var(--gold-light)', fontSize: '.88rem', fontFamily: "'DM Sans', sans-serif" }}>
-              ✓ You&apos;re in! Check your inbox.
-            </p>
+            <p className="email-signup__done">You&rsquo;re in. Check your inbox.</p>
           ) : (
             <form className="email-signup__form" onSubmit={handleSubmit}>
               <label htmlFor="email-signup-input" className="visually-hidden">Email address</label>
@@ -70,9 +68,7 @@ export default function EmailSignup({
             </form>
           )}
           {status === 'error' && (
-            <p style={{ color: 'rgba(255,100,100,.8)', fontSize: '.78rem', marginTop: '8px', fontFamily: "'DM Sans', sans-serif" }}>
-              {error}
-            </p>
+            <p className="email-signup__error" role="alert">{error}</p>
           )}
           <p className="email-signup__note">{note}</p>
         </div>

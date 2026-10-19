@@ -5,7 +5,7 @@ import ProductCard from './ProductCard';
 
 export default async function FeaturedProducts({
   eyebrow = 'Daily Essentials',
-  title = 'Curated for your skin.',
+  title = 'Curated for *your skin.*',
   viewAllLabel = 'View All Products',
   viewAllHref = '/shop',
   count = 4,
@@ -19,10 +19,10 @@ export default async function FeaturedProducts({
         <div className="featured-products__header">
           <div>
             <div className="eyebrow reveal">{eyebrow}</div>
-            <h2 className="section-title section-title--dark reveal reveal--d1">{title}</h2>
+            <h2 className="section-title section-title--dark reveal reveal--d1">{title.split('*')[0]}<em>{title.split('*')[1]}</em></h2>
           </div>
           <Link href={viewAllHref} className="view-all-link reveal reveal--d2">
-            {viewAllLabel} →
+            {viewAllLabel} <span aria-hidden="true">→</span>
           </Link>
         </div>
         <div className="product-grid">

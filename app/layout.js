@@ -1,6 +1,26 @@
-import './globals.css';
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
+import './styles/base.css';
+import './styles/pages.css';
+import './styles/chrome.css';
+import './styles/catalog.css';
+import './styles/home.css';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { siteGraph, jsonLd } from '@/lib/seo';
+
+const display = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+});
+
+const body = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
 
 export const metadata = {
   title: {
@@ -19,16 +39,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="no-js">
+    <html lang="en" className={`no-js ${display.variable} ${body.variable}`}>
       <head>
         <meta name="theme-color" content="#243B27" />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(siteGraph())} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body>{children}</body>
     </html>

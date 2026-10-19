@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { useCart } from '@/context/CartContext';
+import Wordmark from '@/components/Wordmark';
 
 export default function Header({ announcementOverride = null }) {
   const { cartCount, setCartOpen } = useCart();
@@ -51,7 +52,7 @@ export default function Header({ announcementOverride = null }) {
 
           {/* Logo */}
           <Link href="/" className="header__logo" aria-label={`${name} home`}>
-            <span className="header__logo-text">{name}</span>
+            <Wordmark />
           </Link>
 
           {/* Desktop Nav */}
@@ -66,7 +67,7 @@ export default function Header({ announcementOverride = null }) {
                     <div className="mega-menu">
                       <div className="mega-menu__inner">
                         <div>
-                          <div className="mega-menu__col-title">Shop By Ritual</div>
+                          <div className="mega-menu__col-title">Shop by ritual</div>
                           <ul className="mega-menu__list">
                             <li><Link href="/shop" className="mega-menu__link">All Products</Link></li>
                             <li><Link href="/shop/category/moisturizers" className="mega-menu__link">Moisturizers</Link></li>
@@ -139,7 +140,9 @@ export default function Header({ announcementOverride = null }) {
       <div className="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="Navigation">
         <div className="mobile-nav__overlay" id="mobile-overlay" />
         <div className="mobile-nav__panel">
-          <button className="mobile-nav__close" id="mobile-close" aria-label="Close menu">✕</button>
+          <button className="mobile-nav__close" id="mobile-close" aria-label="Close menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M5 5l14 14M19 5L5 19" /></svg>
+          </button>
           <nav className="mobile-nav__links">
             {nav.map((item) => (
               <Link key={item.href} href={item.href} className="mobile-nav__link">
@@ -157,7 +160,9 @@ export default function Header({ announcementOverride = null }) {
           <div className="search-popup__inner">
             <div className="search-popup__header">
               <span className="search-popup__title">Search</span>
-              <button className="search-popup__close" id="search-close" aria-label="Close search">✕</button>
+              <button className="search-popup__close" id="search-close" aria-label="Close search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M5 5l14 14M19 5L5 19" /></svg>
+              </button>
             </div>
             <form action="/shop" method="get" className="search-popup__form" role="search">
               <label htmlFor="search-popup-input" className="visually-hidden">Search products</label>

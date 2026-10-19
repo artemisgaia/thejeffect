@@ -9,9 +9,9 @@ const DEFAULT_REVIEWS = [
 
 export default function Reviews({
   eyebrow = 'Real People. Real Results.',
-  title = 'The community speaks.',
+  title = 'The community *speaks.*',
   avgRating = '5.0',
-  reviews = DEFAULT_REVIEWS,
+  reviews = DEFAULT_REVIEWS.slice(0, 3),
 }) {
   return (
     <section className="reviews">
@@ -19,16 +19,13 @@ export default function Reviews({
         <div className="reviews__header">
           <div>
             <div className="eyebrow reveal">{eyebrow}</div>
-            <h2 className="section-title section-title--dark reveal reveal--d1">{title}</h2>
+            <h2 className="section-title section-title--dark reveal reveal--d1">{title.split('*')[0]}<em>{title.split('*')[1]}</em></h2>
           </div>
           <div className="reviews__avg reveal reveal--d2" aria-label={`${avgRating} stars average`}>
+            <div className="reviews__score">{avgRating}</div>
             <div>
-              <div className="reviews__score">{avgRating}</div>
-              <div style={{ color: 'var(--gold)', fontSize: '.72rem', marginTop: '3px' }}>★★★★★</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '.76rem', fontWeight: 300, color: 'rgba(247,243,236,.7)', fontFamily: "'DM Sans', sans-serif" }}>Average Rating</div>
-              <div className="reviews__meta">Community</div>
+              <div className="reviews__stars" aria-hidden="true">★★★★★</div>
+              <div className="reviews__meta">Average rating</div>
             </div>
           </div>
         </div>

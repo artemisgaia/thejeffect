@@ -19,7 +19,7 @@ export default function FAQPage() {
     <div className="policy-page">
       <div className="policy-page__inner">
         <h1 className="policy-page__title reveal">Frequently Asked Questions</h1>
-        <p className="reveal reveal--d1" style={{ textAlign: 'center', fontFamily: "'DM Sans', sans-serif", color: 'var(--ink-soft)', fontSize: '.95rem', maxWidth: '500px', margin: '-24px auto 48px', lineHeight: '1.8' }}>
+        <p className="reveal reveal--d1" style={{ textAlign: 'center', fontFamily: "var(--font-body)", color: 'var(--ink-soft)', fontSize: '.95rem', maxWidth: '500px', margin: '-24px auto 48px', lineHeight: '1.8' }}>
           Everything you need to know about The J Effect, our products, and your ritual.
         </p>
         <div className="policy-page__content">
@@ -38,8 +38,8 @@ export default function FAQPage() {
         </div>
 
         <div className="reveal" style={{ textAlign: 'center', marginTop: '64px', padding: '48px 24px', background: 'var(--cream-2)' }}>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', fontWeight: '400', color: 'var(--ink)', marginBottom: '12px' }}>Still have questions?</h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", color: 'var(--ink-muted)', fontSize: '.88rem', marginBottom: '24px' }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: '1.5rem', fontWeight: '400', color: 'var(--ink)', marginBottom: '12px' }}>Still have questions?</h2>
+          <p style={{ fontFamily: "var(--font-body)", color: 'var(--ink-muted)', fontSize: '.88rem', marginBottom: '24px' }}>
             We are here to help. Reach out and we will get back to you within 24 hours.
           </p>
           <Link href="/contact" className="btn-secondary">Get in Touch →</Link>

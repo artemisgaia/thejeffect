@@ -1,43 +1,37 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import SiteImage from '@/components/SiteImage';
 import { CATEGORIES, CATEGORY_META } from '@/lib/products';
 
 export default function CategoryCards({
-  eyebrow = 'Shop By Ritual',
-  title = 'Find your perfect daily ritual.',
+  eyebrow = 'Shop by ritual',
+  title = 'Find your *perfect* daily ritual.',
   categories = CATEGORIES,
 }) {
+  const [before, accent, after] = title.split('*');
   return (
-    <section className="categories">
+    <section className="categories" id="after-hero">
       <div className="categories__inner">
         <div className="categories__header">
           <div className="eyebrow reveal">{eyebrow}</div>
-          <h2 className="section-title section-title--dark reveal reveal--d1">{title}</h2>
+          <h2 className="section-title section-title--dark reveal reveal--d1">
+            {before}{accent && <em>{accent}</em>}{after}
+          </h2>
         </div>
 
         <div className="categories__grid">
           {categories.map((cat, i) => (
             <Link
-              key={i}
+              key={cat.slot}
               href={`/shop/category/${CATEGORY_META[cat.filter].path}`}
               className={`cat-card reveal reveal--d${i + 1}`}
             >
-              {cat.image ? (
-                <div className="cat-card__media">
-                  <Image className="cat-card__img is-pending-img" src={cat.image} alt={cat.name} loading="lazy" width={600} height={800} />
-                  <div className="pending-badge">
-                    <span className="pending-badge__label">Coming Soon</span>
-                    <span className="pending-badge__sub">Updating Inventory</span>
-                  </div>
-                </div>
-              ) : (
-                <div className="cat-card__img" style={{ background: 'var(--cream-2)', width: '100%', height: '100%' }} />
-              )}
-              <div className="cat-card__overlay" aria-hidden="true" />
+              <div className="cat-card__media">
+                <SiteImage slot={cat.slot} alt={cat.name} sizes="(min-width: 1000px) 22vw, (min-width: 600px) 45vw, 90vw" />
+              </div>
               <div className="cat-card__body">
                 <div className="cat-card__label">{cat.label}</div>
                 <div className="cat-card__name">{cat.name}</div>
-                <span className="cat-card__cta">{cat.cta} →</span>
+                <span className="cat-card__cta">{cat.cta} <span aria-hidden="true">→</span></span>
               </div>
             </Link>
           ))}

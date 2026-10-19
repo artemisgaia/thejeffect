@@ -96,14 +96,14 @@ export default function RitualGuidePage() {
                 className="ritual-guide__step reveal"
               >
                 <div style={{ direction: 'ltr' }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '5rem', color: 'var(--cream-3)', fontWeight: '400', lineHeight: '1', marginBottom: '16px' }}>{step.num}</div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: '5rem', color: 'var(--cream-3)', fontWeight: '400', lineHeight: '1', marginBottom: '16px' }}>{step.num}</div>
                   <div style={{ fontSize: '2rem', marginBottom: '8px' }}>{step.icon}</div>
                   <div className="eyebrow" style={{ marginBottom: '8px' }}>{step.subtitle}</div>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2rem', color: 'var(--ink)', marginBottom: '20px', fontWeight: '400' }}>{step.title}</h3>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", color: 'var(--ink-soft)', lineHeight: '1.85', fontWeight: '300', marginBottom: '16px' }}>{step.desc}</p>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '.82rem', color: 'var(--forest)', fontStyle: 'italic', marginBottom: '24px' }}>{step.tip}</p>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: '2rem', color: 'var(--ink)', marginBottom: '20px', fontWeight: '400' }}>{step.title}</h3>
+                  <p style={{ fontFamily: "var(--font-body)", color: 'var(--ink-soft)', lineHeight: '1.85', fontWeight: '300', marginBottom: '16px' }}>{step.desc}</p>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: '.82rem', color: 'var(--forest)', fontStyle: 'italic', marginBottom: '24px' }}>{step.tip}</p>
                   <div>
-                    <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '.72rem', letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--ink-muted)', marginBottom: '10px' }}>For this step:</div>
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: '.72rem', letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--ink-muted)', marginBottom: '10px' }}>For this step:</div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                       {step.products.map((p) => (
                         <Link key={p.slug} href={`/shop/${p.slug}`} className="ritual-guide__product-chip">

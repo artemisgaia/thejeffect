@@ -24,7 +24,7 @@
   min-height: 100vh;
   background: var(--a-bg);
   color: var(--a-ink);
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.5;
 }
@@ -43,11 +43,11 @@
   position: sticky; top: 0; height: 100vh;
 }
 .adm-brand {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 1.25rem; letter-spacing: .06em; text-transform: uppercase;
   display: flex; flex-direction: column; gap: 2px; padding: 0 10px 26px;
 }
-.adm-brand span { font-family: 'DM Sans', sans-serif; font-size: .66rem; letter-spacing: .26em; color: var(--a-gold); }
+.adm-brand span { font-family: var(--font-body); font-size: .66rem; letter-spacing: .26em; color: var(--a-gold); }
 .adm-nav { display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .adm-nav__link {
   padding: 10px 12px; border-radius: 8px; font-size: .92rem;
@@ -66,7 +66,7 @@
 
 .adm-main { padding: 36px clamp(20px, 4vw, 52px) 80px; min-width: 0; max-width: 1280px; }
 .adm-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
-.adm-head h1 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 2rem; line-height: 1.15; letter-spacing: -.01em; }
+.adm-head h1 { font-family: var(--font-display); font-weight: 500; font-size: 2rem; line-height: 1.15; letter-spacing: -.01em; }
 .adm-head p { color: var(--a-muted); margin-top: 6px; max-width: 60ch; }
 .adm-crumb { font-size: .8rem; color: var(--a-muted); margin-bottom: 8px; display: inline-block; }
 .adm-crumb:hover { color: var(--a-forest); }
@@ -81,7 +81,7 @@
 .adm-grid--2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
 .adm-stat { background: var(--a-surface); border: 1px solid var(--a-line); border-radius: 14px; padding: 20px 22px; }
 .adm-stat__label { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--a-muted); }
-.adm-stat__value { font-family: 'Playfair Display', serif; font-size: 2.1rem; margin-top: 6px; line-height: 1.1; color: var(--a-forest); }
+.adm-stat__value { font-family: var(--font-display); font-size: 2.1rem; margin-top: 6px; line-height: 1.1; color: var(--a-forest); }
 .adm-stat__note { font-size: .8rem; color: var(--a-muted); margin-top: 4px; }
 
 .adm-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
@@ -193,8 +193,8 @@
 /* ── Login ───────────────────────────────────────────────── */
 .adm-login { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at top, var(--a-forest-2), var(--a-forest) 60%, #1a2b1c); }
 .adm-login__card { width: min(420px, 100%); background: #fdfcfa; border-radius: 18px; padding: 38px 34px; display: grid; gap: 18px; box-shadow: 0 30px 80px rgba(0, 0, 0, .35); }
-.adm-login__brand { font-family: 'Playfair Display', serif; text-transform: uppercase; letter-spacing: .14em; color: var(--a-forest); font-size: .95rem; }
-.adm-login h1 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.9rem; margin-top: -8px; }
+.adm-login__brand { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .14em; color: var(--a-forest); font-size: .95rem; }
+.adm-login h1 { font-family: var(--font-display); font-weight: 500; font-size: 1.9rem; margin-top: -8px; }
 
 /* ── Preview (campaign) ──────────────────────────────────── */
 .adm-preview { border: 1px solid var(--a-line); border-radius: 12px; overflow: hidden; background: #fff; }

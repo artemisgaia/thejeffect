@@ -1,22 +1,18 @@
-import Image from 'next/image';
+import SiteImage from '@/components/SiteImage';
 import { MOSAIC_IMAGES } from '@/lib/products';
 
 export default function ImageMosaic({ images = MOSAIC_IMAGES }) {
   return (
-    <section className="section section--sm" aria-label="Gallery">
+    <section className="gallery" aria-label="Gallery">
       <div className="image-mosaic__grid">
         {images.map((img, i) => (
-          <div
-            key={i}
-            className={`mosaic-item${img.tall ? ' mosaic-item--tall' : ''}${img.wide ? ' mosaic-item--wide' : ''}`}
+          <figure
+            key={img.slot}
+            className={`mosaic-item reveal reveal--d${(i % 4) + 1}${img.tall ? ' mosaic-item--tall' : ''}${img.wide ? ' mosaic-item--wide' : ''}`}
           >
-            <Image className="is-pending-img" src={img.src} alt={img.caption || ''} loading="lazy" width={800} height={600} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <div className="pending-badge">
-              <span className="pending-badge__label">Coming Soon</span>
-              <span className="pending-badge__sub">Updating Inventory</span>
-            </div>
-            {img.caption && <div className="mosaic-item__cap">{img.caption}</div>}
-          </div>
+            <SiteImage slot={img.slot} alt={img.caption || ''} sizes="(min-width: 900px) 33vw, 50vw" />
+            {img.caption && <figcaption className="mosaic-item__cap">{img.caption}</figcaption>}
+          </figure>
         ))}
       </div>
     </section>
