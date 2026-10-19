@@ -4,6 +4,7 @@ import './styles/pages.css';
 import './styles/chrome.css';
 import './styles/catalog.css';
 import './styles/home.css';
+import './styles/inner.css';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { siteGraph, jsonLd } from '@/lib/seo';
 

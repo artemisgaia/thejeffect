@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import SiteImage from '@/components/SiteImage';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { POSTS } from '@/lib/products';
@@ -24,45 +24,18 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <>
-      <article className="blog-post">
-        {/* Post Hero */}
-        <header className="blog-post__hero">
-          <div className="blog-post__hero-img-wrap reveal reveal--d1">
-            <Image
-              className="is-pending-img"
-              src={post.image}
-              alt={post.title}
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-            <div className="pending-badge">
-              <span className="pending-badge__label">Coming Soon</span>
-              <span className="pending-badge__sub">Updating Inventory</span>
-            </div>
-          </div>
-          <div className="blog-post__header-content">
-            <div className="eyebrow eyebrow--center reveal reveal--d2">{post.date}</div>
-            <h1 className="section-title section-title--dark reveal reveal--d3" style={{ textAlign: 'center', marginTop: '16px', maxWidth: '800px', margin: '16px auto 0' }}>
-              {post.title}
-            </h1>
-          </div>
+      <article className="post">
+        <header className="post__header">
+          <div className="eyebrow eyebrow--center reveal">{post.date}</div>
+          <h1 className="post__title reveal reveal--d1">{post.title}</h1>
         </header>
-
-        {/* Post Body */}
-        <div className="blog-post__body-container reveal">
-          <div 
-            className="blog-post__content"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+        <div className="post__hero reveal reveal--d2">
+          <SiteImage slot={post.slot} alt={post.title} priority sizes="(min-width: 900px) 70vw, 100vw" />
         </div>
-
-        {/* Back Link */}
-        <div className="blog-post__footer reveal" style={{ textAlign: 'center', padding: '60px 20px', borderTop: '1px solid var(--cream-3)' }}>
-          <Link href="/journal" className="btn-secondary">
-            ← Back to Journal
-          </Link>
-        </div>
+        <div className="post__content reveal" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <footer className="post__footer reveal">
+          <Link href="/journal" className="btn-outline"><span aria-hidden="true">←</span> Back to Journal</Link>
+        </footer>
       </article>
 
       <EmailSignup />

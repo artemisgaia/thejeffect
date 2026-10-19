@@ -1,0 +1,99 @@
+/* ============================================================
+   THE J EFFECT — INNER PAGES
+   About · Journal · Ritual Guide · shared closing CTA
+   ============================================================ */
+
+.about-hero__img, .about-mission__img, .guide-step__img, .article-card__img, .post__hero {
+  position: relative; overflow: hidden; background: var(--pack);
+}
+
+/* ── About ───────────────────────────────────────────────── */
+.about-hero {
+  position: relative; overflow: hidden; color: var(--cream);
+  padding: calc(var(--announce-h) + var(--header-h) + clamp(32px, 5vw, 72px)) var(--gutter) clamp(64px, 9vw, 120px);
+  background: radial-gradient(ellipse at 80% 20%, var(--forest-2), var(--forest) 50%, var(--forest-3));
+}
+.about-hero__inner { max-width: var(--maxw); margin: 0 auto; display: grid; gap: 56px; align-items: center; }
+@media (min-width: 900px) { .about-hero__inner { grid-template-columns: 1.1fr .9fr; gap: clamp(48px, 7vw, 112px); } }
+.about-hero__title { font-family: var(--font-display); font-weight: 400; letter-spacing: -.03em; line-height: .92; font-size: clamp(3rem, 7vw, 6rem); }
+.about-hero__title em { color: var(--gold-light); }
+.about-hero__sub { margin: 26px 0 38px; max-width: 42ch; font-size: 1.08rem; font-weight: 300; line-height: 1.8; color: rgba(247, 243, 236, .8); }
+.about-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 32px; }
+.about-hero__img { aspect-ratio: 4 / 5; border-radius: var(--arch); max-width: 480px; width: 100%; justify-self: center; box-shadow: 0 50px 100px -40px rgba(0, 0, 0, .6), 0 0 0 1px rgba(221, 185, 122, .45); }
+
+.about-mission { padding: clamp(64px, 9vw, 140px) var(--gutter); background: var(--white); }
+.about-mission__inner { max-width: var(--maxw); margin: 0 auto; display: grid; gap: 56px; align-items: center; }
+@media (min-width: 900px) { .about-mission__inner { grid-template-columns: .85fr 1.15fr; gap: clamp(48px, 8vw, 128px); } }
+.about-mission__img { aspect-ratio: 4 / 5; border-radius: var(--arch); max-width: 480px; width: 100%; justify-self: center; box-shadow: 0 50px 90px -44px rgba(26, 43, 28, .5); }
+.about-mission__copy { margin-top: 28px; display: grid; gap: 18px; max-width: 56ch; font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--ink-muted); }
+
+.about-values { padding: clamp(64px, 9vw, 130px) var(--gutter); background: var(--cream); }
+.about-values__inner { max-width: var(--maxw); margin: 0 auto; }
+.about-values__header { text-align: center; margin-bottom: clamp(40px, 6vw, 72px); }
+.about-values__header .eyebrow { justify-content: center; }
+.about-values__grid { display: grid; gap: 0; grid-template-columns: 1fr; border-top: 1px solid var(--cream-3); }
+@media (min-width: 700px) { .about-values__grid { grid-template-columns: repeat(2, 1fr); column-gap: 64px; } }
+@media (min-width: 1100px) { .about-values__grid { grid-template-columns: repeat(3, 1fr); column-gap: 80px; } }
+.value-card { padding: 36px 0; border-bottom: 1px solid var(--cream-3); }
+.value-card__icon { color: var(--gold); margin-bottom: 18px; }
+.value-card__title { font-family: var(--font-display); font-size: 1.9rem; font-weight: 500; line-height: 1.05; color: var(--forest); }
+.value-card__desc { margin-top: 10px; max-width: 34ch; font-size: .95rem; font-weight: 300; line-height: 1.7; color: var(--ink-muted); }
+
+/* ── Closing CTA (shared) ────────────────────────────────── */
+.closing { padding: clamp(72px, 10vw, 150px) var(--gutter); background: var(--white); text-align: center; }
+.closing__inner { max-width: 680px; margin: 0 auto; display: grid; justify-items: center; }
+.closing .eyebrow { justify-content: center; }
+.closing .body-text { margin: 24px auto 40px; }
+
+/* ── Journal ─────────────────────────────────────────────── */
+.journal { padding: clamp(56px, 8vw, 120px) var(--gutter); background: var(--cream); }
+.journal__grid { max-width: var(--maxw); margin: 0 auto; display: grid; gap: 56px 32px; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .journal__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .journal__grid { grid-template-columns: repeat(3, 1fr); gap: 64px 40px; } }
+.article-card { display: flex; flex-direction: column; }
+.article-card__img { display: block; aspect-ratio: 3 / 2; }
+.article-card__img .site-img--pack, .post__hero .site-img--pack { object-fit: contain; object-position: 50% 50%; transform: scale(1.12); }
+.article-card:hover .article-card__img .site-img { transform: scale(1.05); transition: transform 1.2s var(--ease-out); }
+.article-card__body { padding-top: 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.article-card__date { font-size: .64rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+.article-card__title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.4vw, 2.3rem); font-weight: 500; line-height: 1.05; color: var(--forest); }
+.article-card__excerpt { font-size: .98rem; font-weight: 300; line-height: 1.7; color: var(--ink-muted); }
+.article-card .view-all-link { margin-top: 8px; }
+
+.post { padding: calc(var(--announce-h) + var(--header-h) + clamp(32px, 5vw, 64px)) var(--gutter) 0; background: var(--white); }
+.post__header { max-width: 860px; margin: 0 auto; text-align: center; }
+.post__header .eyebrow { justify-content: center; }
+.post__title { font-family: var(--font-display); font-weight: 400; letter-spacing: -.025em; line-height: 1; font-size: clamp(2.4rem, 5vw, 4.2rem); color: var(--forest); }
+.post__hero { max-width: 1100px; margin: clamp(32px, 5vw, 56px) auto 0; aspect-ratio: 16 / 9; }
+.post__content { max-width: 700px; margin: clamp(40px, 6vw, 72px) auto 0; font-size: 1.1rem; font-weight: 300; line-height: 1.95; color: var(--ink-soft); }
+.post__content p { margin-bottom: 1.5em; }
+.post__content h2 { font-family: var(--font-display); font-weight: 500; font-size: 2.2rem; line-height: 1.1; color: var(--forest); margin: 2em 0 .6em; }
+.post__content blockquote { margin: 2em 0; padding-left: 28px; border-left: 2px solid var(--gold); font-family: var(--font-display); font-style: italic; font-size: 1.8rem; line-height: 1.3; color: var(--forest); }
+.post__content em { color: var(--forest-2); }
+.post__footer { text-align: center; padding: clamp(48px, 7vw, 96px) 0; margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--cream-3); }
+
+/* ── Ritual guide ────────────────────────────────────────── */
+.guide { padding: clamp(64px, 9vw, 140px) var(--gutter); background: var(--white); }
+.guide__inner { max-width: var(--maxw); margin: 0 auto; }
+.guide__head { text-align: center; margin-bottom: clamp(48px, 7vw, 96px); }
+.guide__head .eyebrow { justify-content: center; }
+.guide__steps { display: grid; gap: clamp(64px, 9vw, 140px); }
+.guide-step { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 900px) {
+  .guide-step { grid-template-columns: 1fr .8fr; gap: clamp(48px, 8vw, 128px); }
+  .guide-step--flip .guide-step__text { order: 2; }
+}
+.guide-step__num { font-family: var(--font-display); font-style: italic; font-size: clamp(4rem, 7vw, 6rem); line-height: .9; color: var(--cream-3); }
+.guide-step__icon { color: var(--gold); margin: 18px 0 14px; }
+.guide-step__title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.6vw, 3.2rem); font-weight: 400; line-height: 1; color: var(--forest); margin: 4px 0 18px; }
+.guide-step__desc { max-width: 52ch; font-size: 1.02rem; font-weight: 300; line-height: 1.85; color: var(--ink-muted); }
+.guide-step__tip { margin: 16px 0 28px; font-size: .9rem; font-style: italic; color: var(--forest-2); }
+.guide-step__products-label { font-size: .64rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 12px; }
+.guide-step__chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.ritual-guide__product-chip { padding: 10px 18px; border: 1px solid var(--cream-3); border-radius: 999px; font-size: .8rem; color: var(--ink-soft); transition: border-color .3s, color .3s, background .3s; }
+.ritual-guide__product-chip:hover { border-color: var(--forest); color: var(--forest); background: var(--cream); }
+.guide-step__img { aspect-ratio: 3 / 4; border-radius: var(--arch); max-width: 460px; width: 100%; justify-self: center; box-shadow: 0 50px 90px -44px rgba(26, 43, 28, .5); }
+.guide-faq { padding: clamp(64px, 9vw, 130px) var(--gutter); background: var(--cream); }
+.guide-faq__inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.guide-faq__inner .eyebrow { justify-content: center; }
+.guide-faq__list { margin-top: clamp(32px, 5vw, 56px); text-align: left; border-top: 1px solid var(--cream-3); }

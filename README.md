@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The J Effect
 
-## Getting Started
+Ultra-premium clean skincare storefront. Next.js 16 (App Router), React 19, vanilla CSS, Stripe checkout, Supabase (data, photos, admin), Resend (email) and Formspree (contact form).
 
-First, run the development server:
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.local.example .env.local   # fill in keys (see below)
+npm run dev                         # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The storefront works with no keys at all: it serves the static catalog in `lib/catalog/*`. Each key you add switches on one capability.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Connect the services
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Service | What it powers | Keys |
+| --- | --- | --- |
+| **Stripe** | Checkout. Prices come from the catalog/admin, so no Price IDs are needed. | `STRIPE_SECRET_KEY` |
+| **Supabase** | Admin login, product edits, photo uploads, subscriber list | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` |
+| **Resend** | Welcome email, campaigns from the admin | `RESEND_API_KEY`, `RESEND_SEGMENT_ID`, `RESEND_FROM` |
+| **Formspree** | Contact page messages | `FORMSPREE_FORM_ID` |
 
-## Learn More
+### Supabase setup (once)
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a project at supabase.com and copy the URL, anon key and service-role key into `.env.local` (and Vercel).
+2. Open **SQL editor**, paste `supabase/schema.sql` and run it. It is safe to re-run.
+3. **Authentication → Users → Add user** with your email and a strong password.
+4. In the SQL editor run: `insert into public.admins (email) values ('you@example.com');`
+5. Visit `/admin` and sign in.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Resend setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Verify your sending domain in Resend, create a **Segment** for subscribers and put its ID in `RESEND_SEGMENT_ID`. `RESEND_FROM` must use the verified domain.
 
-## Deploy on Vercel
+## The admin (`/admin`)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Products:** edit name, descriptor, copy, price, compare-at price, size, tags, badges, sold-out and visibility, SEO title and description, and upload, reorder or remove photos. Changes go live immediately.
+- **Subscribers:** list, remove, export CSV.
+- **Campaigns:** compose in the brand email template, send a test, send to the list via Resend.
+- **Settings:** the announcement bar.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Edits are stored as overrides on top of the static catalog (`product_overrides`), only for fields that differ, so long-form copy still comes from `lib/catalog/*`. "Revert to catalog version" removes the overrides.
+
+## Images
+
+- **Product photos:** prompts in `docs/KLING_PROMPTS.md`. Save as `photos-inbox/<slug>-<shot>.png`, then `npm run images:sync`.
+- **Site photos (hero, categories, About, Journal, Ritual Guide):** 22 named slots in `lib/site-slots.js`. Prompts in `docs/SITE_IMAGE_PROMPTS.md` (regenerate with `npm run prompts:site`). Save as `photos-inbox/site-<slot>.png`, then `npm run images:sync`.
+- Until a photo exists, each slot shows the product packaging render inside its arch frame.
+- Photos uploaded in the admin are served from Supabase Storage.
+
+## Project map
+
+```
+app/
+  (site)/        storefront pages (shared header, footer, cart)
+  admin/         admin dashboard (own layout, noindex)
+  api/           checkout, newsletter, contact
+  styles/        base · chrome · catalog · home · inner · pages (legacy page styles)
+components/      Header, Footer, Hero, ProductCard, SiteImage, ...
+lib/
+  store.js       storefront data layer (catalog + Supabase overrides)
+  site-slots.js  site image slots and prompts
+  supabase/      clients (server, browser, service-role)
+proxy.js         guards /admin and refreshes the session
+supabase/        schema.sql
+```
+
+See `AI_HANDOFF.md` for the design rules.

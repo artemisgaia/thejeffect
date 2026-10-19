@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node --no-warnings scripts/sync-product-images.mjs",
+    "predev": "node --no-warnings scripts/sync-product-images.mjs && node --no-warnings scripts/sync-site-images.mjs",
     "dev": "next dev",
-    "prebuild": "node --no-warnings scripts/sync-product-images.mjs",
+    "prebuild": "node --no-warnings scripts/sync-product-images.mjs && node --no-warnings scripts/sync-site-images.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "images:sync": "node --no-warnings scripts/sync-product-images.mjs",
+    "images:sync": "node --no-warnings scripts/sync-product-images.mjs && node --no-warnings scripts/sync-site-images.mjs",
     "images:render": "node --no-warnings scripts/render-packaging.mjs",
-    "prompts:kling": "node --no-warnings scripts/build-kling-prompts.mjs"
+    "prompts:kling": "node --no-warnings scripts/build-kling-prompts.mjs",
+    "prompts:site": "node --no-warnings scripts/build-site-prompts.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

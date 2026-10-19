@@ -40,7 +40,6 @@ const nextConfig = {
   turbopack: { root: import.meta.dirname },
   images: {
     remotePatterns: [
-      { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'cdn.shopify.com' },
       { protocol: 'https', hostname: 'thejeffect.com' },
       { protocol: 'https', hostname: 'picsum.photos' },

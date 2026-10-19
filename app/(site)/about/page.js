@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import MarqueeBar from '@/components/MarqueeBar';
+import SiteImage from '@/components/SiteImage';
 import EmailSignup from '@/components/EmailSignup';
 
 export const metadata = {
@@ -20,91 +19,69 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <>
-      {/* About Hero */}
-      <div className="about-hero">
-        <div className="about-hero__text">
-          <div className="eyebrow eyebrow--light reveal">Our Story</div>
-          <h1 className="section-title section-title--light reveal reveal--d1">Made with intention.</h1>
-          <p className="about-hero__sub reveal reveal--d2">
-            The J Effect was born from a simple belief: skincare should feel like a return to yourself.
-          </p>
-          <div className="about-hero__actions reveal reveal--d3">
-            <Link href="/shop" className="btn-primary">Shop the Ritual →</Link>
-            <Link href="/ritual-guide" className="btn-ghost-light">See the Guide →</Link>
+      <section className="about-hero">
+        <div className="about-hero__inner">
+          <div className="about-hero__text">
+            <div className="eyebrow eyebrow--light reveal">Our story</div>
+            <h1 className="about-hero__title reveal reveal--d1">Made with <em>intention.</em></h1>
+            <p className="about-hero__sub reveal reveal--d2">
+              The J Effect was born from a simple belief: skincare should feel like a return to yourself.
+            </p>
+            <div className="about-hero__actions reveal reveal--d3">
+              <Link href="/shop" className="btn-primary">Shop the Ritual <span aria-hidden="true">→</span></Link>
+              <Link href="/ritual-guide" className="btn-ghost-light">See the Guide <span aria-hidden="true">→</span></Link>
+            </div>
+          </div>
+          <div className="about-hero__img reveal reveal--d2">
+            <SiteImage slot="about-hero" priority sizes="(min-width: 900px) 36vw, 80vw" />
           </div>
         </div>
-        <div className="about-hero__img reveal reveal--d2" style={{ position: 'relative', overflow: 'hidden', minHeight: '320px' }}>
-          <Image
-            className="is-pending-img"
-            src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=900&q=80"
-            alt="The J Effect skincare products arranged on a clean surface"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ objectFit: 'cover' }}
-            priority
-          />
-          <div className="pending-badge">
-            <span className="pending-badge__label">Coming Soon</span>
-            <span className="pending-badge__sub">Updating Inventory</span>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <MarqueeBar items={['Crafted in the USA', 'Clean Formulas', 'Mindful Rituals', 'Cruelty Free', 'Luminous Skin']} />
-
-      {/* Mission */}
-      <div className="about-mission">
-        <div className="about-mission__img reveal" style={{ position: 'relative', overflow: 'hidden', minHeight: '320px' }}>
-          <Image
-            className="is-pending-img"
-            src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=900&q=80"
-            alt="Clean skincare jar held in hands showing The J Effect products"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ objectFit: 'cover' }}
-            loading="lazy"
-          />
-          <div className="pending-badge">
-            <span className="pending-badge__label">Coming Soon</span>
-            <span className="pending-badge__sub">Updating Inventory</span>
+      <section className="about-mission">
+        <div className="about-mission__inner">
+          <div className="about-mission__img reveal">
+            <SiteImage slot="about-mission" sizes="(min-width: 900px) 36vw, 80vw" />
+          </div>
+          <div>
+            <div className="eyebrow reveal">Our mission</div>
+            <h2 className="section-title section-title--dark reveal reveal--d1">Your journey to radiant <em>confidence.</em></h2>
+            <div className="about-mission__copy reveal reveal--d2">
+              <p>We believe skincare should be a supportive ritual, something you return to when life gets loud.</p>
+              <p>Built on clarity, comfort and consistency. Every product we make is designed to slot effortlessly into your day, so the ritual feels like a gift to yourself and not a chore.</p>
+              <p>The J Effect isn&rsquo;t about fixing your skin. It&rsquo;s about meeting it where it is, with clean, honest formulas that let your natural radiance through.</p>
+            </div>
           </div>
         </div>
-        <div>
-          <div className="eyebrow reveal">Our Mission</div>
-          <h2 className="section-title section-title--dark reveal reveal--d1">Your Journey to Radiant Confidence.</h2>
-          <div className="body-text reveal reveal--d2" style={{ marginTop: '16px', whiteSpace: 'pre-line' }}>
-            {`We believe skincare should be a supportive ritual — something you return to when life gets loud.\n\nBuilt on clarity, comfort, and consistency. Every product we make is designed to slot effortlessly into your day and make the ritual feel like a gift to yourself, not a chore.\n\nThe J Effect isn't about fixing your skin. It's about meeting it where it is — with clean, honest formulas that let your natural radiance through.`}
-          </div>
-        </div>
-      </div>
+      </section>
 
-      {/* Values */}
-      <div className="about-values">
+      <section className="about-values">
         <div className="about-values__inner">
           <div className="about-values__header">
-            <div className="eyebrow eyebrow--center reveal">What We Stand For</div>
-            <h2 className="section-title section-title--dark reveal reveal--d1">The J Effect values.</h2>
+            <div className="eyebrow eyebrow--center reveal">What we stand for</div>
+            <h2 className="section-title section-title--dark reveal reveal--d1">The J Effect <em>values.</em></h2>
           </div>
-          <div className="about-values__grid">
+          <ul className="about-values__grid">
             {VALUES.map((v, i) => (
-              <div className={`value-card reveal reveal--d${i + 1}`} key={i}>
+              <li className={`value-card reveal reveal--d${(i % 3) + 1}`} key={v.title}>
                 <div className="value-card__icon">{v.icon}</div>
                 <h3 className="value-card__title">{v.title}</h3>
                 <p className="value-card__desc">{v.desc}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-      </div>
+      </section>
 
-      {/* Closing */}
-      <section className="section section--lg" style={{ textAlign: 'center', maxWidth: '1300px', margin: '0 auto' }}>
-        <div className="eyebrow eyebrow--center reveal">A Note From Us</div>
-        <h2 className="section-title section-title--dark reveal reveal--d1" style={{ marginBottom: '20px' }}>Built for real routines.</h2>
-        <p className="body-text reveal reveal--d2" style={{ maxWidth: '640px', margin: '0 auto 36px' }}>
-          Thank you for being part of this ritual with us. Every purchase, every routine, every quiet morning moment — you are what The J Effect is made for.
-        </p>
-        <Link href="/shop" className="btn-secondary reveal reveal--d3">Shop the Full Collection →</Link>
+      <section className="closing">
+        <div className="closing__inner">
+          <div className="eyebrow eyebrow--center reveal">A note from us</div>
+          <h2 className="section-title section-title--dark reveal reveal--d1">Built for <em>real routines.</em></h2>
+          <p className="body-text reveal reveal--d2">
+            Thank you for being part of this ritual with us. Every purchase, every routine, every quiet morning moment: you are what The J Effect is made for.
+          </p>
+          <Link href="/shop" className="btn-secondary reveal reveal--d3">Shop the full collection <span aria-hidden="true">→</span></Link>
+        </div>
       </section>
 
       <EmailSignup />

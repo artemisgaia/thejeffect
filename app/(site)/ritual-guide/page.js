@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import MarqueeBar from '@/components/MarqueeBar';
+import SiteImage from '@/components/SiteImage';
 import EmailSignup from '@/components/EmailSignup';
 
 export const metadata = {
@@ -20,7 +19,7 @@ const STEPS = [
       { name: 'Nº 01 Soft Reset Cleanser', slug: 'gentle-cleansing-gel' },
       { name: 'Nº 38 Cooling Aloe Bar', slug: 'aloe-cool-cucumber-soap' },
     ],
-    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900&q=80'
+    slot: 'guide-cleanse',
   },
   {
     num: '02',
@@ -34,7 +33,7 @@ const STEPS = [
       { name: 'Nº 17 Jojoba Glow Face Oil', slug: 'nourishing-jojoba-face-oil' },
       { name: 'Nº 18 Ritual Glide Gua Sha Oil', slug: 'gua-sha-face-oil' },
     ],
-    image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=900&q=80'
+    slot: 'guide-treat',
   },
   {
     num: '03',
@@ -47,7 +46,7 @@ const STEPS = [
       { name: 'Nº 19 Watermelon Dew Moisturizer', slug: 'watermelon-hydration-moisturizer' },
       { name: 'Nº 23 Timeless Renewal Cream', slug: 'anti-aging-moisturizer' },
     ],
-    image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=900&q=80'
+    slot: 'guide-seal',
   },
 ];
 
@@ -61,70 +60,44 @@ const FAQS = [
 export default function RitualGuidePage() {
   return (
     <>
-      {/* Hero */}
       <div className="collection-hero">
         <div className="collection-hero__inner">
-          <div className="eyebrow eyebrow--light reveal">The J Effect Method</div>
-          <h1 className="section-title section-title--light reveal reveal--d1">
-            Skincare as ceremony.
-          </h1>
+          <div className="eyebrow eyebrow--light reveal">The J Effect method</div>
+          <h1 className="section-title section-title--light reveal reveal--d1">Skincare as <em>ceremony.</em></h1>
           <p className="collection-hero__sub reveal reveal--d2">
             Three intentional steps. Designed to layer beautifully, work in harmony, and deliver steady, visible results.
           </p>
         </div>
       </div>
 
-      <MarqueeBar />
+      <section className="guide">
+        <div className="guide__inner">
+          <div className="guide__head">
+            <div className="eyebrow eyebrow--center reveal">The three steps</div>
+            <h2 className="section-title section-title--dark reveal reveal--d1">Your complete <em>ritual.</em></h2>
+          </div>
 
-      {/* Steps */}
-      <section className="section section--lg" style={{ background: 'var(--cream)' }}>
-        <div style={{ maxWidth: '1300px', margin: '0 auto', padding: '0 24px' }}>
-          <div className="eyebrow eyebrow--center reveal" style={{ marginBottom: '12px' }}>The Three Steps</div>
-          <h2 className="section-title section-title--dark reveal reveal--d1" style={{ textAlign: 'center', marginBottom: '64px' }}>Your complete ritual.</h2>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+          <div className="guide__steps">
             {STEPS.map((step, i) => (
-              <div
-                key={i}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '60px',
-                  alignItems: 'center',
-                  direction: i % 2 === 1 ? 'rtl' : 'ltr',
-                }}
-                className="ritual-guide__step reveal"
-              >
-                <div style={{ direction: 'ltr' }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: '5rem', color: 'var(--cream-3)', fontWeight: '400', lineHeight: '1', marginBottom: '16px' }}>{step.num}</div>
-                  <div style={{ fontSize: '2rem', marginBottom: '8px' }}>{step.icon}</div>
-                  <div className="eyebrow" style={{ marginBottom: '8px' }}>{step.subtitle}</div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: '2rem', color: 'var(--ink)', marginBottom: '20px', fontWeight: '400' }}>{step.title}</h3>
-                  <p style={{ fontFamily: "var(--font-body)", color: 'var(--ink-soft)', lineHeight: '1.85', fontWeight: '300', marginBottom: '16px' }}>{step.desc}</p>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: '.82rem', color: 'var(--forest)', fontStyle: 'italic', marginBottom: '24px' }}>{step.tip}</p>
-                  <div>
-                    <div style={{ fontFamily: "var(--font-body)", fontSize: '.72rem', letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--ink-muted)', marginBottom: '10px' }}>For this step:</div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              <div className={`guide-step reveal${i % 2 ? ' guide-step--flip' : ''}`} key={step.num}>
+                <div className="guide-step__text">
+                  <div className="guide-step__num">{step.num}</div>
+                  <div className="guide-step__icon">{step.icon}</div>
+                  <div className="eyebrow">{step.subtitle}</div>
+                  <h3 className="guide-step__title">{step.title}</h3>
+                  <p className="guide-step__desc">{step.desc}</p>
+                  <p className="guide-step__tip">{step.tip}</p>
+                  <div className="guide-step__products">
+                    <div className="guide-step__products-label">For this step</div>
+                    <div className="guide-step__chips">
                       {step.products.map((p) => (
-                        <Link key={p.slug} href={`/shop/${p.slug}`} className="ritual-guide__product-chip">
-                          {p.name}
-                        </Link>
+                        <Link key={p.slug} href={`/shop/${p.slug}`} className="ritual-guide__product-chip">{p.name}</Link>
                       ))}
                     </div>
                   </div>
                 </div>
-                <div style={{
-                  direction: 'ltr',
-                  position: 'relative',
-                  aspectRatio: '3/4',
-                  overflow: 'hidden',
-                  background: 'var(--cream-2)'
-                }}>
-                  <Image className="is-pending-img" src={step.image} alt={step.title} fill style={{ objectFit: 'cover' }} loading={i === 0 ? 'eager' : 'lazy'} />
-                  <div className="pending-badge">
-                    <span className="pending-badge__label">Coming Soon</span>
-                    <span className="pending-badge__sub">Updating Inventory</span>
-                  </div>
+                <div className="guide-step__img">
+                  <SiteImage slot={step.slot} alt={step.title} sizes="(min-width: 900px) 34vw, 80vw" />
                 </div>
               </div>
             ))}
@@ -132,35 +105,31 @@ export default function RitualGuidePage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="section section--lg" style={{ background: 'var(--cream-2)' }}>
-        <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 24px' }}>
-          <div className="eyebrow eyebrow--center reveal" style={{ marginBottom: '12px' }}>Common Questions</div>
-          <h2 className="section-title section-title--dark reveal reveal--d1" style={{ textAlign: 'center', marginBottom: '48px' }}>Ritual FAQ.</h2>
-          <div className="product-info__accordions">
-            {FAQS.map((faq, i) => (
-              <div className="accordion reveal" key={i}>
+      <section className="guide-faq">
+        <div className="guide-faq__inner">
+          <div className="eyebrow eyebrow--center reveal">Common questions</div>
+          <h2 className="section-title section-title--dark reveal reveal--d1">Ritual <em>FAQ.</em></h2>
+          <div className="guide-faq__list">
+            {FAQS.map((faq) => (
+              <div className="accordion reveal" key={faq.q}>
                 <button className="accordion__btn" aria-expanded="false">
                   {faq.q} <span className="accordion__icon" aria-hidden="true">+</span>
                 </button>
-                <div className="accordion__body">
-                  <p>{faq.a}</p>
-                </div>
+                <div className="accordion__body"><p>{faq.a}</p></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section section--lg" style={{ textAlign: 'center', background: 'var(--cream)' }}>
-        <div style={{ maxWidth: '640px', margin: '0 auto', padding: '0 24px' }}>
+      <section className="closing">
+        <div className="closing__inner">
           <div className="eyebrow eyebrow--center reveal">Ready to begin?</div>
-          <h2 className="section-title section-title--dark reveal reveal--d1" style={{ marginBottom: '16px' }}>Start your ritual today.</h2>
-          <p className="body-text reveal reveal--d2" style={{ marginBottom: '36px' }}>
-            Every J Effect product is formulated to work beautifully on its own — and even better together.
+          <h2 className="section-title section-title--dark reveal reveal--d1">Start your ritual <em>today.</em></h2>
+          <p className="body-text reveal reveal--d2">
+            Every J Effect product is formulated to work beautifully on its own, and even better together.
           </p>
-          <Link href="/shop" className="btn-primary reveal reveal--d3">Shop the Full Collection →</Link>
+          <Link href="/shop" className="btn-primary reveal reveal--d3">Shop the full collection <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 

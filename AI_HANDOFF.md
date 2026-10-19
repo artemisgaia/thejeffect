@@ -4,48 +4,47 @@ Welcome! If you are an AI assistant (like Claude) taking over this project, plea
 
 ## 1. Project Overview & Tech Stack
 "The J Effect" is an ultra-premium, luxury skincare e-commerce brand.
-- **Framework**: Next.js 15 (App Router)
-- **Styling**: 100% Custom Vanilla CSS (`app/globals.css`). **DO NOT** install Tailwind CSS or any external component libraries (e.g., Material UI, Chakra).
-- **Icons**: Custom inline SVGs. **DO NOT** use unicode emojis (🌿, ✨, 🌊) anywhere in the UI. 
-- **Images**: Next.js native `<Image />` component exclusively for automatic WebP compression and lazy loading. 
+- **Framework**: Next.js 16 (App Router, Turbopack), React 19. `AGENTS.md` applies: read `node_modules/next/dist/docs/` before writing Next code (e.g. `middleware` is now `proxy.js`, `revalidateTag` takes a second argument).
+- **Styling**: 100% custom vanilla CSS in `app/styles/*.css`. **DO NOT** install Tailwind CSS or any component library.
+- **Icons**: custom inline SVGs. **DO NOT** use emojis in the UI.
+- **Images**: `next/image` only. Site photo spots are named slots rendered with `<SiteImage slot="..." />` (see `lib/site-slots.js`); never hotlink stock photos.
+- **Data**: static catalog in `lib/catalog/*` plus Supabase overrides managed in `/admin` (see `lib/store.js`, `supabase/schema.sql`). Read products through `lib/store.js` (async), never import `PRODUCTS` into pages.
+- **Email / forms**: Resend (newsletter, campaigns), Formspree (contact), via `app/api/*`.
 
 ## 2. Brand & Aesthetic Guidelines (CRITICAL)
-This site operates on a "2027 Luxury Standard." Every interaction must feel expensive, fluid, and intentional.
-- **Typography**: 
-  - Headings: `Playfair Display` (tight kerning, e.g., `letter-spacing: -0.02em`, tall line-heights).
-  - Body: `DM Sans` (clean, highly legible).
-- **Color Palette**: 
-  - Dark Forest (`#243B27`)
-  - Gold (`#C4954A`)
-  - Cream (`#F7F3EC`)
-  - *Rule*: Avoid flat hex codes in large areas. Use subtle radial gradients (e.g., in the footer and hero overlay) to create "velvet depth."
-- **Micro-Interactions**:
-  - **Blur-Reveals**: Elements should not just "fade up." They use a cinematic blur-reveal (`filter: blur(12px)` transitioning to `0px`).
-  - **Glassmorphism**: Sticky headers and value cards use frosted-glass effects (`backdrop-filter: blur(24px)`).
-  - **Magnetic Spring Physics**: Buttons, cards, and the Cart Drawer utilize custom `cubic-bezier` transition curves to mimic physical weight and iOS spring physics.
+Calm, spacious, expensive. When in doubt, remove something: one idea per section, generous whitespace, few elements on screen.
+- **Typography**:
+  - Display: `Cormorant Garamond` (`var(--font-display)`), tight tracking, italic gold accent word in headlines (`*word*` in component props becomes `<em>`).
+  - Body: `DM Sans` (`var(--font-body)`).
+  - Loaded with `next/font` in `app/layout.js`; never hardcode font names.
+- **Color Palette** (tokens in `app/styles/base.css`):
+  - Dark Forest `--forest` `#243B27`, Gold `--gold` `#C4954A`, Cream `--cream` `#F7F3EC`, and `--pack` `#EEE7DC` (packaging render background).
+  - Large areas use subtle radial gradients ("velvet depth"), not flat fills.
+- **Signature shape**: the arch (`border-radius: var(--arch)`) frames hero, category, ritual, story and About imagery.
+- **Motion**: `.reveal` blur-reveal on scroll (`.reveal--d1..d6` for stagger), spring easing on buttons and cards, glass header. `prefers-reduced-motion` is respected globally.
+- **Accessibility**: no custom cursor, visible `:focus-visible` rings, skip link, labelled controls.
 
 ## 3. Directory Structure
 ```
-jeffect-website/
-├── app/
-│   ├── about/             # Frosted-glass value cards, custom SVGs
-│   ├── journal/           # Dynamic blog routing (app/journal/[slug]/page.js)
-│   ├── ritual-guide/      # Editorial landing page with asymmetrical layout
-│   ├── shop/              # Product grid and dynamic product pages ([slug])
-│   ├── layout.js          # Global layout, SEO metadata, custom webkit scrollbar
-│   ├── globals.css        # The heart of the styling, animations, and tokens
-│   ├── loading.js         # Global fade-transition state
-│   └── not-found.js       # Custom 404 with blur-reveal animations
-├── components/
-│   ├── Header.js          # Mega-menu, glassmorphism sticky header
-│   ├── CartDrawer.js      # Spring physics drawer, polished empty state
-│   ├── ThemeScript.js     # Client-side IntersectionObserver for .reveal classes
-│   └── ...
-├── context/
-│   └── CartContext.js     # Global cart state & Stripe checkout initialization
-└── lib/
-    ├── products.js        # The pseudo-database (Products, Categories, Blog Posts)
-    └── site-config.js     # Global SEO metadata and configuration
+app/
+├── (site)/                # Storefront (layout adds header, footer, cart drawer)
+│   ├── page.js            # Home: hero, categories, featured, ritual, reviews, story, email
+│   ├── shop/ about/ journal/ ritual-guide/ contact/ cart/ faq/ ...
+├── admin/                 # Admin dashboard (own layout, noindex, Supabase auth)
+├── api/                   # checkout (server-priced), newsletter (Resend), contact (Formspree)
+├── styles/                # base · chrome · catalog · home · inner · pages(legacy page styles)
+├── layout.js              # Root: fonts, metadata, JSON-LD
+└── not-found.js
+components/                # Header, Footer, Hero, ProductCard, SiteImage, SiteChrome, ...
+context/CartContext.js     # Cart in an external store (localStorage, cross-tab)
+lib/
+├── store.js               # Storefront data layer (catalog + Supabase overrides). Server only.
+├── products.js            # Static catalog assembly, categories, journal posts
+├── catalog/*              # Long-form product copy
+├── site-slots.js          # Named site photo spots + generation prompts
+└── supabase/              # server, browser, service-role clients
+proxy.js                   # Guards /admin, refreshes session
+supabase/schema.sql        # Tables, RLS, storage bucket
 ```
 
 ## 4. Key Mechanics to Maintain
