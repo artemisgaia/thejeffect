@@ -16,7 +16,7 @@ const STEPS = [
     desc: 'A gentle, pH-balanced cleanse removes the day — pollution, SPF, impurities — without stripping the skin\'s natural moisture barrier. The foundation of everything that follows.',
     tip: 'Tip: Use lukewarm water, never hot. Massage for 30–60 seconds.',
     products: [
-      { name: 'Nº 01 Soft Reset Cleanser', slug: 'gentle-cleansing-gel' },
+      { name: 'Nº 02 Pure Slate Charcoal Cleanser', slug: 'charcoal-facial-cleanser' },
       { name: 'Nº 38 Cooling Aloe Bar', slug: 'aloe-cool-cucumber-soap' },
     ],
     slot: 'guide-cleanse',
@@ -30,7 +30,6 @@ const STEPS = [
     tip: 'Tip: Apply lightest to heaviest. Let each step absorb before layering.',
     products: [
       { name: 'Nº 09 Glasslight PDRN Serum', slug: 'pdrn-brightening-serum' },
-      { name: 'Nº 17 Jojoba Glow Face Oil', slug: 'nourishing-jojoba-face-oil' },
       { name: 'Nº 18 Ritual Glide Gua Sha Oil', slug: 'gua-sha-face-oil' },
     ],
     slot: 'guide-treat',
@@ -43,7 +42,6 @@ const STEPS = [
     desc: 'Moisturizer seals everything in — nutrients, hydration, and treatment. It creates a protective layer that keeps skin supple through the night or shields it through the day.',
     tip: 'Tip: In the morning, always follow with SPF. It\'s non-negotiable.',
     products: [
-      { name: 'Nº 19 Watermelon Dew Moisturizer', slug: 'watermelon-hydration-moisturizer' },
       { name: 'Nº 23 Timeless Renewal Cream', slug: 'anti-aging-moisturizer' },
     ],
     slot: 'guide-seal',
@@ -53,8 +51,8 @@ const STEPS = [
 const FAQS = [
   { q: 'How often should I do the full ritual?', a: 'Both morning and evening. Consistency is the single most important factor in skincare results.' },
   { q: 'Can I use all three steps if I have sensitive skin?', a: 'Yes. Many of our formulas are fragrance-free and made with sensitive skin in mind; check each product’s details. Start with Cleanse + Moisturizer, then add treatment steps one at a time.' },
-  { q: 'What order do I apply Glasslight serum and Jojoba Glow oil?', a: 'Serum first (water-based), then oil (oil-based). Oils always go after serums.' },
-  { q: 'Do I need a ritual bar if I already have a cleansing gel?', a: 'They\'re alternatives — choose based on preference. Soft Reset gel is ideal for daily face cleansing; ritual bars are great for body, travel and zero-waste routines.' },
+  { q: 'What order do I apply Glasslight serum and Ritual Glide oil?', a: 'Serum first (water-based), then oil (oil-based). Oils always go after serums.' },
+  { q: 'Do I need a ritual bar if I already have a facial cleanser?', a: 'They\'re alternatives — choose based on preference. Pure Slate is ideal for daily face cleansing; ritual bars are great for body, travel and zero-waste routines.' },
 ];
 
 export default function RitualGuidePage() {

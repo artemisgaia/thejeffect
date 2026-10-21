@@ -6,7 +6,7 @@ import ShopGrid from './ShopGrid';
 export const metadata = {
   title: 'Shop Clean Skincare, Serums & Ritual Bars',
   description:
-    'Shop all 47 J Effect rituals: serums, cleansers, toners, moisturizers, face oils, body care, handmade ritual bars and scalp care. Clean formulas, made in the USA.',
+    'Shop J Effect rituals: serums, cleanser, moisturizers, face oil, body care, handmade ritual bars and scalp care. Clean formulas, made in the USA.',
   alternates: { canonical: '/shop' },
   openGraph: { url: '/shop', title: 'Shop the Full Ritual | The J Effect' },
 };

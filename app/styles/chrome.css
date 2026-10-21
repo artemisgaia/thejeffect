@@ -122,6 +122,7 @@ body:has(.hero, .collection-hero, .about-hero) .site-header:not(.scrolled),
 .mega-promo { position: relative; display: block; overflow: hidden; aspect-ratio: 4 / 4.6; background: var(--pack); }
 .mega-promo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
 .mega-promo:hover img { transform: scale(1.06); }
+.mega-promo--plain { background: var(--forest); }
 .mega-promo__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(17, 31, 19, .78) 0%, transparent 55%); }
 .mega-promo__text { position: absolute; left: 20px; bottom: 18px; right: 20px; color: var(--cream); }
 .mega-promo__label { font-size: .6rem; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 4px; }

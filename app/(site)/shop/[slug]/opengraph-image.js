@@ -18,19 +18,26 @@ export async function generateStaticParams() {
 export default async function Image({ params }) {
   const { slug } = await params;
   const p = await getProduct(slug);
-  const first = p.gallery[0].src;
-  // Local files come from public/; admin-uploaded images live on Supabase Storage.
-  const source = first.startsWith('http')
-    ? Buffer.from(await (await fetch(first)).arrayBuffer())
-    : await readFile(join(process.cwd(), 'public', first));
-  const png = await sharp(source).resize(473, 630, { fit: 'cover' }).png().toBuffer();
-  const img = `data:image/png;base64,${png.toString('base64')}`;
+  const first = p.gallery[0]?.src;
+  let img = null;
+  if (first) {
+    // Local files come from public/; admin-uploaded images live on Supabase Storage.
+    const source = first.startsWith('http')
+      ? Buffer.from(await (await fetch(first)).arrayBuffer())
+      : await readFile(join(process.cwd(), 'public', first));
+    const png = await sharp(source).resize(473, 630, { fit: 'cover' }).png().toBuffer();
+    img = `data:image/png;base64,${png.toString('base64')}`;
+  }
   const no = String(p.no).padStart(2, '0');
 
   return new ImageResponse(
     (
       <div style={{ width: '100%', height: '100%', display: 'flex', background: '#F7F3EC' }}>
-        <img src={img} width={473} height={630} alt="" style={{ objectFit: 'cover' }} />
+        {img ? (
+          <img src={img} width={473} height={630} alt="" style={{ objectFit: 'cover' }} />
+        ) : (
+          <div style={{ width: 473, height: 630, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#EEE7DC', color: '#243B27', fontSize: 28, letterSpacing: 12 }}>THE J EFFECT</div>
+        )}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 72px', background: '#243B27', color: '#F7F3EC' }}>
           <div style={{ fontSize: 22, letterSpacing: 6, color: '#DDB97A', textTransform: 'uppercase' }}>{`Nº ${no} · ${p.type}`}</div>
           <div style={{ fontSize: 76, lineHeight: 1.02, marginTop: 22 }}>{p.name}</div>

@@ -79,16 +79,15 @@ export default function Header({ announcementOverride = null }) {
                           </ul>
                         </div>
                         <div className="mega-menu__promos">
-                          <Link href="/shop/watermelon-hydration-moisturizer" className="mega-promo">
-                            <Image src="/products/watermelon-hydration-moisturizer/watermelon-hydration-moisturizer-pack.webp" alt="Watermelon Dew hydration moisturizer" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          <Link href="/shop/hyaluronic-acid-serum" className="mega-promo">
+                            <Image src="/products/hyaluronic-acid-serum/hyaluronic-acid-serum-hero.webp" alt="Aqua Lock hyaluronic acid serum" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="mega-promo__overlay" />
                             <div className="mega-promo__text">
                               <div className="mega-promo__label">Bestseller</div>
-                              <div className="mega-promo__title">Watermelon Dew</div>
+                              <div className="mega-promo__title">Aqua Lock</div>
                             </div>
                           </Link>
-                          <Link href="/ritual-guide" className="mega-promo">
-                            <Image src="/products/hyaluronic-acid-serum/hyaluronic-acid-serum-pack.webp" alt="Aqua Lock hyaluronic acid serum" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          <Link href="/ritual-guide" className="mega-promo mega-promo--plain">
                             <div className="mega-promo__overlay" />
                             <div className="mega-promo__text">
                               <div className="mega-promo__label">Method</div>

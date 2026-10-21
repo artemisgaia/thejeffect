@@ -16,7 +16,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const HERO_PRODUCT = await getProduct('watermelon-hydration-moisturizer');
+  const HERO_PRODUCT = await getProduct('hyaluronic-acid-serum');
   return (
     <>
       <Hero

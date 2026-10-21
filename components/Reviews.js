@@ -1,7 +1,7 @@
 const DEFAULT_REVIEWS = [
   { text: "My skin looks rested — like I've been taking better care of myself all along. The routine actually sticks.", author: 'J. — Verified Customer', product: 'Daily Ritual Set' },
-  { text: "The routine feels simple, but my glow looks entirely intentional. I get compliments every week.", author: 'A. — Verified Customer', product: 'Watermelon Hydration Moisturizer' },
-  { text: "Finally — skincare that feels calm and genuinely effective. No guessing, no overwhelm.", author: 'M. — Verified Customer', product: 'Gentle Cleansing Gel' },
+  { text: "The routine feels simple, but my glow looks entirely intentional. I get compliments every week.", author: 'A. — Verified Customer', product: 'Hyaluronic Acid Hydration Cream' },
+  { text: "Finally — skincare that feels calm and genuinely effective. No guessing, no overwhelm.", author: 'M. — Verified Customer', product: 'Activated Charcoal Facial Cleanser' },
   { text: "I replaced five products with three from The J Effect. My skin has never looked this clear or felt this soft.", author: 'S. — Verified Customer', product: 'Hyaluronic Acid Serum' },
   { text: "The Retinol & Peptide serum changed everything. I wake up looking like I got ten hours of sleep.", author: 'K. — Verified Customer', product: 'Retinol & Peptide Face Serum' },
   { text: "Clean ingredients I can actually pronounce, and results I can actually see. This is what skincare should be.", author: 'R. — Verified Customer', product: 'Anti Aging Moisturizer' },

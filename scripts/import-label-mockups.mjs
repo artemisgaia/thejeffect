@@ -43,10 +43,12 @@ const MAP = {
   'dead-sea-mud-mask': ['Dead Sea Mud', {
     'view-1': ['hero'], 'view-2': ['lifestyle', 'cover'], 'view-3': ['ritual', 'cover'], 'view-4': ['texture', 'cover'], 'view-5': ['ingredients', 'cover'] }],
   'exfoliating-luffa-bar': ['EXFOLIATING LUFFA BAR', { 'view-1': ['hero'] }],
-  'gua-sha-face-oil': ['GUA SHA', { 'view-2': ['hero'], 'view-3': ['ingredients'], 'view-4': ['texture'] }],
+  'gua-sha-face-oil': ['GUA SHA', { main: ['hero'], 'view-2': ['lifestyle'], 'view-3': ['ingredients'], 'view-4': ['texture'], 'view-5': ['ritual'] }],
   'hyaluronic-acid-serum': ['HYALURONIC ACID', {
     label_designs: ['hero'], 'view-2': ['ingredients'], 'view-4': ['ritual', 'cover'], 'view-5': ['lifestyle', 'cover'] }],
-  'kojic-turmeric-soap': ['KOJIC ACID & TURMERIC SOAP', { main: ['hero'], 'view-2': ['lifestyle'], 'view-5': ['texture', 'cover'] }],
+  'kojic-turmeric-soap': ['KOJIC ACID & TURMERIC SOAP', { main: ['hero'], 'view-2': ['lifestyle'], 'view-3': ['ingredients'], 'view-4': ['ritual'], 'view-5': ['texture', 'cover'] }],
+  'peptide-hair-growth-serum': ['Peptide Hair Growth', { 'gen-0': ['hero'], 'gen-1': ['ingredients'], 'gen-2': ['texture'], 'gen-3': ['lifestyle'] }],
+  'botanical-hair-growth-serum': ['Botanical Hair Growth', { 'gen-0': ['hero'], 'gen-4': ['texture', 'cover'], 'gen-1': ['ingredients'], 'gen-2': ['lifestyle'], 'gen-3': ['ritual'] }],
   'lemongrass-sage-soap': ['Lemongrass and sage soap', STD],
   'oat-milk-honey-soap': ['OAT MILK HONEY SOAP', { main: ['hero'], 'view-1': ['lifestyle'], 'view-2': ['ingredients'], 'view-3': ['ritual'], 'view-5': ['texture'] }],
   'pdrn-brightening-serum': ['PDRN BRIGHTENING', { 'view-5': ['texture'] }],
@@ -70,6 +72,8 @@ const MAP = {
 const keyOf = (file) => {
   const b = file.toLowerCase();
   if (b.startsWith('label_designs')) return 'label_designs';
+  const g = b.match(/generated-label-image-(\d)/);
+  if (g) return `gen-${g[1]}`;
   if (b.startsWith('main')) return 'main';
   const m = b.match(/^view-(\d)-/);   // only the keys listed in MAP are used; blank-label shots are simply not listed
   return m ? `view-${m[1]}` : null;
@@ -83,7 +87,10 @@ for (const [slug, [folder, shots]] of Object.entries(MAP)) {
   if (!fs.existsSync(outDir)) { console.warn(`no product folder for ${slug}`); continue; }
   const files = fs.readdirSync(dir).filter((f) => /\.(png|jpe?g)$/i.test(f));
   for (const [key, [shot, mode = 'extend']] of Object.entries(shots)) {
-    const f = files.find((x) => keyOf(x) === key);
+    // Newest file wins when a shot was regenerated (e.g. .jpg next to an older .png).
+    const f = files
+      .filter((x) => keyOf(x) === key)
+      .sort((a, b) => fs.statSync(path.join(dir, b)).mtimeMs - fs.statSync(path.join(dir, a)).mtimeMs)[0];
     if (!f) { console.warn(`  ${slug}: no source for ${key}`); skipped++; continue; }
     const out = path.join(outDir, `${slug}-${shot}.webp`);
     const img = sharp(path.join(dir, f));

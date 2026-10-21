@@ -47,7 +47,7 @@ export default function ProductCard({ product }) {
               )}
             </>
           ) : (
-            <div className="product-card__img product-card__img--placeholder" />
+            <div className="product-card__img product-card__img--placeholder"><span>Photo coming soon</span></div>
           )}
         </Link>
 

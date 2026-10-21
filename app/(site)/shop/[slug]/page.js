@@ -76,7 +76,7 @@ export default async function ProductPage({ params }) {
       {/* ── 1. Hero ─────────────────────────────────────────── */}
       <section className="pdp-hero">
         <div className="pdp-hero__inner">
-          <ProductGallery images={p.gallery} preview={p.packagingPreview} />
+          <ProductGallery images={p.gallery} />
 
           <div className="pdp-info">
             <nav className="pdp-crumbs" aria-label="Breadcrumb">
@@ -206,10 +206,12 @@ export default async function ProductPage({ params }) {
       </section>
 
       {/* ── 4. The method ───────────────────────────────────── */}
-      <section className="pdp-method">
-        <div className="pdp-method__media">
-          <Image src={ritualImage.src} alt={ritualImage.alt} fill sizes="(min-width: 900px) 50vw, 100vw" style={{ objectFit: 'cover' }} />
-        </div>
+      <section className={`pdp-method${ritualImage ? '' : ' pdp-method--solo'}`}>
+        {ritualImage && (
+          <div className="pdp-method__media">
+            <Image src={ritualImage.src} alt={ritualImage.alt} fill sizes="(min-width: 900px) 50vw, 100vw" style={{ objectFit: 'cover' }} />
+          </div>
+        )}
         <div className="pdp-method__content reveal">
           <div className="eyebrow eyebrow--light">The method</div>
           <h2 className="section-title section-title--light">Your {p.name} ritual.</h2>

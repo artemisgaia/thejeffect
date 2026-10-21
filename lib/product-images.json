@@ -30,8 +30,13 @@
     "ritual"
   ],
   "botanical-hair-growth-serum": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "calming-lavender-soap": [
     "hero",
@@ -148,7 +153,9 @@
     "hero",
     "ingredients",
     "label",
+    "lifestyle",
     "pack",
+    "ritual",
     "texture"
   ],
   "hyaluronic-acid-serum": [
@@ -174,9 +181,11 @@
   ],
   "kojic-turmeric-soap": [
     "hero",
+    "ingredients",
     "label",
     "lifestyle",
     "pack",
+    "ritual",
     "texture"
   ],
   "lemongrass-sage-soap": [
@@ -226,8 +235,12 @@
     "ritual"
   ],
   "peptide-hair-growth-serum": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "texture"
   ],
   "raw-shea-butter": [
     "hero",
