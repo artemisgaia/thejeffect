@@ -80,7 +80,7 @@ export default function Header({ announcementOverride = null }) {
                         </div>
                         <div className="mega-menu__promos">
                           <Link href="/shop/hyaluronic-acid-serum" className="mega-promo">
-                            <Image src="/products/hyaluronic-acid-serum/hyaluronic-acid-serum-hero.webp" alt="Aqua Lock hyaluronic acid serum" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <Image src="/products/hyaluronic-acid-serum/hyaluronic-acid-serum-model.webp" alt="Aqua Lock hyaluronic acid serum" loading="lazy" width={600} height={450} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             <div className="mega-promo__overlay" />
                             <div className="mega-promo__text">
                               <div className="mega-promo__label">Bestseller</div>
