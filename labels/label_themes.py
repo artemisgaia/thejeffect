@@ -50,9 +50,9 @@ def T(layout, pattern, font, bg, fg, acc, sbg, sfg, acc2=None):
 THEMES = {
     # ---- serums -------------------------------------------------------------------
     'EVL0NCNS': T('frame',   'dots',     'sans',  '#0F3B3D', '#F2F7F5', '#7FD0C0', '#EEF4F3', '#0F3B3D'),           # niacinamide: lab teal
-    'EVL0PDRN': T('arch',    'rays',     'serif', '#F3DDD3', '#5A2B34', '#B76E79', '#F1DCD6', '#4A2229', '#8E3F55'),  # PDRN brightening: rose gold
+    'EVL0PDRN': T('arch',    'rays',     'serif', '#F3DDD3', '#5A2B34', '#B76E79', '#FBF3EF', '#4A2229', '#8E3F55'),  # PDRN brightening: rose gold
     'EVL0PPEC': T('corners', 'arcs',     'sans',  '#E4E7F7', '#252A63', '#6E74C9', '#F4F5FC', '#252A63', '#4249A8'),  # eye gel-cream: periwinkle
-    'EVL0REPE': T('double',  'lines',    'sans',  '#5E1A33', '#FBEFF1', '#F0A6B8', '#EAD3DB', '#4B1226'),           # retinol + peptide: wine
+    'EVL0REPE': T('double',  'lines',    'sans',  '#5E1A33', '#FBEFF1', '#F0A6B8', '#F8EEF0', '#4B1226'),           # retinol + peptide: wine
     'FMN0DRSE': T('band',    'dots',     'sans',  '#E6EDE4', '#2F4A36', '#6F9A78', '#F6F8F4', '#2F4A36', '#42694B'),  # dark spot, sensitive: soft sage
     'FMN0SPOT': T('frame',   'speckle',  'sans',  '#3A4310', '#F6F4E0', '#C7D75A', '#F4F5E8', '#2F3610'),           # dark spot, normal: olive lime
     'FMN0GUSH': T('arch',    'arcs',     'serif', '#0F4A35', '#F1F7F2', '#9AD7B4', '#EEF5F0', '#0F3B2A'),           # gua sha oil: jade
