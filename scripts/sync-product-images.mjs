@@ -12,7 +12,7 @@ import path from 'node:path';
 const root = path.resolve(import.meta.dirname, '..');
 const inbox = path.join(root, 'photos-inbox');
 const dir = path.join(root, 'public', 'products');
-const SHOTS = ['hero', 'texture', 'ingredients', 'ritual', 'lifestyle'];
+const SHOTS = ['hero', 'model', 'texture', 'ingredients', 'ritual', 'lifestyle'];
 const shotRe = new RegExp(`^(.+)-(${SHOTS.join('|')})\\.(png|jpe?g|webp)$`, 'i');
 
 // ── 1. Import from the inbox (only re-encodes new or changed files) ──

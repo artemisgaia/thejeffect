@@ -67,7 +67,7 @@ export default async function ProductPage({ params }) {
   const related = relatedOf(p, all);
   const no = String(p.no).padStart(2, '0');
   const badges = [...new Set([...p.badges, 'Made in USA'])];
-  const ritualImage = p.gallery.find((g) => g.kind === 'lifestyle') || p.gallery[0];
+  const ritualImage = ['model', 'lifestyle', 'ritual', 'ingredients', 'texture'].map((k) => p.gallery.find((g) => g.kind === k)).find(Boolean);
 
   return (
     <article className="pdp">

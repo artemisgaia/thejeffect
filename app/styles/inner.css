@@ -97,3 +97,6 @@
 .guide-faq__inner { max-width: 760px; margin: 0 auto; text-align: center; }
 .guide-faq__inner .eyebrow { justify-content: center; }
 .guide-faq__list { margin-top: clamp(32px, 5vw, 56px); text-align: left; border-top: 1px solid var(--cream-3); }
+
+/* Studio packshots used as stand-ins keep the studio grey so they never show beige side bars. */
+.article-card__img:has(.site-img--fallback), .post__hero:has(.site-img--fallback) { background: #F6F6F6; }

@@ -34,6 +34,7 @@
     "ingredients",
     "label",
     "lifestyle",
+    "model",
     "pack",
     "ritual",
     "texture"
@@ -50,6 +51,7 @@
     "hero",
     "label",
     "lifestyle",
+    "model",
     "pack",
     "ritual",
     "texture"
@@ -154,6 +156,7 @@
     "ingredients",
     "label",
     "lifestyle",
+    "model",
     "pack",
     "ritual",
     "texture"
@@ -163,6 +166,7 @@
     "ingredients",
     "label",
     "lifestyle",
+    "model",
     "pack",
     "ritual"
   ],
@@ -171,6 +175,7 @@
     "ingredients",
     "label",
     "lifestyle",
+    "model",
     "pack",
     "ritual",
     "texture"
