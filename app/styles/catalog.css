@@ -42,7 +42,15 @@
   transition: transform .6s var(--ease-out), opacity .4s var(--ease);
 }
 .product-card:hover .product-card__overlay, .product-card:focus-within .product-card__overlay { transform: none; opacity: 1; }
-@media (hover: none) { .product-card__overlay { transform: none; opacity: 1; } .product-card__overlay .btn-atc { padding: 13px 10px; font-size: .64rem; letter-spacing: .14em; } }
+/* Touch / phone: the Add button sits under the photo, never over the packaging. */
+@media (hover: none), (max-width: 639px) {
+  .product-card__media { overflow: visible; margin-bottom: 52px; }
+  .product-card__img-link { overflow: hidden; }
+  .product-card:hover .product-card__img { transform: none; }
+  .product-card__overlay { left: 0; right: 0; bottom: -52px; transform: none; opacity: 1; }
+  .product-card__overlay .btn-atc { padding: 12px 8px; font-size: .6rem; letter-spacing: .1em; white-space: normal; line-height: 1.35; text-align: center; }
+}
+@media (max-width: 639px) { .product-card__overlay .btn-atc { padding: 11px 6px; font-size: .58rem; letter-spacing: .08em; } }
 
 .product-card__info { padding: 18px 2px 0; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .product-card__type { font-size: .62rem; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }

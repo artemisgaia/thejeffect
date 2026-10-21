@@ -113,6 +113,7 @@
 .cat-card__label { font-size: .62rem; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
 .cat-card__name { margin-top: 8px; font-family: var(--font-display); font-size: clamp(1.7rem, 2.6vw, 2.3rem); font-weight: 500; line-height: 1; color: var(--forest); }
 .cat-card__cta { display: inline-flex; gap: 8px; margin-top: 14px; font-size: .68rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-muted); transition: color .3s, gap .4s var(--ease); }
+@media (max-width: 639px) { .cat-card__cta { white-space: nowrap; font-size: .6rem; letter-spacing: .14em; gap: 6px; } }
 .cat-card:hover .cat-card__cta { color: var(--forest); gap: 14px; }
 
 /* ── Featured ────────────────────────────────────────────── */
@@ -198,9 +199,11 @@
 
 /* ── Email signup ────────────────────────────────────────── */
 .email-signup { position: relative; overflow: hidden; text-align: center; color: var(--cream); padding: clamp(72px, 10vw, 150px) var(--gutter); background: radial-gradient(ellipse at 50% 0%, var(--forest-2), var(--forest) 55%, var(--forest-3)); }
-.email-signup::before, .email-signup::after { content: ''; position: absolute; width: clamp(180px, 24vw, 340px); aspect-ratio: 3 / 4; border: 1px solid rgba(221, 185, 122, .28); border-bottom: 0; border-radius: var(--arch); bottom: -2px; pointer-events: none; }
-.email-signup::before { left: clamp(-60px, 4vw, 80px); }
-.email-signup::after { right: clamp(-60px, 4vw, 80px); }
+/* Decorative arches live in the margins either side of the 680px copy column and are hidden when there is no room. */
+.email-signup::before, .email-signup::after { content: ''; position: absolute; width: clamp(120px, calc((100% - 760px) / 2 - 40px), 300px); aspect-ratio: 3 / 4; border: 1px solid rgba(221, 185, 122, .28); border-bottom: 0; border-radius: var(--arch); bottom: -2px; pointer-events: none; }
+.email-signup::before { left: 24px; }
+.email-signup::after { right: 24px; }
+@media (max-width: 1079px) { .email-signup::before, .email-signup::after { display: none; } }
 .email-signup__inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
 .email-signup__title { font-family: var(--font-display); font-weight: 400; letter-spacing: -.025em; line-height: .95; font-size: clamp(2.6rem, 5.4vw, 4.2rem); }
 .email-signup__title em { color: var(--gold-light); }

@@ -19,13 +19,14 @@ const src = (process.argv[2] || '~/Downloads/J EFFEC images').replace(/^~/, os.h
 
 // size = output [w, h]
 const SLOTS = {
-  hero:            { file: 'hero.jpeg',                    crop: [1480, 0, 1152, 1536], size: [1200, 1600] },
+  hero:            { file: 'Serum.jpeg',                   size: [1200, 1600] },   // woman holding the Aqua Lock hyaluronic serum
   story:           { file: 'hero 2.jpeg',                  crop: [1417, 0, 1229, 1536], size: [1200, 1500] },
   'about-hero':    { file: 'Group.jpeg',                   crop: [1523, 0, 1229, 1536], size: [1200, 1500] },
   'about-mission': { file: 'Group 2.jpeg',                 crop: [880, 0, 1229, 1536], size: [1200, 1500] },
   'cat-cleanse':   { file: 'Cleanser better.jpeg',         size: [1200, 1600] },
   'cat-treat':     { file: 'Serum.jpeg',                   size: [1200, 1600] },
-  'cat-seal':      { file: 'Body cream.jpeg',              size: [1200, 1600] },
+  'cat-seal':      { file: 'Moisturzer.jpeg',              size: [1200, 1600] },   // face moisturizer (label: Peptide Moisturizer, mapping unconfirmed)
+  'cat-body':      { file: 'Body cream.jpeg',              size: [1200, 1600] },   // cream smoothed over the forearm
   'guide-treat':   { file: 'Hand.jpeg',                    size: [1200, 1600] },
   'guide-seal':    { file: 'Moisturizer 2 better.jpeg',    size: [1200, 1600] },
 };
