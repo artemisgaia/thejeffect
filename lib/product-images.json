@@ -1,73 +1,134 @@
 {
   "aloe-cool-cucumber-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "aloe-menthol-cooling-cream": [
+    "hero",
     "label",
     "pack"
   ],
   "aloe-tea-tree-clarifying-gel": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "anti-aging-moisturizer": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "botanical-hair-growth-serum": [
     "label",
     "pack"
   ],
   "calming-lavender-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "charcoal-facial-cleanser": [
+    "hero",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "charcoal-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "texture"
   ],
   "coconut-shea-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "coffee-body-scrub": [
+    "hero",
     "label",
     "pack"
   ],
   "collagen-night-cream": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "texture"
   ],
   "copper-peptide-moisturizer": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "dark-spot-serum": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "texture"
   ],
   "dark-spot-serum-sensitive-skin": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "dead-sea-mud-mask": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "dmae-firming-cream": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "texture"
   ],
   "eucalyptus-peppermint-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "exfoliating-luffa-bar": [
+    "hero",
     "label",
     "pack"
   ],
@@ -84,96 +145,158 @@
     "pack"
   ],
   "gua-sha-face-oil": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "pack",
+    "texture"
   ],
   "hyaluronic-acid-serum": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "hyaluronic-hydration-cream": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "hydro-balancing-gel-cream": [
     "label",
     "pack"
   ],
   "kojic-turmeric-soap": [
+    "hero",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "texture"
   ],
   "lemongrass-sage-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "moisturizing-strengthening-hair-oil": [
     "label",
     "pack"
   ],
   "niacinamide-10-serum": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "nourishing-jojoba-face-oil": [
     "label",
     "pack"
   ],
   "oat-milk-honey-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "pdrn-brightening-serum": [
     "label",
-    "pack"
+    "pack",
+    "texture"
   ],
   "peptide-eye-gel-cream": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "peptide-hair-growth-serum": [
     "label",
     "pack"
   ],
   "raw-shea-butter": [
+    "hero",
     "label",
     "pack"
   ],
   "retinol-peptide-face-serum": [
     "label",
-    "pack"
+    "pack",
+    "texture"
   ],
   "sandalwood-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "scalp-health-hair-oil": [
     "label",
     "pack"
   ],
   "slumber-soap": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "snail-mucin-face-serum": [
     "label",
     "pack"
   ],
   "tallow-cream-lemongrass-lavender": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "tallow-cream-orange-bergamot": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "tallow-cream-peaceful-night": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual",
+    "texture"
   ],
   "vitamin-c-brightening-serum": [
+    "hero",
+    "ingredients",
     "label",
-    "pack"
+    "lifestyle",
+    "pack",
+    "ritual"
   ],
   "vitamin-glow-serum": [
     "label",
