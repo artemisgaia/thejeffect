@@ -8,6 +8,7 @@ const ITEMS = [
   { href: '/admin/subscribers', label: 'Subscribers' },
   { href: '/admin/campaigns', label: 'Campaigns' },
   { href: '/admin/settings', label: 'Settings' },
+  { href: '/admin/dashboard', label: 'Dashboard', external: true },
 ];
 
 export default function AdminNav() {
@@ -17,7 +18,7 @@ export default function AdminNav() {
       {ITEMS.map((it) => {
         const active = it.exact ? pathname === it.href : pathname.startsWith(it.href);
         return (
-          <Link key={it.href} href={it.href} className={`adm-nav__link${active ? ' is-active' : ''}`} aria-current={active ? 'page' : undefined}>
+          <Link key={it.href} href={it.href} prefetch={it.external ? false : undefined} className={`adm-nav__link${active ? ' is-active' : ''}`} aria-current={active ? 'page' : undefined}>
             {it.label}
           </Link>
         );

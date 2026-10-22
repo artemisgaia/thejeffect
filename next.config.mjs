@@ -36,6 +36,8 @@ const supabaseHost = (() => {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // The private financial dashboard is read from disk by app/admin/dashboard/route.js.
+  outputFileTracingIncludes: { '/admin/dashboard': ['./private/dashboard.html'] },
   // Pin the workspace root (a stray lockfile in the home folder confuses detection).
   turbopack: { root: import.meta.dirname },
   images: {
@@ -50,7 +52,7 @@ const nextConfig = {
     return [
       {
         source: '/dashboard',
-        destination: '/dashboard.html',
+        destination: '/admin/dashboard',
         permanent: false,
       },
       // Retired products → closest live product (keeps links and rankings)
