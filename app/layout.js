@@ -1,4 +1,5 @@
 import localFont from 'next/font/local';
+import { Analytics } from '@vercel/analytics/next';
 import './styles/base.css';
 import './styles/pages.css';
 import './styles/chrome.css';
@@ -57,7 +58,10 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#243B27" />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(siteGraph())} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
