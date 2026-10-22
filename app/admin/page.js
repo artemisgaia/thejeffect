@@ -24,7 +24,7 @@ export default async function AdminHome() {
 
   const steps = [
     { icon: 'tag', title: 'Add your products', text: `${products.filter((p) => p.published !== false).length} products are live. Edit prices, photos and copy any time.`, cta: 'Manage products', href: '/admin/products', done: products.length > 0 },
-    { icon: 'card', title: 'Activate payments', text: 'Add your Stripe key in Vercel so customers can check out.', cta: 'Payment settings', href: '/admin/settings/payments', done: has('STRIPE_SECRET_KEY') },
+    { icon: 'card', title: 'Payments', text: 'Customers pay through Stripe at checkout.', cta: 'Payment settings', href: '/admin/settings/payments', done: has('STRIPE_SECRET_KEY') },
     { icon: 'truck', title: 'Review shipping rates', text: 'Check the standard, expedited and overnight rates used at checkout.', cta: 'Shipping settings', href: '/admin/settings/shipping', done: false },
     { icon: 'mail', title: 'Connect email', text: 'Add Resend so welcome emails and campaigns can send.', cta: 'Open campaigns', href: '/admin/campaigns', done: has('RESEND_API_KEY') },
     { icon: 'globe', title: 'Domain', text: 'www.thejeffect.com is connected through Vercel.', cta: 'Domain settings', href: '/admin/settings/domains', done: true },

@@ -7,7 +7,7 @@ const REPORTS = [
   ['Sales over time', 'Sales', '/admin/analytics'], ['Sales by product', 'Sales', '/admin/analytics'], ['Average order value over time', 'Sales', '/admin/analytics'],
   ['Sessions over time', 'Acquisition', '/admin/analytics'], ['Sessions by traffic source', 'Acquisition', '/admin/growth/attribution'], ['Sessions by device type', 'Acquisition', '/admin/analytics'],
   ['Conversion rate breakdown', 'Behavior', '/admin/analytics'], ['Top pages', 'Behavior', '/admin/analytics'], ['Visitors right now', 'Behavior', '/admin/analytics/live'],
-  ['Returning customer rate', 'Customers', '/admin/analytics'], ['New vs returning customers', 'Customers', '/admin/customers'], ['Monthly history (Private Office)', 'Finance', '/admin/analytics'],
+  ['Returning customer rate', 'Customers', '/admin/analytics'], ['New vs returning customers', 'Customers', '/admin/customers'], ['Cash position and balance', 'Finance', '/admin/analytics/finance'], ['Revenue, profit and expenses by month', 'Finance', '/admin/analytics/finance'],
 ];
 
 export default function Reports() {

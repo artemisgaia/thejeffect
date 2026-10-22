@@ -229,6 +229,16 @@ create table if not exists public.catalogs (
   created_at  timestamptz not null default now()
 );
 
+create table if not exists public.metafield_definitions (
+  id          uuid primary key default gen_random_uuid(),
+  resource    text not null default 'Products',
+  name        text not null,
+  key         text,
+  type        text not null default 'Single line text',
+  description text,
+  created_at  timestamptz not null default now()
+);
+
 create table if not exists public.rollouts (
   id          uuid primary key default gen_random_uuid(),
   title       text not null,
@@ -324,7 +334,7 @@ begin
     'customers','orders','draft_orders','abandoned_checkouts','discounts','gift_cards',
     'collections','locations','inventory','purchase_orders','transfers','segments','companies',
     'markets','catalogs','rollouts','pages','blog_posts','menus','metaobject_definitions',
-    'metaobjects','files','site_events','custom_products'
+    'metaobjects','files','site_events','custom_products','metafield_definitions'
   ] loop
     execute format('alter table public.%I enable row level security', t);
     execute format('drop policy if exists "admin all" on public.%I', t);
@@ -353,9 +363,25 @@ create policy "admins manage" on public.admins for all to authenticated
 insert into public.markets (name, regions, currency, primary_market)
 select 'United States', 'United States', 'USD', true
 where not exists (select 1 from public.markets);
-insert into public.locations (name, address, city, region, postal, pos)
-select 'Shop location', '1600 Vine St', 'Los Angeles', 'CA', '90028', true
-where not exists (select 1 from public.locations);
+-- Locations: United States and Europe.
+insert into public.locations (name, address, city, region, postal, country, pos)
+select 'United States', '1600 Vine St', 'Los Angeles', 'CA', '90028', 'United States', true
+where not exists (select 1 from public.locations where name = 'United States');
+insert into public.locations (name, country, pos)
+select 'Europe', 'Europe', false
+where not exists (select 1 from public.locations where name = 'Europe');
+
+-- Catalogs: one for everything, plus one per product category (US market).
+insert into public.catalogs (name, market, price_adjust, collection_handle)
+select v.name, 'United States', 0, v.handle
+from (values
+  ('All products', null),
+  ('Serums', 'serums'), ('Moisturizers', 'moisturizers'), ('Cleansers', 'cleansers'), ('Face oils', 'face-oils'),
+  ('Eye care', 'eye-care'), ('Treatments', 'treatments'), ('Masks', 'masks'), ('Body', 'body'),
+  ('Ritual bars', 'ritual-bars'), ('Hair and scalp', 'hair-scalp')
+) v(name, handle)
+where not exists (select 1 from public.catalogs c where c.name = v.name);
+
 insert into public.segments (name, rule)
 select * from (values
   ('Customers who have purchased at least once', 'purchased'),
