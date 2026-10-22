@@ -239,6 +239,38 @@ create table if not exists public.metafield_definitions (
   created_at  timestamptz not null default now()
 );
 
+-- Monthly results from before Stripe checkout (imported from the Artemis Private Office).
+-- Revenue/profit/expenses are real. orders/fulfilled/returning/new customers are blank until
+-- you enter them (Analytics → Monthly history), so nothing is invented.
+create table if not exists public.history_months (
+  id          uuid primary key default gen_random_uuid(),
+  label       text not null,
+  period_start date not null,
+  revenue     integer not null default 0,           -- cents
+  profit      integer not null default 0,
+  expenses    integer not null default 0,
+  orders      integer,
+  fulfilled   integer,
+  returning_customers integer,
+  new_customers integer,
+  created_at  timestamptz not null default now()
+);
+create unique index if not exists history_months_start_key on public.history_months (period_start);
+insert into public.history_months (label, period_start, revenue, profit, expenses)
+select v.label, v.d::date, v.r * 100, v.p * 100, v.e * 100
+from (values
+  ('January 2026',   '2026-01-01', 4000,  733,  3267),
+  ('February 2026',  '2026-02-01', 7936,  1331, 6605),
+  ('March 2026',     '2026-03-01', 12487, 1809, 10678),
+  ('April 2026',     '2026-04-01', 18216, 2317, 15899),
+  ('May 2026',       '2026-05-01', 22846, 2637, 20208),
+  ('June 2026',      '2026-06-01', 29274, 2434, 26840),
+  ('July 2026',      '2026-07-01', 36596, 2544, 34052),
+  ('August 2026',    '2026-08-01', 44426, 1519, 42907),
+  ('September 2026 (partial, through Sep 22)', '2026-09-01', 38176, 2247, 35929)
+) v(label, d, r, p, e)
+where not exists (select 1 from public.history_months h where h.period_start = v.d::date);
+
 create table if not exists public.rollouts (
   id          uuid primary key default gen_random_uuid(),
   title       text not null,
@@ -334,7 +366,7 @@ begin
     'customers','orders','draft_orders','abandoned_checkouts','discounts','gift_cards',
     'collections','locations','inventory','purchase_orders','transfers','segments','companies',
     'markets','catalogs','rollouts','pages','blog_posts','menus','metaobject_definitions',
-    'metaobjects','files','site_events','custom_products','metafield_definitions'
+    'metaobjects','files','site_events','custom_products','metafield_definitions','history_months'
   ] loop
     execute format('alter table public.%I enable row level security', t);
     execute format('drop policy if exists "admin all" on public.%I', t);

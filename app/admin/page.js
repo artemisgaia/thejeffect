@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { requireAdmin } from '@/lib/admin/auth';
 import { getAllProducts } from '@/lib/store';
-import { loadAnalytics } from '@/lib/admin/stats';
+import { loadAnalytics, loadHistory, summarizeHistory } from '@/lib/admin/stats';
 import { HISTORY, CASH, HISTORY_SOURCE, HISTORY_UPDATED } from '@/lib/admin/history';
 import { money, dateShort } from '@/lib/admin/format';
 import Chart from './_ui/Chart';
@@ -16,8 +16,9 @@ const usd = (n) => money(Math.round(n * 100));
 
 export default async function AdminHome() {
   const { supabase } = await requireAdmin();
-  const [a, products, { count: subscribers }] = await Promise.all([
+  const [a, hist, products, { count: subscribers }] = await Promise.all([
     loadAnalytics(supabase, 30),
+    loadHistory(supabase),
     getAllProducts(),
     supabase.from('subscribers').select('*', { count: 'exact', head: true }).eq('status', 'subscribed'),
   ]);
@@ -30,9 +31,11 @@ export default async function AdminHome() {
     { icon: 'globe', title: 'Domain', text: 'www.thejeffect.com is connected through Vercel.', cta: 'Domain settings', href: '/admin/settings/domains', done: true },
     { icon: 'shield', title: 'Review policies', text: 'Add your refund, shipping and privacy policies.', cta: 'Open policies', href: '/admin/settings/policies', done: false },
   ];
+  const hs = summarizeHistory(hist);
+  const live = a.orderCount > 0;
   const stats = [
-    { label: 'Total sales', value: money(a.total), note: 'last 30 days' },
-    { label: 'Orders', value: a.orderCount, note: 'last 30 days' },
+    live ? { label: 'Total sales', value: money(a.total), note: 'last 30 days' } : { label: 'Total sales', value: money(hs.revenue), note: '2026 to date (imported)' },
+    live ? { label: 'Orders', value: a.orderCount, note: 'last 30 days' } : { label: 'Orders', value: hs.orders == null ? '—' : hs.orders, note: hs.orders == null ? 'enter in Monthly history' : '2026 to date' },
     { label: 'Sessions', value: a.sessions, note: a.hasTraffic ? 'last 30 days' : 'tracking starts with the next visit' },
     { label: 'Conversion rate', value: `${a.conversion}%`, note: 'sessions that bought' },
     { label: 'Email subscribers', value: subscribers ?? 0, note: 'on the list' },
