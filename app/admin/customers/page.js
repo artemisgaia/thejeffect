@@ -26,10 +26,11 @@ export default async function Customers({ searchParams }) {
       <PageHead title="Customers" icon="users">
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a className="adm-btn" href="/admin/subscribers/export">Export</a>
+        <Link href="/admin/customers/import" className="adm-btn">Import</Link>
         <Link href="/admin/customers/new" className="adm-btn adm-btn--primary"><Icon name="plus" size={14} /> Add customer</Link>
       </PageHead>
       {all.length === 0 ? (
-        <EmptyState art="users" title="Add your customers" text="Customers are added automatically when they check out with Stripe. You can also add them by hand." cta="Add customer" href="/admin/customers/new" learn="customers" />
+        <EmptyState art="users" title="Add your customers" text="Customers are added automatically when they check out with Stripe. You can also import a CSV or add them by hand." cta="Import customers" href="/admin/customers/import" learn="customers" />
       ) : (
         <div className="adm-table-wrap">
           <form className="adm-toolbar" role="search">
