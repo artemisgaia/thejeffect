@@ -87,7 +87,8 @@ export default function Header({ announcementOverride = null }) {
                               <div className="mega-promo__title">Aqua Lock</div>
                             </div>
                           </Link>
-                          <Link href="/ritual-guide" className="mega-promo mega-promo--plain">
+                          <Link href="/ritual-guide" className="mega-promo">
+                            <Image src="/site/menu-ritual.webp" alt="Charcoal cleanser, hyaluronic acid serum and hydration cream on a travertine slab" loading="lazy" width={600} height={690} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 45%' }} />
                             <div className="mega-promo__overlay" />
                             <div className="mega-promo__text">
                               <div className="mega-promo__label">Method</div>
