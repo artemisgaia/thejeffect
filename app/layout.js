@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import './styles/base.css';
 import './styles/pages.css';
 import './styles/chrome.css';
@@ -8,17 +8,29 @@ import './styles/inner.css';
 import { SITE_CONFIG } from '@/lib/site-config';
 import { siteGraph, jsonLd } from '@/lib/seo';
 
-const display = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
+// Fonts are bundled in app/fonts (latin subset) so the build never needs to reach Google.
+const display = localFont({
+  src: [
+    { path: './fonts/CormorantGaramond-normal-300.woff2', weight: '300', style: 'normal' },
+    { path: './fonts/CormorantGaramond-italic-300.woff2', weight: '300', style: 'italic' },
+    { path: './fonts/CormorantGaramond-normal-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/CormorantGaramond-italic-400.woff2', weight: '400', style: 'italic' },
+    { path: './fonts/CormorantGaramond-normal-500.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/CormorantGaramond-italic-500.woff2', weight: '500', style: 'italic' },
+    { path: './fonts/CormorantGaramond-normal-600.woff2', weight: '600', style: 'normal' },
+    { path: './fonts/CormorantGaramond-italic-600.woff2', weight: '600', style: 'italic' },
+  ],
   variable: '--font-cormorant',
   display: 'swap',
 });
 
-const body = DM_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+const body = localFont({
+  src: [
+    { path: './fonts/DMSans-normal-300.woff2', weight: '300', style: 'normal' },
+    { path: './fonts/DMSans-normal-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/DMSans-normal-500.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/DMSans-normal-600.woff2', weight: '600', style: 'normal' },
+  ],
   variable: '--font-dm-sans',
   display: 'swap',
 });
