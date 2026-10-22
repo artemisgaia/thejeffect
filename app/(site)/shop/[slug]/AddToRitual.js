@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import { formatMoney } from '@/lib/format';
@@ -8,14 +9,20 @@ export default function AddToRitual({ product }) {
   const { addToCart } = useCart();
   const variant = product.variants[0];
   const soldOut = product.sold_out;
-  const add = () => { if (!soldOut) addToCart(product, variant); };
+  const [added, setAdded] = useState(false);
+  const add = () => {
+    if (soldOut) return;
+    addToCart(product, variant);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1600);
+  };
   const price = formatMoney(variant.price);
 
   return (
     <>
       <div className="pdp-atc">
-        <button className="btn-primary pdp-atc__btn" onClick={add} disabled={soldOut}>
-          {soldOut ? 'Sold out' : `Add to Ritual · ${price}`}
+        <button className={`btn-primary pdp-atc__btn${added ? ' is-added' : ''}`} onClick={add} disabled={soldOut}>
+          {soldOut ? 'Sold out' : added ? 'Added to your ritual ✓' : `Add to Ritual · ${price}`}
         </button>
         <p className="pdp-atc__note">Free U.S. shipping over $50 · 30-day money-back guarantee</p>
       </div>

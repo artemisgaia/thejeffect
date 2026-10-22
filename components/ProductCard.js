@@ -1,12 +1,15 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { formatMoney } from '@/lib/format';
 
 // Expects the slim shape from toCard() in lib/products.js.
 export default function ProductCard({ product }) {
   const { addToCart } = useCart();
+  const [added, setAdded] = useState(false);
+  const onAdd = () => { addToCart(product, cv); setAdded(true); setTimeout(() => setAdded(false), 1600); };
   const cv = product.variants?.[0] || product;
   const hasCompare = product.compare_at_price && product.compare_at_price > product.price;
   const isBestseller = product.tags.includes('bestseller');
@@ -62,12 +65,12 @@ export default function ProductCard({ product }) {
         {/* ATC overlay */}
         <div className="product-card__overlay">
           <button
-            className="btn-atc"
-            onClick={() => addToCart(product, cv)}
+            className={`btn-atc${added ? ' is-added' : ''}`}
+            onClick={onAdd}
             aria-label={soldOut ? `${product.name} is sold out` : `Add ${product.name} to cart`}
             disabled={soldOut}
           >
-            {soldOut ? 'Sold out' : `Add to Ritual — ${formatMoney(product.price)}`}
+            {soldOut ? 'Sold out' : added ? 'Added to your ritual ✓' : `Add to Ritual — ${formatMoney(product.price)}`}
           </button>
         </div>
       </div>

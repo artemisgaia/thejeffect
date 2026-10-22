@@ -15,6 +15,19 @@ export default function ThemeScript() {
       cleanups.push(() => el.removeEventListener(evt, fn, opts));
     };
 
+    /* ── Photos fade in as they finish loading (never hides an image that is already there) ── */
+    const fadeImages = () => {
+      document.querySelectorAll('img[data-nimg]:not(.img-wait):not(.product-card__img--hover)').forEach((img) => {
+        if (img.complete) return;
+        img.classList.add('img-wait');
+        const done = () => img.classList.add('img-in');
+        img.addEventListener('load', done, { once: true });
+        img.addEventListener('error', done, { once: true });
+        if (img.complete) done();
+      });
+    };
+    fadeImages();
+
     /* ── Header scroll behaviour ── */
     const header = document.getElementById('site-header');
     const hero = document.querySelector('.hero');

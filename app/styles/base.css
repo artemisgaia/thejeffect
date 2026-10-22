@@ -160,7 +160,14 @@ main:focus { outline: none; }
 .reveal--d6 { transition-delay: .68s; }
 .no-js .reveal { opacity: 1; transform: none; filter: none; }
 
+/* ── Photo fade-in + add-to-cart confirmation ───────────── */
+img.img-wait:not(.img-in) { opacity: 0; }
+img.img-wait.img-in { opacity: 1; transition: opacity .9s var(--ease); }
+.btn-atc.is-added, .pdp-atc__btn.is-added { background: var(--gold); color: var(--forest-3); animation: addedPop .5s var(--ease-out); }
+@keyframes addedPop { 0% { transform: scale(.97); } 60% { transform: scale(1.015); } 100% { transform: scale(1); } }
+
 @media (prefers-reduced-motion: reduce) {
+  img.img-wait:not(.img-in) { opacity: 1; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   .reveal { opacity: 1; transform: none; filter: none; }
