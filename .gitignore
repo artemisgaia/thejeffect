@@ -43,3 +43,6 @@ next-env.d.ts
 
 # raw product photos (optimized copies live in public/products)
 /photos-inbox
+
+# Supliful label templates (large .psd/.ai from Supliful): keep locally, not in git
+/labels/Labels Supliful/
