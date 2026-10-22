@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getStripe } from '@/lib/stripe';
 import { getProducts } from '@/lib/store';
-import { shippingOptions } from '@/lib/shipping';
+import { shippingOptions, applyShippingSettings } from '@/lib/shipping';
+import { createServiceClient } from '@/lib/supabase/service';
 
 // The browser only sends { slug, quantity }. Names and prices are looked up
 // here from the live catalog, so a cart can never set its own price.
@@ -46,16 +47,25 @@ export async function POST(request) {
       });
     }
 
+    let shipping;
+    try {
+      const db = createServiceClient();
+      const { data } = db ? await db.from('site_settings').select('value').eq('key', 's:shipping').maybeSingle() : { data: null };
+      shipping = applyShippingSettings(data?.value || {});
+    } catch { shipping = applyShippingSettings({}); }
+
     const stripe = getStripe();
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       line_items: lineItems,
-      shipping_options: shippingOptions(subtotal),
+      shipping_options: shippingOptions(subtotal, shipping),
       success_url: `${siteUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/cart`,
       shipping_address_collection: { allowed_countries: ['US', 'CA', 'GB', 'AU'] },
       automatic_tax: { enabled: false },
       allow_promotion_codes: true,
+      // Lets Stripe give us a recovery link when a checkout expires, for Abandoned checkouts.
+      after_expiration: { recovery: { enabled: true, allow_promotion_codes: true } },
       metadata: { source: 'the-jeffect-website' },
     });
 

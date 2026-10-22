@@ -8,7 +8,7 @@ import ProductCard from '@/components/ProductCard';
 import ProductGallery from './ProductGallery';
 import AddToRitual from './AddToRitual';
 
-export const dynamicParams = false;
+export const dynamicParams = true; // products created in the admin are rendered on demand
 
 export async function generateStaticParams() {
   return (await getProducts()).map((p) => ({ slug: p.slug }));

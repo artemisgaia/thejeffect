@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { requireAdmin } from '@/lib/admin/auth';
 import { getAllProducts } from '@/lib/store';
 import { CATEGORY_META } from '@/lib/products';
@@ -20,7 +21,7 @@ export default async function AdminProducts() {
     price: p.price,
     size: p.size,
     image: p.images[0] || '',
-    published: p.published,
+    published: p.published !== false,
     sold_out: Boolean(p.sold_out),
     edited: Boolean(p.edited),
     bestseller: p.tags.includes('bestseller'),
@@ -31,14 +32,15 @@ export default async function AdminProducts() {
     .map(([value, m]) => ({ value, label: m.label }));
 
   return (
-    <>
+    <div className="adm-wide">
       <header className="adm-head">
         <div>
           <h1>Products</h1>
           <p>{products.length} products. Open one to change its copy, price, photos, SEO and visibility.</p>
         </div>
+        <div className="adm-head__actions"><Link href="/admin/products/new" className="adm-btn adm-btn--primary">Add product</Link></div>
       </header>
       <ProductTable rows={rows} categories={categories} />
-    </>
+    </div>
   );
 }

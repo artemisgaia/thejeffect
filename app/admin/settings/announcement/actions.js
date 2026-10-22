@@ -6,7 +6,7 @@ import { SETTINGS_TAG } from '@/lib/store';
 function refresh() {
   updateTag(SETTINGS_TAG);
   revalidatePath('/', 'layout');
-  revalidatePath('/admin/settings');
+  revalidatePath('/admin/settings/announcement');
 }
 
 export async function saveAnnouncement(prevState, formData) {

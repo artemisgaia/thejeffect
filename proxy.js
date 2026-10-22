@@ -9,6 +9,8 @@ export async function proxy(request) {
   let response = NextResponse.next({ request });
   response.headers.set('X-Robots-Tag', 'noindex, nofollow');
 
+  // Local demo mode (never in production): skip the login redirect.
+  if (process.env.ADMIN_PREVIEW === '1' && process.env.NODE_ENV !== 'production') return response;
   if (!supabaseConfigured) return response;
 
   const supabase = createServerClient(SUPABASE_URL, SUPABASE_ANON_KEY, {

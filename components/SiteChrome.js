@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
 import ThemeScript from '@/components/ThemeScript';
+import Tracker from '@/components/Tracker';
 import { getSiteSettings } from '@/lib/store';
 
 // Storefront shell: announcement bar, header, cart drawer, footer.
@@ -20,6 +21,7 @@ export default async function SiteChrome({ children }) {
       </main>
       <Footer />
       <ThemeScript />
+      <Tracker />
     </CartProvider>
   );
 }

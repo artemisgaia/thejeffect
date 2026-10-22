@@ -1,22 +1,21 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { requireAdmin } from '@/lib/admin/auth';
-import { applyOverride } from '@/lib/store';
-import { PRODUCTS, FEATURED_SLUGS } from '@/lib/products';
+import { applyOverride, getBaseProducts } from '@/lib/store';
+import { FEATURED_SLUGS } from '@/lib/products';
 import ProductForm from './ProductForm';
 
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const p = PRODUCTS.find((x) => x.slug === slug);
-  return { title: p ? p.name : 'Product' };
+  return { title: slug === 'new' ? 'Add product' : 'Product' };
 }
 
 export default async function AdminProductPage({ params }) {
   const { supabase } = await requireAdmin();
   const { slug } = await params;
-  const base = PRODUCTS.find((p) => p.slug === slug);
+  const base = (await getBaseProducts()).find((p) => p.slug === slug);
   if (!base) notFound();
 
   const { data: row } = await supabase.from('product_overrides').select('*').eq('slug', slug).maybeSingle();

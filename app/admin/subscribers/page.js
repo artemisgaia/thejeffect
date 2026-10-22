@@ -21,6 +21,7 @@ export default async function SubscribersPage() {
           <h1>Subscribers</h1>
           <p>{active} subscribed. People who join through the site or footer appear here and in your Resend segment.</p>
         </div>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a href="/admin/subscribers/export" className="adm-btn">Export CSV</a>
       </header>
 

@@ -2,8 +2,8 @@
 import { revalidatePath, updateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { requireAdmin } from '@/lib/admin/auth';
-import { PRODUCTS, FEATURED_SLUGS } from '@/lib/products';
-import { PRODUCTS_TAG } from '@/lib/store';
+import { FEATURED_SLUGS } from '@/lib/products';
+import { PRODUCTS_TAG, getBaseProducts } from '@/lib/store';
 import { SUPABASE_URL } from '@/lib/supabase/config';
 
 const BUCKET = 'product-images';
@@ -34,7 +34,7 @@ export async function saveProduct(prevState, formData) {
   const { supabase, user } = await requireAdmin();
 
   const slug = String(formData.get('slug') || '');
-  const base = PRODUCTS.find((p) => p.slug === slug);
+  const base = (await getBaseProducts()).find((p) => p.slug === slug);
   if (!base) return { error: 'Unknown product.' };
 
   const text = (k, max = 2000) => String(formData.get(k) ?? '').trim().slice(0, max);
@@ -128,7 +128,7 @@ export async function saveProduct(prevState, formData) {
 export async function resetProduct(formData) {
   const { supabase } = await requireAdmin();
   const slug = String(formData.get('slug') || '');
-  if (!PRODUCTS.some((p) => p.slug === slug)) return;
+  if (!(await getBaseProducts()).some((p) => p.slug === slug)) return;
 
   const { data: existing } = await supabase.from('product_overrides').select('images').eq('slug', slug).maybeSingle();
   await supabase.from('product_overrides').delete().eq('slug', slug);

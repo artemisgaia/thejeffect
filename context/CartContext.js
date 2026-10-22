@@ -1,6 +1,7 @@
 'use client';
 import { createContext, useContext, useState, useCallback, useSyncExternalStore } from 'react';
 import { formatMoney } from '@/lib/format';
+import { track } from '@/lib/track';
 
 const CartContext = createContext(null);
 
@@ -59,6 +60,7 @@ export function CartProvider({ children }) {
   const [cartOpen, setCartOpen] = useState(false);
 
   const addToCart = useCallback((product, variant) => {
+    track('add_to_cart', { product: product.slug });
     setCart((prev) => {
       const key = variant?.id || product.id;
       const existing = prev.find((item) => item.key === key);
@@ -108,6 +110,7 @@ export function CartProvider({ children }) {
   // Stripe checkout
   const checkout = useCallback(async () => {
     if (cart.length === 0) return;
+    track('checkout');
     try {
       const items = cart.map((item) => ({ slug: item.slug, quantity: item.quantity }));
       const res = await fetch('/api/checkout', {
