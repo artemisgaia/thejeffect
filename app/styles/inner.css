@@ -100,3 +100,34 @@
 
 /* Studio packshots used as stand-ins keep the studio grey so they never show beige side bars. */
 .article-card__img:has(.site-img--fallback), .post__hero:has(.site-img--fallback) { background: #F6F6F6; }
+
+/* ── Phone polish: 44px touch targets, 11.5px text floor, no iOS input zoom ── */
+@media (max-width: 639px) {
+  /* text floor (uppercase labels keep their tracking, just never below 11.5px) */
+  .hero__float-label, .cat-card__label, .cat-card__cta, .product-card__type, .badge, .btn-atc, .btn-primary,
+  .eyebrow, .hero__eyebrow, .footer-col-title, .filter-label, .collection-hero__count, .article-card__date,
+  .guide-step__products-label, .contact-detail__label, .form-label, .reviews__meta, .review-card__product,
+  .product-info__how-label, .product-info__variant-label { font-size: max(.72rem, 11.5px); }
+  .pdp-crumbs, .pdp-crumbs a, .footer-links a, .footer-copy, cite { font-size: max(.78rem, 12px); }
+
+  /* touch targets */
+  .btn-atc, .pdp-atc__btn, .btn-primary, .btn-secondary, .filter-btn, .search-popup__submit { min-height: 44px; }
+  .filter-btn { padding-block: 12px; }
+  .footer-links a { display: inline-block; padding: 12px 0; }
+  .footer-logo-link { display: inline-flex; align-items: center; min-height: 44px; }
+  .header__logo { display: inline-flex; align-items: center; min-height: 44px; }
+  .view-all-link, .article-card__more { display: inline-flex; align-items: center; min-height: 44px; }
+  .announce a { display: inline-flex; align-items: center; min-height: 44px; }
+  /* links that sit in running text keep their layout but get a bigger invisible hit area */
+  .pdp-crumbs a, .product-card__title a { position: relative; }
+  .pdp-crumbs a::after, .product-card__title a::after { content: ''; position: absolute; inset: -14px -6px; }
+
+  .pdp-facts dt, .pdp-spec dt, .pdp-badges li, .pdp-story__quote cite { font-size: max(.72rem, 11.5px); }
+  .product-card__overlay .btn-atc { font-size: max(.72rem, 11.5px); letter-spacing: .06em; padding: 10px 6px; }
+
+  /* iOS zooms the page when a field is under 16px */
+  input, select, textarea { font-size: 16px; }
+}
+
+/* The decorative arch only appears where it has its own space; on phones it would cross the heading. */
+@media (max-width: 899px) { .collection-hero::after { display: none; } }
